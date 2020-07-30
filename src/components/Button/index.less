@@ -1,0 +1,61 @@
+.buttonBase() {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 4px;
+  border: 1px solid grey;
+  cursor: pointer;
+  position: relative;
+}
+.hover() {
+  &:hover {
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+.code-ui-button {
+  &-main {
+    .buttonBase();
+    background: #1890ff;
+    color: #ffffff;
+    border-color: #1890ff;
+    .hover();
+  }
+
+  &-danger {
+    .buttonBase();
+    background: #e8635e;
+    color: #ffffff;
+    border-color: #e8635e;
+    .hover();
+  }
+  &-warn {
+    .buttonBase();
+    background: #ebc053;
+    color: #ffffff;
+    border-color: #ebc053;
+    .hover();
+  }
+  &-safe {
+    .buttonBase();
+    background: #53eb67;
+    color: #ffffff;
+    border: 1px solid #53eb67;
+    border-color: #53eb67;
+    .hover();
+  }
+  &-default {
+    .buttonBase();
+    color: grey;
+    &:hover {
+      color: #1890ff;
+      border-color: #1890ff;
+    }
+  }
+}

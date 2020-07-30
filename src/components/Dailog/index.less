@@ -1,0 +1,58 @@
+.code-ui-dailog {
+  width: 520px;
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  z-index: 2;
+  border-radius: 4px;
+  background: #ffffff;
+
+  &-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+  & &-header {
+    font-size: 24px;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: default;
+
+  }
+  & &-main {
+    min-height: 50px;
+    padding: 20px;
+    cursor: default;
+  }
+  & &-close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: -10px;
+    top:-10px;
+    background: grey;
+    border: 1px solid black;
+    border-radius: 50%;
+    color:black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  & &-footer {
+    display: flex;
+    justify-content: flex-end;
+    border-top:1px solid grey;
+    padding:8px;
+  }
+  & &-ok{
+    margin-left:10px;
+  }
+}
