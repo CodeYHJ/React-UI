@@ -1,5 +1,6 @@
+@import "../var.less";
 .code-ui-dailog {
-  width: 520px;
+  min-width: 320px;
   position: fixed;
   top: 25%;
   left: 50%;
@@ -20,11 +21,10 @@
   & &-header {
     font-size: 24px;
     padding: 10px;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid @border-color;
     overflow: hidden;
     text-overflow: ellipsis;
     cursor: default;
-
   }
   & &-main {
     min-height: 50px;
@@ -36,11 +36,11 @@
     height: 20px;
     position: absolute;
     right: -10px;
-    top:-10px;
+    top: -10px;
     background: grey;
     border: 1px solid black;
     border-radius: 50%;
-    color:black;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,10 +49,10 @@
   & &-footer {
     display: flex;
     justify-content: flex-end;
-    border-top:1px solid grey;
-    padding:8px;
+    border-top: 1px solid @border-color;
+    padding: 8px;
   }
-  & &-ok{
-    margin-left:10px;
+  & &-ok {
+    margin-left: 10px;
   }
 }
