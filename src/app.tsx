@@ -10,9 +10,7 @@ interface AppProps {
 
 }
 const App: React.SFC<AppProps> = () => {
-    useEffect(() => {
-        Modal.danger({ mainText: 'test' })
-    }, [])
+
     const [show, setShow] = useState(false)
     const closeDailog = (e: React.MouseEvent<Element, MouseEvent>) => {
         console.log('close')
@@ -22,17 +20,33 @@ const App: React.SFC<AppProps> = () => {
         console.log('open')
         setShow(true)
     }
+    const dangerOpen = ()=>{
+        Modal.danger({ mainText: 'test' })
+
+    }
+    const warnOpen = ()=>{
+        Modal.warn({ mainText: 'test' })
+
+    }
+    const safeOpen = ()=>{
+        Modal.safe({ mainText: 'test' })
+
+    }
+    const mainOpen = ()=>{
+        Modal.main({ mainText: 'test' })
+
+    }
     return (
         <div>
             <Dialog visble={show} onCancel={closeDailog} onOk={closeDailog} maskClosable={true}>
                 <div>asdasdasd</div>
             </Dialog>
-            <Button>123</Button>
-            <Button type="main" onClick={onpenDailog}>123</Button>
+            <Button onClick={onpenDailog}>123</Button>
+            <Button type="main" onClick={mainOpen}>123</Button>
 
-            <Button type="warn">123</Button>
-            <Button type="danger">123</Button>
-            <Button type="safe">123</Button>
+            <Button type="warn" onClick={warnOpen}>123</Button>
+            <Button type="danger" onClick={dangerOpen}>123</Button>
+            <Button type="safe" onClick={safeOpen}>123</Button>
         </div>
 
     );
