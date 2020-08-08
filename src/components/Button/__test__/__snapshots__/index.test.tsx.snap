@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button/> renders an \`.code-ui-button-danger\` component 1`] = `
+<div
+  className="code-ui-button-danger"
+>
+  <span />
+</div>
+`;
+
+exports[`<Button/> renders an \`.code-ui-button-default\` component 1`] = `
+<div
+  className="code-ui-button-default"
+>
+  <span />
+</div>
+`;
+
+exports[`<Button/> renders an \`.code-ui-button-main\` component 1`] = `
+<div
+  className="code-ui-button-main"
+>
+  <span />
+</div>
+`;
+
+exports[`<Button/> renders an \`.code-ui-button-safe\` component 1`] = `
+<div
+  className="code-ui-button-safe"
+>
+  <span />
+</div>
+`;
+
+exports[`<Button/> renders an \`.code-ui-button-warn\` component 1`] = `
+<div
+  className="code-ui-button-warn"
+>
+  <span />
+</div>
+`;

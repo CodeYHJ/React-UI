@@ -1,5 +1,5 @@
 import React, { Fragment, MouseEventHandler, ReactNode } from 'react';
-import { classPre } from '@com/utils';
+import { classPre } from '@utils/index';
 import "./index.less"
 import { Icon } from '@com/Icon';
 import Button from '@com/Button';
@@ -15,7 +15,7 @@ export interface DailogProps {
     okText?: string,
     cancleText?: string
 }
-const c = classPre('dailog')
+const c = classPre('dialog')
 
 const Dialog: React.SFC<DailogProps> = (props) => {
     const { visble, onCancel, onOk, maskClosable = false, footer, okText, cancleText, headerText, closable } = props
@@ -38,7 +38,7 @@ const Dialog: React.SFC<DailogProps> = (props) => {
     const Footer = () => {
         if (footer === null) return null
         return footer ? footer : <footer className={c('footer')}>
-            <Button type="default" onClick={onClickClose}>{cancleText ? cancleText : 'cancel'}</Button>
+            <Button type="default" onClick={onClickClose} className={c('cancel')}>{cancleText ? cancleText : 'cancel'}</Button>
             <Button type="main" onClick={onClickOk} className={c('ok')}>{okText ? okText : 'ok'}</Button>
         </footer>
     }
