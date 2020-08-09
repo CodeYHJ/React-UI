@@ -2,48 +2,46 @@ defaults: &defaults
   docker:
     - image: circleci/node:12.16.3
   branches:
-    only:
-      - master
+    only: master
 
-version: 2
+version: 2.1
 jobs:
   prepare:
     <<: *defaults
     steps:
       - checkout
       - restore_cach:
-        keys:
-          - v1-dependencies-{{ checksum "package-lock.json" }}
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
       - run: yarn install
-      - save_cach:
-        paths:
-          - node_modules
-        keys:
-          - v1-dependencies-{{ checksum "package-lock.json" }}
+      - save_cache:
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
       - persist_to_workspace:
-        root: .
-        paths:
-          - node_modules
+          root: .
+          paths:
+            - node_modules
   builds:
     <<: *defaults
     steps:
       - checkout
       - attach_workspace:
-        at: .
+          at: .
       - run: yarn build
       - persist_to_workspace:
-        root: .
-        paths:
-          - dist
-          - package.json
-          - README.md
-          - LICENSE
+          root: .
+          paths:
+            - dist
+            - package.json
+            - README.md
+            - LICENSE
   test:
     <<: *defaults
     steps:
       - checkout
       - attach_workspace:
-        at: .
+          at: .
       - run: yarn ci
       - store_test_results:
           path: test-results
@@ -51,7 +49,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-        at: .
+          at: .
       - run: npm publish
 
 workfolws:
