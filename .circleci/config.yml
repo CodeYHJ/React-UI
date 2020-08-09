@@ -8,7 +8,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cach:
+      - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package-lock.json" }}
       - run: yarn install
