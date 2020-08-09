@@ -50,7 +50,7 @@ jobs:
           at: .
       - run: npm publish
 
-workfolws:
+workflows:
   version: 2
   build_deploy:
     jobs:
