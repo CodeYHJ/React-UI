@@ -6,52 +6,53 @@ defaults: &defaults
           - master
 
 version: 2.1
-  prepare:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cach:
-        keys:
-          - v1-dependencies-{{ checksum "package-lock.json" }}
-      - run: yarn install
-      - save_cach:
-        paths:
-          - node_modules
-        keys:
-          - v1-dependencies-{{ checksum "package-lock.json" }}
-      - persist_to_workspace:
-        root: .
-        paths:
-          - node_modules
-  builds:
-    <<: *defaults
-    steps:
+  jobs:
+    prepare:
+      <<: *defaults
+      steps:
+        - checkout
+        - restore_cach:
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+        - run: yarn install
+        - save_cach:
+          paths:
+            - node_modules
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+        - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules
+    builds:
+      <<: *defaults
+      steps:
+        - checkout
+        - attach_workspace:
+          at: .
+        - run: yarn build
+        - persist_to_workspace:
+          root: .
+          paths:
+            - dist
+            - package.json
+            - README.md
+            - LICENSE
+    test:
+      <<: *defaults
+      steps:
       - checkout
       - attach_workspace:
         at: .
-      - run: yarn build
-      - persist_to_workspace:
-        root: .
-        paths:
-          - dist
-          - package.json
-          - README.md
-          - LICENSE
-  test:
-    <<: *defaults
-    steps:
-    - checkout
-    - attach_workspace:
-      at: .
-    - run: yarn ci
-    - store_test_results:
-        path: test-results 
-  publish:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-        at: .
-      - run: npm publish
+      - run: yarn ci
+      - store_test_results:
+          path: test-results 
+    publish:
+      <<: *defaults
+      steps:
+        - attach_workspace:
+          at: .
+        - run: npm publish
 
 
 workfolws:
