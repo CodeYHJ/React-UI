@@ -5,9 +5,9 @@ const webpack = require("webpack");
  * @type {import('webpack').Configuration}
  */
 module.exports = {
-  entry: pathFn("./src/app.tsx"),
+  entry: pathFn("./doces/app.tsx"),
   output: {
-    path: pathFn("./dist"),
+    path: pathFn("./docesPage"),
     filename: "js/[name].[hash].js",
     chunkFilename: "js/[name].[hash].js",
     publicPath: "/",
@@ -15,9 +15,7 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx"],
     alias: {
-      "@": pathFn("./src"),
-      "@com": pathFn("./src/components"),
-      "@utils":pathFn("./src/components/utils"),
+      "@lib": pathFn("./lib"),
     },
   },
   module: modules,

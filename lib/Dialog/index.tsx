@@ -1,9 +1,9 @@
 import React, { Fragment, MouseEventHandler, ReactNode } from 'react';
-import { classPre } from '@utils/index';
 import "./index.less"
-import { Icon } from '@com/Icon';
-import Button from '@com/Button';
 import { createPortal } from 'react-dom';
+import { classPre } from '@lib/utils';
+import Button from '@lib/Button';
+import { Icon } from '@lib/Icon';
 export interface DailogProps {
     visble: boolean,
     onOk?: MouseEventHandler,

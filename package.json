@@ -1,11 +1,17 @@
 {
-  "name": "react",
+  "name": "react-ui",
   "version": "0.0.1",
-  "main": "index.js",
+  "description": "",
+  "main": "dist/lib/index",
+  "types": "dist/lib/index",
   "license": "MIT",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --config ./config/webpack/webpack.config.dev.js --hot",
-    "build": "cross-env NODE_ENV=pro webpack --config ./config/webpack/webpack.config.pro.js",
+    "build:doces": "cross-env NODE_ENV=pro webpack --config ./config/webpack/webpack.config.pro.js",
+    "build:lib": "cross-env NODE_ENV=pro webpack --config ./config/webpack/webpack.config.lib.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
@@ -29,6 +35,7 @@
     "@types/webpack": "^4.41.21",
     "@types/webpack-env": "^1.15.2",
     "@types/webpack-merge": "^4.1.5",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-jest": "^26.2.2",
     "babel-loader": "^8.1.0",
     "babel-plugin-import": "^1.13.0",
@@ -64,5 +71,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0"
-  }
+  },
+  "repository": "git@github.com:CodeYHJ/React-UI.git",
+  "author": "codeyhj <colgateyhj@gmail.com>"
 }

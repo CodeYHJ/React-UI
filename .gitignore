@@ -103,6 +103,11 @@ dist
 # TernJS port file
 .tern-port
 
+# build
 coverage
 
 test-results
+
+docesPage
+
+dist

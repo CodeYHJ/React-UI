@@ -18,7 +18,7 @@ module.exports = {
   collectCoverage: false,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  collectCoverageFrom: ["src/components/**/*.{ts,tsx}", "!**/node_modules/**"],
+  collectCoverageFrom: ["lib/**/*.{ts,tsx}", "!**/node_modules/**"],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: "coverage",
@@ -64,9 +64,9 @@ module.exports = {
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    "^@com(.*)$": "<rootDir>/src/components/$1",
-    "^@utils(.*)$": "<rootDir>/src/components/utils/$1",
-    "^.+\\.(css|less)$": "<rootDir>/src/tests/mock/styles.ts",
+    "^@com(.*)$": "<rootDir>/lib/$1",
+    "^@utils(.*)$": "<rootDir>/lib/utils/$1",
+    "^.+\\.(css|less)$": "<rootDir>/tests/mock/styles.ts",
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -113,7 +113,7 @@ module.exports = {
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  setupFilesAfterEnv: ["<rootDir>/src/tests/setup.ts"],
+  setupFilesAfterEnv: ["<rootDir>/tests/setup.ts"],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,

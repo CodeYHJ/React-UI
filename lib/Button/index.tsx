@@ -1,6 +1,6 @@
 import React, { MouseEventHandler } from 'react';
-import { classPre } from '@com/utils';
 import "./index.less"
+import { classPre } from '@lib/utils';
 
 type ButtonType = 'main' | 'danger' | 'warn' | 'default' | 'safe'
 export interface ButtonProps {

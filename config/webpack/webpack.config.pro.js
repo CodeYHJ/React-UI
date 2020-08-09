@@ -12,11 +12,12 @@ const pathFn = require("./utils");
 const proConfig = {
   mode: "production",
   output: {
-    path: pathFn("./dist"),
+    path: pathFn("./docesPage"),
     filename: "js/[name].[chunkhash].js",
     chunkFilename: "js/[name].[chunkhash].js",
     publicPath: "/",
   },
+
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlwebpackPlugin({
@@ -49,34 +50,34 @@ const proConfig = {
         sourceMap: false,
       }),
     ],
-    splitChunks: {
-      cacheGroups: {
-        axios: {
-          test: /[\\/]node_modules[\\/](axios)[\\/]/,
-          name: "axios",
-          chunks: "all",
-          priority: 2,
-        },
-        antd: {
-          test: /[\\/]node_modules[\\/](antd)|(@ant-design)[\\/]/,
-          name: "antd",
-          chunks: "all",
-          priority: 3,
-        },
-        moment: {
-          test: /[\\/]node_modules[\\/](moment)[\\/]/,
-          name: "moment",
-          chunks: "all",
-          priority: 4,
-        },
-        rc: {
-          test: /[\\/]node_modules[\\/](rc-table)|(rc-mentions)|(rc-tree)|(rc-picker)|(rc-select)[\\/]/,
-          name: "rc",
-          chunks: "all",
-          priority: 4,
-        },
-      },
-    },
+    // splitChunks: {
+    //   cacheGroups: {
+    //     axios: {
+    //       test: /[\\/]node_modules[\\/](axios)[\\/]/,
+    //       name: "axios",
+    //       chunks: "all",
+    //       priority: 2,
+    //     },
+    //     antd: {
+    //       test: /[\\/]node_modules[\\/](antd)|(@ant-design)[\\/]/,
+    //       name: "antd",
+    //       chunks: "all",
+    //       priority: 3,
+    //     },
+    //     moment: {
+    //       test: /[\\/]node_modules[\\/](moment)[\\/]/,
+    //       name: "moment",
+    //       chunks: "all",
+    //       priority: 4,
+    //     },
+    //     rc: {
+    //       test: /[\\/]node_modules[\\/](rc-table)|(rc-mentions)|(rc-tree)|(rc-picker)|(rc-select)[\\/]/,
+    //       name: "rc",
+    //       chunks: "all",
+    //       priority: 4,
+    //     },
+    //   },
+    // },
   },
 };
 module.exports = merge(baseConfig, proConfig);

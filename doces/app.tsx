@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import CreateIcon from '@com/Icon/createIcon';
-import Dialog from '@com/Dialog';
-import { Icon, createIcon } from '@com/Icon';
-import Button from '@com/Button';
-import render from '@com/Modal';
-import Modal from '@com/Modal';
+import Modal from '@lib/Modal';
+import Dialog from '@lib/Dialog';
+import Button from '@lib/Button';
 interface AppProps {
 
 }

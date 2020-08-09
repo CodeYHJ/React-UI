@@ -18,19 +18,19 @@ module.exports = {
     },
     {
       test: /\.svg$/,
-      loader: 'svg-sprite-loader',
+      loader: "svg-sprite-loader",
     },
     // src内样式
     {
       test: /\.less/,
-      include: pathFn("./src"),
+      // include: pathFn("./src"),
       exclude: /node_modules/,
       use: [
         process.env.NODE_ENV === "dev"
           ? "style-loader"
           : MiniCssExtractPlugin.loader,
-          "css-loader",
-          "less-loader",
+        "css-loader",
+        "less-loader",
       ],
     },
   ],

@@ -1,10 +1,10 @@
 import React from 'react';
 import { BaseDiaLog } from '../Dialog';
 import ReactDOM, { unmountComponentAtNode } from 'react-dom';
-import { Icon } from '@com/Icon';
-import { classPre } from '@com/utils';
-import Button from '@com/Button';
 import './index.less'
+import { classPre } from '@lib/utils';
+import { Icon } from '@lib/Icon';
+import Button from '@lib/Button';
 interface PropsConfig {
     visble: boolean,
     mainText: string,
