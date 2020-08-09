@@ -12,7 +12,7 @@ const pathFn = require("./utils");
 const proConfig = {
   mode: "production",
   output: {
-    path: pathFn("./docesPage"),
+    path: pathFn("./example"),
     filename: "js/[name].[chunkhash].js",
     chunkFilename: "js/[name].[chunkhash].js",
     publicPath: "/",

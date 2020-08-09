@@ -1,0 +1,24 @@
+.code-ui-layout {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  &-header {
+    flex-grow: 1;
+    min-height: 50px;
+  }
+  &-content {
+    flex-grow: 1;
+  }
+  &-footer {
+    flex-grow: 1;
+    min-height: 50px;
+  }
+  &-aside {
+    min-width: 200px;
+    position: relative;
+  }
+  &-hasAside {
+    display: flex;
+    flex-direction: row;
+  }
+}

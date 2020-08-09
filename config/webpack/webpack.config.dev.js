@@ -11,21 +11,21 @@ const pathFn = require("./utils");
  */
 const devConfig = {
   mode: "development",
-  // devServer: {
-  //   historyApiFallback: true,
-  //   publicPath: "/",
-  //   stats: "minimal",
-  //   proxy: {
-  //     "/api": {
-  //       target: "http://localhost:7001",
-  //       changeOrigin: true,
-  //       pathRewrite: {
-  //         "^/api": "", // 重写path
-  //       },
-  //       secure: true, // 设置支持https协议的代理
-  //     },
-  //   },
-  // },
+  devServer: {
+    historyApiFallback: true,
+    publicPath: "/",
+    stats: "minimal",
+    // proxy: {
+    //   "/api": {
+    //     target: "http://localhost:7001",
+    //     changeOrigin: true,
+    //     pathRewrite: {
+    //       "^/api": "", // 重写path
+    //     },
+    //     secure: true, // 设置支持https协议的代理
+    //   },
+    // },
+  },
   optimization: {
     minimizer: [
       new TerserPlugin({

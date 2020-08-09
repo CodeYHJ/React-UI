@@ -5,9 +5,9 @@ const webpack = require("webpack");
  * @type {import('webpack').Configuration}
  */
 module.exports = {
-  entry: pathFn("./doces/app.tsx"),
+  entry: pathFn("./example/app.tsx"),
   output: {
-    path: pathFn("./docesPage"),
+    path: pathFn("./examplePage"),
     filename: "js/[name].[hash].js",
     chunkFilename: "js/[name].[hash].js",
     publicPath: "/",

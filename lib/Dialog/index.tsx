@@ -1,10 +1,10 @@
-import React, { Fragment, MouseEventHandler, ReactNode } from 'react';
+import React, { Fragment, MouseEventHandler, ReactNode, HtmlHTMLAttributes } from 'react';
 import "./index.less"
 import { createPortal } from 'react-dom';
 import { classPre } from '@lib/utils';
 import Button from '@lib/Button';
 import { Icon } from '@lib/Icon';
-export interface DailogProps {
+export interface DailogProps extends HtmlHTMLAttributes<HTMLElement> {
     visble: boolean,
     onOk?: MouseEventHandler,
     onCancel?: MouseEventHandler,

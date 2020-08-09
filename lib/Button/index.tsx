@@ -1,9 +1,9 @@
-import React, { MouseEventHandler } from 'react';
+import React, { MouseEventHandler, HtmlHTMLAttributes } from 'react';
 import "./index.less"
 import { classPre } from '@lib/utils';
 
 type ButtonType = 'main' | 'danger' | 'warn' | 'default' | 'safe'
-export interface ButtonProps {
+export interface ButtonProps extends HtmlHTMLAttributes<HTMLElement> {
     type?: ButtonType,
     className?: string,
     onClick?: MouseEventHandler
