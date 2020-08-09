@@ -1,9 +1,9 @@
-import Icon from "./Icon";
+import Icon from "./localIcon";
 export interface CreateIconProps {
     scriptUrl: string
 }
 const setMap = new Set()
-const CreateIcon = (scriptUrl: string) => {
+const createIcon = (scriptUrl: string) => {
     if (!setMap.has(scriptUrl)) {
         const svgDom = document.createElement('script')
         svgDom.setAttribute('src', scriptUrl)
@@ -13,4 +13,4 @@ const CreateIcon = (scriptUrl: string) => {
     return Icon
 }
 
-export default CreateIcon;
+export default createIcon;

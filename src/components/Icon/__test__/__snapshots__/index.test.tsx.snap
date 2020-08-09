@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icon renders an \`.code-ui-svg\` component 1`] = `
+exports[`localIcon renders an \`.code-ui-svg\` component 1`] = `
 <svg
   className="code-ui-svg"
 >

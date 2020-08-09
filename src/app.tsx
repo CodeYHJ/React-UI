@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import CreateIcon from '@com/Icon/createIcon';
 import Dialog from '@com/Dialog';
-import { Icon } from '@com/Icon';
+import { Icon, createIcon } from '@com/Icon';
 import Button from '@com/Button';
 import render from '@com/Modal';
 import Modal from '@com/Modal';
@@ -10,6 +10,7 @@ interface AppProps {
 
 }
 const App: React.SFC<AppProps> = () => {
+    // const LocalIcon = createIcon('//at.alicdn.com/t/font_1973431_ia5jq3fwut.js')
 
     const [show, setShow] = useState(false)
     const closeDailog = (e: React.MouseEvent<Element, MouseEvent>) => {
@@ -20,19 +21,19 @@ const App: React.SFC<AppProps> = () => {
         console.log('open')
         setShow(true)
     }
-    const dangerOpen = ()=>{
+    const dangerOpen = () => {
         Modal.danger({ mainText: 'test' })
 
     }
-    const warnOpen = ()=>{
+    const warnOpen = () => {
         Modal.warn({ mainText: 'test' })
 
     }
-    const safeOpen = ()=>{
+    const safeOpen = () => {
         Modal.safe({ mainText: 'test' })
 
     }
-    const mainOpen = ()=>{
+    const mainOpen = () => {
         Modal.main({ mainText: 'test' })
 
     }

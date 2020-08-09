@@ -1,7 +1,7 @@
 import React from 'react';
-import Dialog from '../Dialog';
+import { BaseDiaLog } from '../Dialog';
 import ReactDOM, { unmountComponentAtNode } from 'react-dom';
-import Icon from '@com/Icon/Icon';
+import { Icon } from '@com/Icon';
 import { classPre } from '@com/utils';
 import Button from '@com/Button';
 import './index.less'
@@ -9,7 +9,8 @@ interface PropsConfig {
     visble: boolean,
     mainText: string,
     okText?: string,
-    type: ModalType
+    type: ModalType,
+    className?: string
 }
 interface ModalProps {
     mainText: string,
@@ -39,17 +40,18 @@ const createIcon = (type: ModalType) => {
 }
 const ModalBase = (propsConfig: PropsConfig) => {
     const div = document.createElement('div')
+    propsConfig.className && div.setAttribute('class', propsConfig.className)
     document.body.appendChild(div);
     const currentConfig = { ...propsConfig, visble: true }
     const render = (propsConfig: PropsConfig) => {
         ReactDOM.render(
-            <Dialog visble={propsConfig.visble} footer={null} headerText=''>
+            <BaseDiaLog visble={propsConfig.visble} footer={null} headerText=''>
                 <header className={c("header")}>{createIcon(currentConfig.type)}</header>
-                <main className={c("main")}>{propsConfig.mainText ? propsConfig.mainText : ''}</main>
+                <main className={c("mainContent")}>{propsConfig.mainText ? propsConfig.mainText : ''}</main>
                 <footer className={c("footer")}>
                     <Button type="main" onClick={close}>{propsConfig.okText ? propsConfig.okText : 'OK'}</Button>
                 </footer>
-            </Dialog>,
+            </BaseDiaLog>,
             div)
     }
     const close = () => {
@@ -69,16 +71,16 @@ const ModalBase = (propsConfig: PropsConfig) => {
 }
 
 const danger = (props: ModalProps) => {
-    return ModalBase({ ...props, visble: true, type: 'danger' })
+    return ModalBase({ ...props, visble: true, type: 'danger', className: c('danger') })
 }
 const warn = (props: ModalProps) => {
-    return ModalBase({ ...props, visble: true, type: 'warn' })
+    return ModalBase({ ...props, visble: true, type: 'warn', className: c('warn') })
 }
 const safe = (props: ModalProps) => {
-    return ModalBase({ ...props, visble: true, type: 'safe' })
+    return ModalBase({ ...props, visble: true, type: 'safe', className: c('safe') })
 }
 const main = (props: ModalProps) => {
-    return ModalBase({ ...props, visble: true, type: 'main' })
+    return ModalBase({ ...props, visble: true, type: 'main', className: c('main') })
 }
 
 const Modal = {

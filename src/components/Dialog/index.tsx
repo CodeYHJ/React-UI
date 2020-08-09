@@ -3,7 +3,7 @@ import { classPre } from '@utils/index';
 import "./index.less"
 import { Icon } from '@com/Icon';
 import Button from '@com/Button';
-import { createPortal, unmountComponentAtNode } from 'react-dom';
+import { createPortal } from 'react-dom';
 export interface DailogProps {
     visble: boolean,
     onOk?: MouseEventHandler,
@@ -17,7 +17,7 @@ export interface DailogProps {
 }
 const c = classPre('dialog')
 
-const Dialog: React.SFC<DailogProps> = (props) => {
+export const BaseDiaLog: React.SFC<DailogProps> = (props) => {
     const { visble, onCancel, onOk, maskClosable = false, footer, okText, cancleText, headerText, closable } = props
     const onClickClose: MouseEventHandler = (e) => {
         onCancel && onCancel(e)
@@ -60,10 +60,10 @@ const Dialog: React.SFC<DailogProps> = (props) => {
             </div>
         </Fragment>
         : null
-
-    return (
-        createPortal(dialog, document.body)
-    );
+    return dialog
+}
+const Dialog: React.SFC<DailogProps> = (props) => {
+    return createPortal(BaseDiaLog(props), document.body)
 }
 
 Dialog.defaultProps = {

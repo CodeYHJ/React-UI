@@ -8,7 +8,8 @@
     "build": "cross-env NODE_ENV=pro webpack --config ./config/webpack/webpack.config.pro.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT_DIR=./test-results/jest/results.xml jest --config=jest.config.ci.js"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
@@ -40,6 +41,7 @@
     "hard-source-webpack-plugin": "^0.13.1",
     "html-webpack-plugin": "^4.3.0",
     "jest": "^26.2.2",
+    "jest-junit": "^11.1.0",
     "jsdom": "^16.3.0",
     "less": "^3.12.2",
     "less-loader": "^6.2.0",

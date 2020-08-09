@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { SVGAttributes } from 'react';
 import { classPre } from "@utils/index";
 import "./importAll"
 import "./index.less";
-export interface IconProps {
-    className?: string;
+export interface IconProps extends SVGAttributes<SVGElement> {
     name: string
 }
 const c = classPre("svg")
