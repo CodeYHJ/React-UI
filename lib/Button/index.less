@@ -1,10 +1,15 @@
 .buttonBase() {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
   padding: 5px 15px;
   border-radius: 4px;
-  border: 1px solid grey;
+  border: 1px solid @neutral-color-border;
   cursor: pointer;
   position: relative;
+  border: 1px solid @neutral-color-border;
+  outline: none;
+  background: #ffffff;
 }
 .hover() {
   &:hover {
@@ -15,47 +20,122 @@
       position: absolute;
       top: 0;
       left: 0;
-      background: rgba(255, 255, 255, 0.3);
+      background: @neutral-color-background;
     }
   }
 }
 .code-ui-button {
-  &-main {
+  height: 30px;
+  &-primary {
     .buttonBase();
-    background: #1890ff;
+    background: @main-color-primary;
     color: #ffffff;
-    border-color: #1890ff;
+    border-color: @main-color-primary;
     .hover();
   }
 
   &-danger {
     .buttonBase();
-    background: #e8635e;
+    background: @fun-color-danger;
     color: #ffffff;
-    border-color: #e8635e;
+    border-color: @fun-color-danger;
     .hover();
   }
   &-warn {
     .buttonBase();
-    background: #ebc053;
+    background: @fun-color-warn;
     color: #ffffff;
-    border-color: #ebc053;
+    border-color: @fun-color-warn;
     .hover();
   }
-  &-safe {
+  &-success {
     .buttonBase();
-    background: #009900;
+    background: @fun-color-success;
     color: #ffffff;
-    border: 1px solid #009900;
-    border-color: #009900;
+    border-color: @fun-color-success;
     .hover();
+  }
+  &-dashed {
+    .buttonBase();
+    color: @neutral-color-content;
+    border-style: dashed;
+    &:hover {
+      color: @main-color-primary;
+      border-color: @main-color-primary;
+    }
+    &:focus {
+      color: @main-color-primary;
+      border-color: @main-color-primary;
+    }
   }
   &-default {
     .buttonBase();
-    color: grey;
+    color: @neutral-color-content;
     &:hover {
-      color: #1890ff;
-      border-color: #1890ff;
+      color: @main-color-primary;
+      border-color: @main-color-primary;
     }
+    &:focus {
+      color: @main-color-primary;
+      border-color: @main-color-primary;
+    }
+  }
+  &-disabled {
+    background: @neutral-color-background;
+    color: @neutral-color-disabled;
+    border: 1px solid @neutral-color-border;
+    cursor: not-allowed;
+
+    &:hover {
+      color: @neutral-color-disabled;
+      border: 1px solid @neutral-color-border;
+      &::before {
+        content: none;
+      }
+    }
+    &:focus {
+      color: @neutral-color-disabled;
+      border: 1px solid @neutral-color-border;
+    }
+  }
+  &-loading {
+    color:#ffffff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right:8px;
+    animation: button-loading-spin 1s linear infinite;
+  }
+  &-preIcon{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right:8px;
+
+  }
+  &-dashed-disabled {
+    background: @neutral-color-background;
+    color: @neutral-color-disabled;
+    border-style: dashed;
+    cursor: not-allowed;
+    &:hover {
+      color: @neutral-color-disabled;
+      border: 1px solid @neutral-color-border;
+      border-style: dashed;
+    }
+    &:focus {
+      color: @neutral-color-disabled;
+      border: 1px solid @neutral-color-border;
+      border-style: dashed;
+    }
+  }
+}
+
+@keyframes button-loading-spin {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
   }
 }

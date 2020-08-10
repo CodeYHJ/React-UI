@@ -1,0 +1,121 @@
+@import "../../util/util.less";
+
+.code-ui-example-color {
+  margin: 0 300px;
+  h1 {
+    color: @neutral-color-title;
+  }
+  section {
+    margin-top: 60px;
+  }
+  .content {
+    color: @neutral-color-content;
+    margin: 30px 0;
+  }
+
+  &-mainColor {
+    .row();
+    justify-content: space-around;
+    &-box {
+      width: 30%;
+      height: 100px;
+      .column();
+      justify-content: center;
+      color: #ffffff;
+      border-radius: 5px;
+      padding-left: 20px;
+      .title {
+        font-size: 25px;
+        margin-bottom: 5px;
+      }
+      .hex {
+        font-size: 20px;
+      }
+      &:nth-child(1) {
+        background: @main-color-light;
+      }
+      &:nth-child(2) {
+        background: @main-color-primary;
+      }
+      &:nth-child(3) {
+        background: @main-color-dark;
+      }
+    }
+  }
+  &-mainColorFun {
+    .row();
+    justify-content: space-around;
+
+    &-box {
+      width: 30%;
+      height: 100px;
+      .column();
+      justify-content: center;
+      color: #ffffff;
+      border-radius: 5px;
+      padding-left: 20px;
+      .title {
+        font-size: 25px;
+        margin-bottom: 5px;
+      }
+      .hex {
+        font-size: 20px;
+      }
+      &:nth-child(1) {
+        background: @fun-color-success;
+      }
+      &:nth-child(2) {
+        background: @fun-color-warn;
+      }
+      &:nth-child(3) {
+        background: @fun-color-danger;
+      }
+    }
+  }
+  &-mainColorNeutral {
+    .row();
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+    &-box {
+      width: 30%;
+      height: 100px;
+      .column();
+      justify-content: center;
+      color: #ffffff;
+      border-radius: 5px;
+      padding-left: 20px;
+      .title {
+        font-size: 25px;
+        margin-bottom: 5px;
+      }
+      .hex {
+        font-size: 20px;
+      }
+      &:nth-child(1) {
+        background: @neutral-color-title;
+      }
+      &:nth-child(2) {
+        background: @neutral-color-content;
+      }
+      &:nth-child(3) {
+        background: @neutral-color-sub;
+      }
+      &:nth-child(4) {
+        color: @neutral-color-content;
+        background: @neutral-color-disabled;
+        margin-top: 30px;
+      }
+      &:nth-child(5) {
+        color: @neutral-color-content;
+        background: @neutral-color-border;
+        margin-top: 30px;
+      }
+      &:nth-child(6) {
+        color: @neutral-color-content;
+        background: @neutral-color-background;
+        margin-top: 30px;
+      }
+    }
+  }
+}

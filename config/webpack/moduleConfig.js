@@ -23,14 +23,36 @@ module.exports = {
     // src内样式
     {
       test: /\.less/,
-      // include: pathFn("./src"),
       exclude: /node_modules/,
       use: [
         process.env.NODE_ENV === "dev"
           ? "style-loader"
+          : process.env.NODE_ENV === "lib"
+          ? ""
           : MiniCssExtractPlugin.loader,
         "css-loader",
         "less-loader",
+        // 在这里引入要增加的全局less文件
+        {
+          loader: "style-resources-loader",
+          options: {
+            patterns: pathFn("./lib/var.less"),
+          },
+        },
+      ],
+    },
+    // img优化
+    {
+      test: /\.(png|svg|jpg|gif|jpeg)$/,
+      include: pathFn("./example"),
+      use: [
+        {
+          loader: "url-loader",
+          options: {
+            limit: 8192, //默认单位为bytes
+            outputPath: "images/",
+          },
+        },
       ],
     },
   ],

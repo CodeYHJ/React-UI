@@ -39,7 +39,7 @@ export const BaseDiaLog: React.SFC<DailogProps> = (props) => {
         if (footer === null) return null
         return footer ? footer : <footer className={c('footer')}>
             <Button type="default" onClick={onClickClose} className={c('cancel')}>{cancleText ? cancleText : 'cancel'}</Button>
-            <Button type="main" onClick={onClickOk} className={c('ok')}>{okText ? okText : 'ok'}</Button>
+            <Button type="primary" onClick={onClickOk} className={c('ok')}>{okText ? okText : 'ok'}</Button>
         </footer>
     }
     const CloseIcon = () => {

@@ -10,9 +10,9 @@ const Herader: React.SFC<HeraderProps> = (props) => {
     const { className, ...others } = props
     const cls = [c(), className].filter(Boolean).join(' ')
     return (
-        <div className={cls} {...others}>
+        <header className={cls} {...others}>
             {props.children}
-        </div>
+        </header>
     );
 }
 

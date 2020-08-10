@@ -9,12 +9,12 @@ const Aside: React.SFC<AsideProps> = (props) => {
     const { className, ...others } = props
     const cls = [c(), className].filter(Boolean).join(' ')
     return (
-        <div className={cls} {...others}>
+        <aside className={cls} {...others}>
             <div className={c('children')}>
                 {props.children}
 
             </div>
-        </div>
+        </aside>
     );
 }
 

@@ -16,6 +16,7 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js", ".jsx"],
     alias: {
       "@lib": pathFn("./lib"),
+      "@assets":pathFn("./example/assets"),
     },
   },
   module: modules,

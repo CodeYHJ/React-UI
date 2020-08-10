@@ -9,9 +9,9 @@ const Footer: React.SFC<FooterProps> = (props) => {
     const { className, ...others } = props
     const cls = [c(), className].filter(Boolean).join(' ')
     return (
-        <div className={cls} {...others}>
+        <footer className={cls} {...others}>
             {props.children}
-        </div>
+        </footer>
     );
 }
 

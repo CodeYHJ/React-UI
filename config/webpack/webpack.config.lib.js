@@ -14,38 +14,7 @@ const proConfig = {
     library: "CodeUI",
     libraryTarget: "umd",
   },
-  module: {
-    rules: [
-      // {
-      //   test: /\.js|jsx|ts|tsx/,
-      //   exclude: /node_modules/,
-      //   use: [
-      //     {
-      //       loader: "babel-loader",
-      //       options: {
-      //         presets: ["@babel/preset-typescript", "@babel/preset-react"],
-      //         plugins: ["syntax-dynamic-import"],
-      //       },
-      //     },
-      //   ],
-      // },
-      {
-        test: /\.tsx?$/,
-        loader: "awesome-typescript-loader",
-      },
-      {
-        test: /\.svg$/,
-        loader: "svg-sprite-loader",
-      },
-      // src内样式
-      {
-        test: /\.less/,
-        // include: pathFn("./src"),
-        exclude: /node_modules/,
-        use: ["style-loader", "css-loader", "less-loader"],
-      },
-    ],
-  },
+  module:modules,
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx"],
     alias: {
