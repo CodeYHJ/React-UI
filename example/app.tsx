@@ -13,6 +13,7 @@ import HeaderPage from './component/Header'
 import AsidePage from './component/Aside'
 import { classPre } from "./util/index";
 import './app.less'
+import IconExample from './pages/IconExample';
 interface AppProps {
 
 }
@@ -34,7 +35,8 @@ const App: React.SFC<AppProps> = () => {
                                 <Route path="/introduction" exact component={Introduction} />
                                 <Route path="/color" exact component={Color} />
                                 <Route path="/layout" exact component={LayoutExample} />
-                                <Route path="/Button" exact component={ButtonExample} />
+                                <Route path="/button" exact component={ButtonExample} />
+                                <Route path="/icon" exact component={IconExample} />
                                 <Redirect exact to="/introduction" from="/" />
                             </Switch>
 
