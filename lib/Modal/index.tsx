@@ -49,7 +49,7 @@ const ModalBase = (propsConfig: PropsConfig) => {
                 <header className={c("header")}>{createIcon(currentConfig.type)}</header>
                 <main className={c("mainContent")}>{propsConfig.mainText ? propsConfig.mainText : ''}</main>
                 <footer className={c("footer")}>
-                    <Button type="main" onClick={close}>{propsConfig.okText ? propsConfig.okText : 'OK'}</Button>
+                    <Button type="primary" onClick={close}>{propsConfig.okText ? propsConfig.okText : 'OK'}</Button>
                 </footer>
             </BaseDiaLog>,
             div)

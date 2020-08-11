@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { HtmlHTMLAttributes } from 'react';
 import { classPre } from "../../util/index";
 import './index.less'
-export interface ExampleBoxProps {
+export interface ExampleBoxProps extends HtmlHTMLAttributes<HTMLDivElement> {
     title: string,
-    description:string
+    description: string,
+
 }
 const c = classPre('exampleBox')
 const ExampleBox: React.SFC<ExampleBoxProps> = (props) => {
+    const { title, description, className, ...others } = props
+    const cls = [c(), className].filter(Boolean).join(' ')
     return (
-        <div className={c()}>
+        <div className={cls} {...others}>
             <section className={c('demo')}>
                 {props.children}
             </section>
             <section className={c("meta")}>
-                <div className={c('title')}>{props.title}</div>
-                <div className={c('description')}>{props.description}</div>
+                <div className={c('title')}>{title}</div>
+                <div className={c('description')}>{description}</div>
             </section>
         </div>
     );

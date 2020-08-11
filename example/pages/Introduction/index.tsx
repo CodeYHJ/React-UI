@@ -8,7 +8,7 @@ const c = classPre('introduction')
  
 const Introduction: React.SFC<IntroductionProps> = () => {
     return ( 
-        <div className="introduction">
+        <div className={c()}>
             <section className={c('section')}>
                 <h1 className={c('h1')}>CodeUI-React</h1>
                 <p className={c('p')}>CodeUI-React是一套PC端得React组件库</p>

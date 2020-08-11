@@ -1,0 +1,42 @@
+.code-ui-example-aside {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  border-right: 1px solid @neutral-color-border;
+
+  &-title {
+    text-align: center;
+  }
+  &-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  &-li {
+    text-align: center;
+    position: relative;
+    & > .active {
+      color: @main-color-primary;
+      background: #c0dcff;
+      &::before {
+        content: "";
+        width: 5px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: @main-color-dark;
+      }
+    }
+  }
+  &-navLink {
+    display: block;
+    padding: 12px 20px;
+    color: @neutral-color-content;
+    text-decoration: none;
+    &:hover {
+      color: @main-color-primary;
+    }
+  }
+}

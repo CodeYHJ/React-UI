@@ -1,0 +1,36 @@
+.code-ui-example-layout {
+  margin: 0 100px;
+  flex: 1;
+  &-header {
+    background: @main-color-light;
+    text-align: center;
+    line-height: 50px;
+  }
+  &-content {
+    background: @main-color-dark;
+    text-align: center;
+    line-height: 50px;
+    justify-content: center;
+  }
+  &-footer {
+    background: @main-color-light;
+    text-align: center;
+    line-height: 50px;
+  }
+  &-aside {
+    background: @main-color-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section {
+    margin-top: 60px;
+  }
+  .text{
+    color:@neutral-color-content;
+  }
+  .code-ui-layout-aside-children {
+    display: flex;
+    align-items: center;
+  }
+}

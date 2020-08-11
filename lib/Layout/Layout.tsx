@@ -2,8 +2,11 @@ import React, { HtmlHTMLAttributes, ReactElement } from 'react';
 import { classPre } from "@lib/utils"
 import './index.less'
 import Aside from './Aside';
+import Content from './Content';
+import Footer from './Footer';
+type LayoutChildrenType = typeof Aside | typeof Content | typeof Footer | typeof Layout
 export interface LayoutProps extends HtmlHTMLAttributes<HTMLElement> {
-    children: ReactElement | Array<ReactElement>
+    children: ReactElement<LayoutChildrenType> | Array<ReactElement<LayoutChildrenType>>
 }
 const c = classPre('layout')
 const Layout: React.SFC<LayoutProps> = (props) => {

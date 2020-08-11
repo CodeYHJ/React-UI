@@ -11,34 +11,37 @@ import Color from "./pages/Color"
 import { Layout, Aside, Content, Header, Footer } from "@lib/Layout";
 import HeaderPage from './component/Header'
 import AsidePage from './component/Aside'
-
+import { classPre } from "./util/index";
+import './app.less'
 interface AppProps {
 
 }
+const c = classPre('app')
 const App: React.SFC<AppProps> = () => {
     return (
         <Router>
-            <Layout style={{ width: '100vw', height: '100vh' }}>
+            <Layout className={c()} style={{ width: '100vw', height: '100vh' }}>
                 <Header>
                     <HeaderPage />
                 </Header>
                 <Content >
                     <Layout >
-                        <Aside style={{ position: 'fixed', left: '0', height: "100vh" }}>
+                        <Aside >
                             <AsidePage />
                         </Aside>
-                        <Content style={{ marginLeft: "200px" }}>
+                        <Content >
                             <Switch>
-                                <Route path="/" exact component={Introduction} />
+                                <Route path="/introduction" exact component={Introduction} />
                                 <Route path="/color" exact component={Color} />
                                 <Route path="/layout" exact component={LayoutExample} />
                                 <Route path="/Button" exact component={ButtonExample} />
-                                <Redirect exact to="/" />
+                                <Redirect exact to="/introduction" from="/" />
                             </Switch>
 
                         </Content>
                     </Layout>
                 </Content>
+                <Footer className={c('footer')}>&copy;</Footer>
             </Layout>
 
         </Router>

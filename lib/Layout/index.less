@@ -7,6 +7,7 @@
     padding: 0;
   }
   &-content {
+    display: flex;
     flex-grow: 1;
     overflow-x: hidden;
   }
@@ -17,6 +18,10 @@
   &-aside {
     min-width: 200px;
     position: relative;
+    &-children {
+      height: 100%;
+      overflow: hidden;
+    }
   }
   &-hasAside {
     display: flex;
