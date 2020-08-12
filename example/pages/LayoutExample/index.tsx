@@ -8,7 +8,6 @@ import { classPre } from "../../util/index";
 import "./index.less"
 import ExampleBox from '../../component/ExampleBox';
 import ExampleApi from '../../component/ExampleApi';
-import Transition from '../../component/Transition';
 export interface LayoutExampleProps {
 
 }
