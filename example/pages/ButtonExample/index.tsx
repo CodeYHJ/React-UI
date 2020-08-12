@@ -38,7 +38,7 @@ const ButtonExample: React.SFC<ButtonExampleProps> = () => {
         </section>
         <section>
             <h2>代码示例</h2>
-            <ExampleBox title="按钮类型" description="按钮有六种类型：默认按钮、虚线按钮、主要按钮、危险按钮、警告按钮、成功按钮">
+            <ExampleBox title="按钮类型" description="按钮有六种类型：默认按钮、虚线按钮、主要按钮、危险按钮、警告按钮、成功按钮" code={require('!!raw-loader!./code/baseCode.tsx')}>
                 <Button type="default" style={{ marginRight: '20px' }}>default</Button>
                 <Button type="dashed" style={{ marginRight: '20px' }}>dashed</Button>
                 <Button type="primary" style={{ marginRight: '20px' }}>primary</Button>
@@ -46,16 +46,16 @@ const ButtonExample: React.SFC<ButtonExampleProps> = () => {
                 <Button type="warn" style={{ marginRight: '20px' }}>warn</Button>
                 <Button type="success" style={{ marginRight: '20px' }}>success</Button>
             </ExampleBox>
-            <ExampleBox title="Disabled" description="设置 Disabled 状态">
+            <ExampleBox title="Disabled" description="设置 Disabled 状态" code={require('!!raw-loader!./code/disabledCode.tsx')}>
                 <Button type="default" disabled style={{ marginRight: '20px' }}>default</Button>
                 <Button type="dashed" disabled style={{ marginRight: '20px' }}>dashed</Button>
                 <Button type="primary" disabled style={{ marginRight: '20px' }}>primary</Button>
             </ExampleBox>
-            <ExampleBox title="Loading" description="设置 Loading 状态">
+            <ExampleBox title="Loading" description="设置 Loading 状态" code={require('!!raw-loader!./code/loadingCode.tsx')}>
                 <Button type="danger" loading style={{ marginRight: '20px' }}>danger</Button>
                 <Button type="primary" style={{ marginRight: '20px' }} loading={loading} onClick={handleClick}>primary</Button>
             </ExampleBox>
-            <ExampleBox title="PreFix" description="自定义Icon">
+            <ExampleBox title="PreFix" description="自定义Icon" code={require('!!raw-loader!./code/preFixCode.tsx')}>
                 <Button type="danger" pre={preIcon} style={{ marginRight: '20px' }}>danger</Button>
                 <Button type="primary" style={{ marginRight: '20px' }} pre={preIcon} loading={loading2} onClick={handleClick2}>primary</Button>
             </ExampleBox>

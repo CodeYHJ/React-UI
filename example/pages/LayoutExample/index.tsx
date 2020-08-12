@@ -21,7 +21,6 @@ const LayoutExample: React.SFC<LayoutExampleProps> = () => {
         { name: 'style', dsc: '指定样式', type: ['CSSProperties'], value: '--' },
     ]
     return (
-        <Transition>
             <div className={c()}>
                 <section>
                     <h1>Layout布局</h1>
@@ -79,7 +78,6 @@ const LayoutExample: React.SFC<LayoutExampleProps> = () => {
                 </section>
                 <ExampleApi data={handleData}></ExampleApi>
             </div>
-        </Transition>
     );
 }
 

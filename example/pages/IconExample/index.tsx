@@ -24,14 +24,14 @@ const IconExample: React.SFC<IconExampleProps> = () => {
             </section>
             <section>
                 <h2>代码示例</h2>
-                <ExampleBox title="Icon" description="UI库Icon展示">
+                <ExampleBox title="Icon" description="UI库Icon展示" code={require('!!raw-loader!./code/baseCode.tsx')}>
                     <Icon name="cancle" className={c('icon-demo')} />
                     <Icon name="arror-down" className={c('icon-demo')} />
                     <Icon name="arror-up" className={c('icon-demo')} />
                     <Icon name="arror-left" className={c('icon-demo')} />
                     <Icon name="arror-right" className={c('icon-demo')} />
                 </ExampleBox>
-                <ExampleBox title="Icon" description="请求后台数据而生成Icon展示">
+                <ExampleBox title="Icon" description="请求后台数据而生成Icon展示" code={require('!!raw-loader!./code/scriptCode.tsx')}>
                     <ScriptIcon name="icon-jianceqi" className={c('icon-demo')} />
                     <ScriptIcon name="icon-jinggai" className={c('icon-demo')} />
                     <ScriptIcon name="icon-liujisuan" className={c('icon-demo')} />
