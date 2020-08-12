@@ -76,7 +76,7 @@ const warn = (props: ModalProps) => {
     return ModalBase({ ...props, visible: true, type: 'warn', className: c('warn') })
 }
 const success = (props: ModalProps) => {
-    return ModalBase({ ...props, visible: true, type: 'success', className: c('sucess') })
+    return ModalBase({ ...props, visible: true, type: 'success', className: c('success') })
 }
 const info = (props: ModalProps) => {
 

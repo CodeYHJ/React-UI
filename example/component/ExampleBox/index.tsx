@@ -20,21 +20,25 @@ const ExampleBox: React.SFC<ExampleBoxProps> = (props) => {
     }
     const renderTransition = () => {
         if (props.code) {
-            return <Transition visible={open} enter={{ maxHeight: "100vh" }} leave={{ maxHeight: '0px' }} time={1}>
-                <Highlight {...defaultProps} code={props.code.default} language="jsx">
-                    {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                        <pre className={className} style={style}>
-                            {tokens.map((line, i) => (
-                                <div {...getLineProps({ line, key: i })}>
-                                    {line.map((token, key) => (
-                                        <span {...getTokenProps({ token, key })} />
-                                    ))}
-                                </div>
-                            ))}
-                        </pre>
-                    )}
-                </Highlight>
-            </Transition>
+            return <Transition visible={open} enter={{ maxHeight: "0px" }
+            } leave={{ maxHeight: '100vh' }
+            } time={1} >
+                <div>
+                    <Highlight {...defaultProps} code={props.code.default} language="jsx">
+                        {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                            <pre className={className} style={style}>
+                                {tokens.map((line, i) => (
+                                    <div {...getLineProps({ line, key: i })}>
+                                        {line.map((token, key) => (
+                                            <span {...getTokenProps({ token, key })} />
+                                        ))}
+                                    </div>
+                                ))}
+                            </pre>
+                        )}
+                    </Highlight>
+                </div>
+            </Transition >
         }
         return null
     }

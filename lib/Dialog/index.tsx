@@ -50,10 +50,10 @@ export const BaseDiaLog: React.SFC<DailogProps> = (props) => {
     }
     const dialog = visible ?
         <Fragment>
-            <Transition visible={visible} beforeEnter={{ opacity: 0 }} enter={{ opacity: 1}} leave={{ opacity: 1 }} afterLeave={{opacity:0}} time={.5}>
+            <Transition visible={visible} beforeEnter={{ opacity: 0 }} enter={{ opacity: 1 }} leave={{ opacity: 0 }} time={.5}>
                 <div className={c('mask')} onClick={onClickMask}></div>
             </Transition>
-            <Transition visible={visible} enter={{ opacity: 1 }} leave={{ opacity: 0 }} time={2}>
+            <Transition visible={visible} beforeEnter={{ opacity: 0 }} enter={{ opacity: 1 }} leave={{ opacity: 1 }} time={.6}>
                 <div className={c()}>
                     {CloseIcon()}
                     {Header()}
