@@ -20,7 +20,7 @@ const ExampleBox: React.SFC<ExampleBoxProps> = (props) => {
     }
     const renderTransition = () => {
         if (props.code) {
-            return <Transition visible={open} enter={{ maxHeight: "100vh" }} leave={{ maxHeight: '0px' }} >
+            return <Transition visible={open} enter={{ maxHeight: "100vh" }} leave={{ maxHeight: '0px' }} time={1}>
                 <Highlight {...defaultProps} code={props.code.default} language="jsx">
                     {({ className, style, tokens, getLineProps, getTokenProps }) => (
                         <pre className={className} style={style}>

@@ -4,6 +4,7 @@ import { classPre } from '@lib/utils';
 import { Icon } from '@lib/Icon';
 
 type ButtonType = 'primary' | 'danger' | 'warn' | 'default' | 'success' | 'dashed'
+
 export interface ButtonProps extends HtmlHTMLAttributes<HTMLButtonElement> {
     type?: ButtonType,
     className?: string,
@@ -16,7 +17,7 @@ const c = classPre('button')
 
 const Button: React.SFC<ButtonProps> = (props) => {
     const { type = 'default', className, disabled, onClick, pre, loading, ...other } = props
-    const defaultCls = [c(),c(type), className]
+    const defaultCls = [c(), c(type), className]
     if (disabled) {
         if (type === 'dashed') {
             defaultCls.push(c('dashed-disabled'))
@@ -39,7 +40,7 @@ const Button: React.SFC<ButtonProps> = (props) => {
         )
     }
     const renderIcon = () => {
-        if(disabled)return null
+        if (disabled) return null
         if (loading) {
             return loadingSvg()
         } else {

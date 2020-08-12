@@ -29,12 +29,12 @@ const ButtonExample: React.SFC<ButtonExampleProps> = () => {
     ]
     return (<div className={c()}>
         <section>
-            <h1>Button按钮</h1>
-            <p>用于点击一个即时操作</p>
+            <h1 className={c('title')}>Button按钮</h1>
+            <p className={c('p')}>用于点击一个即时操作</p>
         </section>
         <section>
-            <h2>何时使用</h2>
-            <p>用户点击行为，触发相应逻辑操作</p>
+            <h2 className={c('title')}>何时使用</h2>
+            <p className={c('p')}>用户点击行为，触发相应逻辑操作</p>
         </section>
         <section>
             <h2>代码示例</h2>

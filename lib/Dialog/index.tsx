@@ -4,8 +4,9 @@ import { createPortal } from 'react-dom';
 import { classPre } from '@lib/utils';
 import Button from '@lib/Button';
 import { Icon } from '@lib/Icon';
+import Transition from '@lib/Transition';
 export interface DailogProps extends HtmlHTMLAttributes<HTMLElement> {
-    visble: boolean,
+    visible: boolean,
     onOk?: MouseEventHandler,
     onCancel?: MouseEventHandler,
     maskClosable?: boolean,
@@ -18,7 +19,7 @@ export interface DailogProps extends HtmlHTMLAttributes<HTMLElement> {
 const c = classPre('dialog')
 
 export const BaseDiaLog: React.SFC<DailogProps> = (props) => {
-    const { visble, onCancel, onOk, maskClosable = false, footer, okText, cancleText, headerText, closable } = props
+    const { visible, onCancel, onOk, maskClosable = false, footer, okText, cancleText, headerText, closable } = props
     const onClickClose: MouseEventHandler = (e) => {
         onCancel && onCancel(e)
     }
@@ -32,7 +33,7 @@ export const BaseDiaLog: React.SFC<DailogProps> = (props) => {
         onOk && onOk(e)
     }
     const Header = () => {
-        if (headerText === '' || headerText === null) return null
+        if (!headerText) return null
         return <header className={c('header')}>{headerText}</header>
     }
     const Footer = () => {
@@ -47,30 +48,35 @@ export const BaseDiaLog: React.SFC<DailogProps> = (props) => {
             <Icon name="cancle" />
         </div> : null
     }
-    const dialog = visble ?
+    const dialog = visible ?
         <Fragment>
-            <div className={c('mask')} onClick={onClickMask}></div>
-            <div className={c()}>
-                {CloseIcon()}
-                {Header()}
-                <main className={c('main')}>
-                    {props.children}
-                </main>
-                {Footer()}
-            </div>
+            <Transition visible={visible} beforeEnter={{ opacity: 0 }} enter={{ opacity: 1}} leave={{ opacity: 1 }} afterLeave={{opacity:0}} time={.5}>
+                <div className={c('mask')} onClick={onClickMask}></div>
+            </Transition>
+            <Transition visible={visible} enter={{ opacity: 1 }} leave={{ opacity: 0 }} time={2}>
+                <div className={c()}>
+                    {CloseIcon()}
+                    {Header()}
+                    <main className={c('main')}>
+                        {props.children}
+                    </main>
+                    {Footer()}
+                </div>
+            </Transition>
+
         </Fragment>
         : null
     return dialog
 }
 const Dialog: React.SFC<DailogProps> = (props) => {
-    return createPortal(BaseDiaLog(props), document.body)
-}
 
+    return createPortal(BaseDiaLog(props), document.body)
+
+}
 Dialog.defaultProps = {
-    visble: false,
+    visible: false,
     maskClosable: false,
     closable: false,
-    headerText: "Dialog",
     okText: "ok",
     cancleText: "cancel"
 }

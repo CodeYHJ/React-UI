@@ -12,8 +12,8 @@ const Color: React.SFC<ColorProps> = () => {
         <div className={c()}>
             <h1>Color 色彩搭配</h1>
             <section>
-                <h2>主色</h2>
-                <p className="content">使用蓝色作为主色调。</p>
+                <h2 className={c('title')}>主色</h2>
+                <p className={c('p')}>使用蓝色作为主色调。</p>
             </section>
             <div className={c('mainColor')}>
                 <div className={c('mainColor-box')}>
@@ -30,8 +30,8 @@ const Color: React.SFC<ColorProps> = () => {
                 </div>
             </div>
             <section>
-                <h2>功能色</h2>
-                <p className="content">功能色展示明确的信息以及状态，比如成功、出错、失败、提醒、链接等。</p>
+                <h2 className={c('title')}>功能色</h2>
+                <p className={c('p')}>功能色展示明确的信息以及状态，比如成功、出错、失败、提醒、链接等。</p>
             </section>
             <div className={c('mainColorFun')}>
                 <div className={c('mainColorFun-box')}>
@@ -48,8 +48,8 @@ const Color: React.SFC<ColorProps> = () => {
                 </div>
             </div>
             <section>
-                <h2>中性色</h2>
-                <p className="content">中性色大量的应用在界面的文字部分。</p>
+                <h2 className={c('title')}>中性色</h2>
+                <p className={c('p')}>中性色大量的应用在界面的文字部分。</p>
             </section>
             <div className={c('mainColorNeutral')}>
                 <div className={c('mainColorNeutral-box')}>

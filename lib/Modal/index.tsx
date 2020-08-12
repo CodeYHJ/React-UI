@@ -1,12 +1,12 @@
 import React from 'react';
-import { BaseDiaLog } from '../Dialog';
+import Dialog, { BaseDiaLog, DailogProps } from '../Dialog';
 import ReactDOM, { unmountComponentAtNode } from 'react-dom';
 import './index.less'
 import { classPre } from '@lib/utils';
 import { Icon } from '@lib/Icon';
 import Button from '@lib/Button';
 interface PropsConfig {
-    visble: boolean,
+    visible: boolean,
     mainText: string,
     okText?: string,
     type: ModalType,
@@ -18,17 +18,16 @@ interface ModalProps {
 }
 const c = classPre('modal')
 
-type ModalType = 'main' | 'danger' | 'warn' | 'safe'
+type ModalType = 'info' | 'danger' | 'warn' | 'success'
 
 const createIcon = (type: ModalType) => {
     if (type === 'danger') {
         return <Icon name="danger" className={c("icon")} />
-    } else if (type === 'main') {
+    } else if (type === 'info') {
         return <Icon name="main" className={c("icon")} />
-
     }
-    else if (type === 'safe') {
-        return <Icon name="safe" className={c("icon")} />
+    else if (type === 'success') {
+        return <Icon name="success" className={c("icon")} />
 
     }
     else if (type === 'warn') {
@@ -42,10 +41,10 @@ const ModalBase = (propsConfig: PropsConfig) => {
     const div = document.createElement('div')
     propsConfig.className && div.setAttribute('class', propsConfig.className)
     document.body.appendChild(div);
-    const currentConfig = { ...propsConfig, visble: true }
+    const currentConfig = { ...propsConfig, visible: true }
     const render = (propsConfig: PropsConfig) => {
         ReactDOM.render(
-            <BaseDiaLog visble={propsConfig.visble} footer={null} headerText=''>
+            <BaseDiaLog visible={propsConfig.visible} footer={null} headerText=''>
                 <header className={c("header")}>{createIcon(currentConfig.type)}</header>
                 <main className={c("mainContent")}>{propsConfig.mainText ? propsConfig.mainText : ''}</main>
                 <footer className={c("footer")}>
@@ -55,7 +54,7 @@ const ModalBase = (propsConfig: PropsConfig) => {
             div)
     }
     const close = () => {
-        render({ ...currentConfig, visble: false })
+        render({ ...currentConfig, visible: false })
         destroy()
     }
     const destroy = () => {
@@ -70,23 +69,32 @@ const ModalBase = (propsConfig: PropsConfig) => {
     }
 }
 
-const danger = (props: ModalProps) => {
-    return ModalBase({ ...props, visble: true, type: 'danger', className: c('danger') })
+const error = (props: ModalProps) => {
+    return ModalBase({ ...props, visible: true, type: 'danger', className: c('danger') })
 }
 const warn = (props: ModalProps) => {
-    return ModalBase({ ...props, visble: true, type: 'warn', className: c('warn') })
+    return ModalBase({ ...props, visible: true, type: 'warn', className: c('warn') })
 }
-const safe = (props: ModalProps) => {
-    return ModalBase({ ...props, visble: true, type: 'safe', className: c('safe') })
+const success = (props: ModalProps) => {
+    return ModalBase({ ...props, visible: true, type: 'success', className: c('sucess') })
 }
-const main = (props: ModalProps) => {
-    return ModalBase({ ...props, visble: true, type: 'main', className: c('main') })
-}
+const info = (props: ModalProps) => {
 
-const Modal = {
-    danger,
+    return ModalBase({ ...props, visible: true, type: 'info', className: c('info') })
+}
+type ModalFun = (props: ModalProps) => void
+
+const Modal: {
+    error: ModalFun,
+    warn: ModalFun,
+    success: ModalFun,
+    info: ModalFun,
+    Modal: React.SFC<DailogProps>
+} = {
+    error,
     warn,
-    safe,
-    main
+    success,
+    info,
+    Modal: Dialog
 }
 export default Modal;

@@ -1,8 +1,22 @@
-.column(){
-    display: flex;
-    flex-direction: column;
+.column() {
+  display: flex;
+  flex-direction: column;
 }
-.row(){
-    display: flex;
-    flex-direction: row;
+.row() {
+  display: flex;
+  flex-direction: row;
+}
+
+.baseStyle() {
+  margin: 0 100px;
+  flex: 1;
+  &-title {
+    color: @neutral-color-title;
+  }
+  &-p {
+    color: @neutral-color-content;
+  }
+  section {
+    margin-top: 60px;
+  }
 }
