@@ -1,5 +1,5 @@
 import React from 'react';
-import Dialog, { BaseDiaLog, DailogProps } from '../Dialog';
+import Dialog, { DailogProps } from '../Dialog';
 import ReactDOM, { unmountComponentAtNode } from 'react-dom';
 import './index.less'
 import { classPre } from '@lib/utils';
