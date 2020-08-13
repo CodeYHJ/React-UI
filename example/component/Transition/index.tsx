@@ -1,84 +1,75 @@
-import React, { useRef, useEffect, useState, CSSProperties, HtmlHTMLAttributes, cloneElement, Children, ReactElement, useLayoutEffect } from 'react';
-import { classPre } from '../../util';
+import React, { useRef, useState, CSSProperties, HtmlHTMLAttributes, cloneElement, ReactElement, useLayoutEffect } from 'react';
 import './index.less'
 export interface TransitionProps extends HtmlHTMLAttributes<HTMLDivElement> {
     visible: boolean,
-    enter?: CSSProperties,
-    leave?: CSSProperties,
+    enter: CSSProperties,
+    leave: CSSProperties,
     beforeEnter?: CSSProperties,
-    time?: number
+    time: number
 }
-const c = classPre('transition')
+
 const Transition: React.SFC<TransitionProps> = (props) => {
-    const handleStatus = {
-        beforeEnter: false,
-        enter: false,
-        leave: false,
-    }
     const childrenRef = useRef<HTMLDivElement>(null)
-    const preTimeRef = useRef<number>()
-    const requestRef = useRef<number>()
-    const setStyle = (ref: React.RefObject<HTMLDivElement>, style: CSSProperties, time = .5) => {
-        const div = ref.current;
-        if (div != null) {
-            const defaultStyle: CSSProperties = {
-                transitionProperty: "all",
-                transitionDuration: `${time}s`,
-                transitionTimingFunction: "cubic-bezier(0.645, 0.045, 0.355, 1)",
-                willChange: 'all',
-                overflow: 'hidden',
-            }
-            Object.assign(div.style, defaultStyle, style)
+    const updateRef = useRef<Boolean>(false)
+    const [controllerVisible, setControllerVisible] = useState(false)
+    const setStyle = (node: HTMLElement, style: CSSProperties, time: number) => {
+        const defaultStyle: CSSProperties = {
+            transitionProperty: "all",
+            transitionDuration: `${time}s`,
+            transitionTimingFunction: "cubic-bezier(0.645, 0.045, 0.355, 1)",
+            willChange: 'all',
+            overflow: 'hidden',
         }
+        Object.assign(node.style, defaultStyle, style)
     }
-    const handleBeforeEnter = () => {
-        setStyle(childrenRef, props.beforeEnter as CSSProperties, props.time)
+    const handleBeforeEnter = (node: HTMLElement) => {
+        setStyle(node, props.beforeEnter as CSSProperties, props.time)
     }
-    const handleEnter = () => {
-        setStyle(childrenRef, props.enter as CSSProperties, props.time)
+    const handleEnter = (node: HTMLElement) => {
+        setStyle(node, props.enter as CSSProperties, props.time)
     }
-    const handleLeave = () => {
-        setStyle(childrenRef, props.leave as CSSProperties, props.time)
+    const handleLeave = (node: HTMLElement) => {
+        setStyle(node, props.leave as CSSProperties, props.time)
     }
 
-    const animation = (time: number) => {
-        if (!props.visible) {
-            handleEnter()
+    const show = (node: HTMLElement) => {
+        const isUpdate = updateRef.current
+        if (isUpdate) {
+            props.beforeEnter && handleBeforeEnter(node);
+            node.getBoundingClientRect()
+            handleEnter(node)
         }
-        preTimeRef.current = time
+
     }
-
-
+    const hide = (node: HTMLElement) => {
+        handleLeave(node)
+        node.getBoundingClientRect()
+    }
     useLayoutEffect(() => {
-        if (props.visible) {
-            if (childrenRef.current !== null) {
-                props.beforeEnter && handleBeforeEnter()
-
+        // 首次渲染
+        if (!updateRef.current && props.visible) {
+            // 记录是否首次予以判断是否更新
+            updateRef.current = true
+            if (childrenRef.current) {
+                show(childrenRef.current)
+            }
+            setControllerVisible(true)
+        } else if (updateRef.current && !props.visible) {
+            if (childrenRef.current) {
+                hide(childrenRef.current)
+                updateRef.current = false
+                const timer = setTimeout(() => {
+                    setControllerVisible(false)
+                    clearTimeout(timer)
+                }, props.time * 1000);
             }
         }
-
     }, [props.visible])
 
-    useEffect(() => {
-        if (childrenRef.current !== null) {
-            requestRef.current = window.requestAnimationFrame(animation)
-        }
-        return () => {
-            props.leave && handleLeave()
-            window.cancelAnimationFrame(requestRef.current as number)
-        }
-    }, [props.visible])
-    // return (
-    //     <div className={c()}>
 
-    //         <div ref={childrenRef}>
-    //             {props.children}
-    //         </div>
-    //     </div>
-    // );
-    return cloneElement(props.children as ReactElement, { ref: childrenRef })
-
-
+    return (props.visible || controllerVisible) ? cloneElement(props.children as ReactElement, { ref: childrenRef }) : null
 }
-
+Transition.defaultProps = {
+    time: .5
+}
 export default Transition;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Link, Route, Switch, Redirect } from "react-router-dom";
 import LayoutExample from "./pages/LayoutExample"
@@ -55,5 +55,5 @@ const App: React.SFC<AppProps> = () => {
     )
 
 }
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(<StrictMode><App /></StrictMode> , document.getElementById('app'))
 export default App;

@@ -72,22 +72,22 @@ const ModalExample: React.SFC<ModalExampleProps> = () => {
                     </Dialog>
                     <Button type="primary" onClick={handleOpen} >open Modal</Button>
                 </ExampleBox>
-                <ExampleBox title="自定义" description="自定义header、footer。不需要footer时可传null。不需要header可不传"
+                {/* <ExampleBox title="自定义" description="自定义header、footer。不需要footer时可传null。不需要header可不传"
                 //  code={require('!!raw-loader!./code/baseCode.tsx')}
                 >
                     <Dialog visible={open1} onCancel={handleClose1} onOk={handleClose1} maskClosable footer={null}>
                         Modal
                     </Dialog>
                     <Button type="primary" onClick={handleOpen1} >open Modal</Button>
-                </ExampleBox>
-                <ExampleBox title="信息提示" description="只有一个按钮用于关闭"
+                </ExampleBox> */}
+                {/* <ExampleBox title="信息提示" description="只有一个按钮用于关闭"
                 //  code={require('!!raw-loader!./code/baseCode.tsx')}
                 >
                     <Button type="primary" onClick={infoMessage} style={{ marginRight: '20px' }}>info</Button>
                     <Button type="success" onClick={successMessage} style={{ marginRight: '20px' }}>Success</Button>
                     <Button type="danger" onClick={errorMessage} style={{ marginRight: '20px' }}>Error</Button>
                     <Button type="warn" onClick={warnMessage} style={{ marginRight: '20px' }}>Warn</Button>
-                </ExampleBox>
+                </ExampleBox> */}
             </section>
         </div>
     );
