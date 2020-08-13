@@ -44,23 +44,27 @@ const ModalBase = (propsConfig: PropsConfig) => {
     const currentConfig = { ...propsConfig, visible: true }
     const render = (propsConfig: PropsConfig) => {
         ReactDOM.render(
-            <BaseDiaLog visible={propsConfig.visible} footer={null} headerText=''>
+            <Dialog visible={propsConfig.visible} footer={null} headerText=''>
                 <header className={c("header")}>{createIcon(currentConfig.type)}</header>
                 <main className={c("mainContent")}>{propsConfig.mainText ? propsConfig.mainText : ''}</main>
                 <footer className={c("footer")}>
                     <Button type="primary" onClick={close}>{propsConfig.okText ? propsConfig.okText : 'OK'}</Button>
                 </footer>
-            </BaseDiaLog>,
+            </Dialog>,
             div)
     }
     const close = () => {
         render({ ...currentConfig, visible: false })
-        destroy()
+        const timer = setTimeout(() => {
+            destroy()
+            clearTimeout(timer)
+        }, 600)
     }
     const destroy = () => {
         const umn = unmountComponentAtNode(div)
         if (umn && div) {
             div.remove()
+
         }
     }
     render(currentConfig)

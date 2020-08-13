@@ -1,5 +1,4 @@
-import React, { useRef, useState, CSSProperties, HtmlHTMLAttributes, cloneElement, ReactElement, useLayoutEffect, useEffect } from 'react';
-import { classPre } from '@lib/utils';
+import React, { useRef, useState, CSSProperties, HtmlHTMLAttributes, cloneElement, ReactElement, useEffect } from 'react';
 import './index.less'
 export interface TransitionProps extends HtmlHTMLAttributes<HTMLDivElement> {
     visible: boolean,
@@ -23,9 +22,6 @@ const Transition: React.SFC<TransitionProps> = (props) => {
         }
         Object.assign(node.style, defaultStyle, style)
     }
-    const handleBeforeEnter = (node: HTMLElement) => {
-        setStyle(node, props.beforeEnter as CSSProperties, props.time)
-    }
     const handleEnter = (node: HTMLElement) => {
         setStyle(node, props.enter as CSSProperties, props.time)
     }
@@ -36,18 +32,14 @@ const Transition: React.SFC<TransitionProps> = (props) => {
     const show = (node: HTMLElement) => {
         const isUpdate = updateRef.current
         if (isUpdate) {
-
-            props.beforeEnter &&  handleBeforeEnter(node);
-            node.getBoundingClientRect()
             handleEnter(node)
         }
 
     }
     const hide = (node: HTMLElement) => {
         handleLeave(node)
-        node.getBoundingClientRect()
     }
-    useLayoutEffect(() => {
+    useEffect(() => {
         // 首次渲染
         if (!updateRef.current && props.visible) {
             // 记录是否首次予以判断是否更新
@@ -69,7 +61,7 @@ const Transition: React.SFC<TransitionProps> = (props) => {
     }, [props.visible])
 
 
-    return (props.visible || controllerVisible) ? cloneElement(props.children as ReactElement, { ref: childrenRef }) : null
+    return (props.visible || controllerVisible) ? cloneElement(props.children as ReactElement, { style: !controllerVisible ? props.beforeEnter : {}, ref: childrenRef }) : null
 }
 Transition.defaultProps = {
     time: .5
