@@ -1,3 +1,28 @@
-<Button type="danger" pre={preIcon} >danger</Button>
+import React, { useState } from 'react';
+import {Button,Icon} from '@lib/index';
+export interface ButtonDemoProps {
 
-<Button type="primary"  pre={preIcon} loading={loading2} onClick={handleClick2}>primary</Button>
+}
+const ButtonDemo: React.SFC<ButtonDemoProps> = () => {
+
+    const [loading, setLoading] = useState(false)
+
+    const handleClick = ()=>{
+        setLoading(false)
+    }
+
+    const preIcon = <Icon name="cancel"/>
+    
+    return (
+        <div>
+            <Button type="danger" pre={preIcon} >danger</Button>
+
+            <Button type="primary" pre={preIcon} loading={loading} onClick={handleClick}>primary</Button>
+
+        </div>
+    );
+}
+
+export default ButtonDemo;
+
+

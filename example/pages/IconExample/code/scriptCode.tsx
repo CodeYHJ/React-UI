@@ -1,11 +1,24 @@
-const ScriptIcon = createIcon(url)
+import React from 'react';
+import { Icon, createIcon } from '@lib/index';
+export interface IconDemoProps {
 
-<ScriptIcon name="icon-jianceqi" className={c('icon-demo')} />
+}
+const ScriptIcon = createIcon('url')
 
-<ScriptIcon name="icon-jinggai" className={c('icon-demo')} />
+const IconDemo: React.SFC<IconDemoProps> = () => {
+    return (
+        <div>
+            <ScriptIcon name="icon-jianceqi" />
 
-<ScriptIcon name="icon-liujisuan" className={c('icon-demo')} />
+            <ScriptIcon name="icon-jinggai" />
 
-<ScriptIcon name="icon-hanshu" className={c('icon-demo')} />
+            <ScriptIcon name="icon-liujisuan" />
 
-<ScriptIcon name="icon-lianjieliu" className={c('icon-demo')} />
+            <ScriptIcon name="icon-hanshu" />
+
+            <ScriptIcon name="icon-lianjieliu" />
+        </div>
+    );
+}
+
+export default IconDemo;

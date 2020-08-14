@@ -14,13 +14,13 @@ export interface DailogProps extends HtmlHTMLAttributes<HTMLElement> {
     footer?: ReactNode,
     headerText?: string,
     okText?: string,
-    cancleText?: string
+    cancelText?: string
 }
 const c = classPre('dialog')
 
 
 const Dialog: React.SFC<DailogProps> = (props) => {
-    const { visible, onCancel, onOk, maskClosable = false, footer, okText, cancleText, headerText, closable } = props
+    const { visible, onCancel, onOk, maskClosable = false, footer, okText, cancelText, headerText, closable } = props
 
     const onClickClose: MouseEventHandler = (e) => {
         onCancel && onCancel(e)
@@ -41,13 +41,13 @@ const Dialog: React.SFC<DailogProps> = (props) => {
     const Footer = () => {
         if (footer === null) return null
         return footer ? footer : <footer className={c('footer')}>
-            <Button type="default" onClick={onClickClose} className={c('cancel')}>{cancleText ? cancleText : 'cancel'}</Button>
+            <Button type="default" onClick={onClickClose} className={c('cancel')}>{cancelText ? cancelText : 'cancel'}</Button>
             <Button type="primary" onClick={onClickOk} className={c('ok')}>{okText ? okText : 'ok'}</Button>
         </footer>
     }
     const CloseIcon = () => {
         return closable ? <div className={c("close")} onClick={onClickClose} >
-            <Icon name="cancle" />
+            <Icon name="cancel" />
         </div> : null
     }
     return createPortal((
@@ -74,7 +74,7 @@ Dialog.defaultProps = {
     maskClosable: false,
     closable: false,
     okText: "ok",
-    cancleText: "cancel"
+    cancelText: "cancel"
 }
 
 export default Dialog;

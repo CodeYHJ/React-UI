@@ -12,7 +12,7 @@ const ButtonExample: React.SFC<ButtonExampleProps> = () => {
     const [loading, setLoading] = useState(false)
     const [loading2, setLoading2] = useState(false)
 
-    const preIcon = (<Icon name="cancle" />)
+    const preIcon = (<Icon name="cancel" />)
     const handleClick = () => {
         setLoading(!loading)
     }

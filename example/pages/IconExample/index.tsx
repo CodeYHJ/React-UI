@@ -25,7 +25,7 @@ const IconExample: React.SFC<IconExampleProps> = () => {
             <section>
                 <h2  className={c('title')}>代码示例</h2>
                 <ExampleBox title="Icon" description="UI库Icon展示" code={require('!!raw-loader!./code/baseCode.tsx')}>
-                    <Icon name="cancle" className={c('icon-demo')} />
+                    <Icon name="cancel" className={c('icon-demo')} />
                     <Icon name="arror-down" className={c('icon-demo')} />
                     <Icon name="arror-up" className={c('icon-demo')} />
                     <Icon name="arror-left" className={c('icon-demo')} />

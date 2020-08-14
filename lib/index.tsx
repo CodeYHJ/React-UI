@@ -3,6 +3,10 @@ export { default as Button } from './Button'
 export { default as createIcon } from './Icon/createIcon'
 export { default as Icon } from './Icon/localIcon'
 export { default as Modal } from './Modal'
+export { default as Form } from './Form'
+export { default as Input } from './Input'
+
+
 
 
 

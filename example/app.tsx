@@ -16,6 +16,7 @@ import ModalExample from './pages/ModalExample';
 
 import { classPre } from "./util/index";
 import './app.less'
+import FormExample from './pages/FormExample';
 
 interface AppProps {
 
@@ -41,7 +42,7 @@ const App: React.SFC<AppProps> = () => {
                                 <Route path="/button" exact component={ButtonExample} />
                                 <Route path="/icon" exact component={IconExample} />
                                 <Route path="/modal" exact component={ModalExample} />
-
+                                <Route path="/form" exact component={FormExample} />
                                 <Redirect exact to="/introduction" from="/" />
                             </Switch>
 

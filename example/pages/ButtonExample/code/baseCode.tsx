@@ -1,11 +1,25 @@
-    <Button type="default">default</Button>
+import React from 'react';
+import Button from '@lib/Button';
+export interface ButtonDemoProps {
 
-    <Button type="dashed">dashed</Button>
+}
 
-    <Button type="primary">primary</Button>
+const ButtonDemo: React.SFC<ButtonDemoProps> = () => {
+    return (
+        <div>
+            <Button type="default">default</Button>
 
-    <Button type="danger">danger</Button>
+            <Button type="dashed">dashed</Button>
 
-    <Button type="warn">warn</Button>
+            <Button type="primary">primary</Button>
 
-    <Button type="success">success</Button>
+            <Button type="danger">danger</Button>
+
+            <Button type="warn">warn</Button>
+
+            <Button type="success">success</Button>
+        </div>
+    );
+}
+
+export default ButtonDemo;

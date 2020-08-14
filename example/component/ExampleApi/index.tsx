@@ -8,7 +8,8 @@ interface TBodyData {
     value: string
 }
 export interface ExampleApiProps {
-    data: Array<TBodyData>
+    data: Array<TBodyData>,
+    title?: string
 }
 const c = classPre('exampleApi')
 const ExampleApi: React.SFC<ExampleApiProps> = (props) => {
@@ -20,7 +21,7 @@ const ExampleApi: React.SFC<ExampleApiProps> = (props) => {
                 <tr key={name}>
                     <td>{name}</td>
                     <td>{dsc}</td>
-                    <td style={{width:'22%',color: '#c41d7f'}}>{handleType}</td>
+                    <td style={{ width: '22%', color: '#c41d7f' }}>{handleType}</td>
                     <td>{value}</td>
                 </tr>
             )
@@ -29,7 +30,7 @@ const ExampleApi: React.SFC<ExampleApiProps> = (props) => {
     return (
         <div className={c()}>
             <section>
-                <h2>API</h2>
+                <h2>{props.title}</h2>
             </section>
             <table className={c('table')}>
                 <thead>
@@ -47,5 +48,7 @@ const ExampleApi: React.SFC<ExampleApiProps> = (props) => {
         </div>
     );
 }
-
+ExampleApi.defaultProps = {
+    title: 'API'
+}
 export default ExampleApi;

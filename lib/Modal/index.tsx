@@ -88,17 +88,18 @@ const info = (props: ModalProps) => {
 }
 type ModalFun = (props: ModalProps) => void
 
-const Modal: {
+type ModalApi = {
     error: ModalFun,
     warn: ModalFun,
     success: ModalFun,
     info: ModalFun,
     Modal: React.SFC<DailogProps>
-} = {
-    error,
-    warn,
-    success,
-    info,
-    Modal: Dialog
 }
+type Modal = ModalApi & React.SFC<DailogProps>
+const Modal = Dialog as Modal
+Modal.error = error
+Modal.warn = warn
+Modal.success = success
+Modal.info = info
+
 export default Modal;

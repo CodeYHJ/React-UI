@@ -1,0 +1,232 @@
+.code-ui-input-inputLabel-noBorder() {
+  border: none;
+  padding: 0;
+  &:focus {
+    border: none;
+    box-shadow: none;
+  }
+  &:hover {
+    border: none;
+  }
+}
+
+// 含有Icon的基本样式
+.code-ui-input-icon-base() {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid @neutral-color-border;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  padding: 5px 10px;
+  &:hover {
+    border-color: @main-color-primary;
+  }
+  & > .code-ui-input-inputLabel {
+    .code-ui-input-inputLabel-noBorder();
+  }
+}
+// 含有Str的基本样式
+.code-ui-input-Str-base() {
+  list-style: none;
+  box-sizing: border-box;
+  display: inline-flex;
+  position: relative;
+  color: @neutral-color-content;
+  & > .code-ui-input-inputLabel {
+    border-radius: 0;
+  }
+}
+.code-ui-input {
+  // only preIconFix style
+  &-preIconFix {
+    .code-ui-input-icon-base();
+    & .code-ui-svg {
+      margin: 0 5px 0 0;
+      color: @neutral-color-border;
+    }
+  }
+  // only sufIconFix style
+  &-sufIconFix {
+    .code-ui-input-icon-base();
+    & .code-ui-svg {
+      margin: 0 0 0 5px;
+      color: @neutral-color-border;
+    }
+  }
+  // sufIconFix and preIconFix style
+  &-allIconFix {
+    .code-ui-input-icon-base();
+    & > :nth-child(1) {
+      margin: 0 5px 0 0;
+      color: @neutral-color-border;
+    }
+    & > :nth-child(3) {
+      margin: 0 0 0 5px;
+      color: @neutral-color-border;
+    }
+  }
+  // only preStrFix style
+  &-preStrFix {
+    .code-ui-input-Str-base();
+    & > :nth-child(1) {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      border-right: none;
+    }
+  }
+  // only sufStrFix style
+
+  &-sufStrFix {
+    .code-ui-input-Str-base();
+    & > :nth-child(2) {
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-left: none;
+    }
+  }
+  // sufStrFix and allStrFix style
+  &-allStrFix {
+    .code-ui-input-Str-base();
+    & > :nth-child(1) {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      border-right: none;
+    }
+    & > :nth-child(3) {
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-left: none;
+    }
+  }
+  // str
+  &-str {
+    font-size: 14px;
+    padding: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: @neutral-color-background;
+    border-radius: 3px;
+    border: 1px solid @neutral-color-border;
+  }
+  // icon disabled
+
+  &-iconDisabled {
+    cursor: not-allowed;
+    background: @neutral-color-background;
+    &:hover {
+      border-color: @neutral-color-border;
+    }
+    & > .code-ui-input-inputLabel {
+      cursor: not-allowed;
+      &:focus {
+        border: none;
+        box-shadow: none;
+      }
+      &:hover {
+        border: none;
+      }
+    }
+  }
+  // icon error
+  &-iconError {
+    border-color: @fun-color-danger;
+    &:focus {
+      border-color: @fun-color-danger;
+      box-shadow: none;
+    }
+    &:hover {
+      border-color: @fun-color-danger;
+    }
+  }
+  // str disabled
+  &-strDisabled {
+    cursor: not-allowed;
+    background: @neutral-color-background;
+    &:hover {
+      border-color: @neutral-color-border;
+    }
+    & > .code-ui-input-inputLabel {
+      cursor: not-allowed;
+      &:focus {
+        border-color: @neutral-color-border;
+        box-shadow: none;
+      }
+      &:hover {
+        border-color: @neutral-color-border;
+      }
+    }
+  }
+  // str error
+  &-strError {
+    & > .code-ui-input-inputLabel {
+      border-color: @fun-color-danger;
+      &:focus {
+        border-color: @fun-color-danger;
+        box-shadow: none;
+      }
+      &:hover {
+        border-color: @fun-color-danger;
+      }
+    }
+  }
+  // sufIconFix or preIconFix or allFix focus
+  &-focus {
+    border: 1px solid @main-color-primary;
+    box-shadow: 0 0 0 1px @main-color-light;
+  }
+
+  // sufIconFix or preIconFix have Icon
+  &-icon {
+    display: inline-flex;
+  }
+}
+// onlay input
+.code-ui-input-inputLabel {
+  box-sizing: border-box;
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  color: @neutral-color-content;
+  background-image: none;
+  outline: none;
+  line-height: 1.5;
+  font-size: 14px;
+  margin: 0;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: 1px solid @neutral-color-border;
+  transition: all 0.3s ease;
+  &:focus {
+    border: 1px solid @main-color-primary;
+    box-shadow: 0 0 0 1px @main-color-light;
+  }
+  &:hover {
+    border: 1px solid @main-color-primary;
+  }
+}
+// onlay input disabled
+.code-ui-input-baseDisabled {
+  cursor: not-allowed;
+  background: @neutral-color-background;
+  &:hover {
+    border: 1px solid @neutral-color-border;
+  }
+}
+// onlay input error
+.code-ui-input-error {
+  border-color: @fun-color-danger;
+  &:hover {
+    border-color: @fun-color-danger;
+  }
+  &:focus {
+    border-color: @fun-color-danger;
+    box-shadow:none;
+  }
+}
+// have Icon focus
+.code-ui-input-inputLabel-preIconFix,
+.code-ui-input-inputLabel-sufIconFix {
+  border: 1px solid @main-color-primary;
+  box-shadow: 0 0 0 1px @main-color-light;
+}

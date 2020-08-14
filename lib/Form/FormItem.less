@@ -1,0 +1,28 @@
+.code-ui-formItem {
+
+  &-label {
+    &::before {
+      display: inline-block;
+      margin-right: 4px;
+      color: #ff4d4f;
+      font-size: 14px;
+      font-family: SimSun, sans-serif;
+      line-height: 1;
+      content: "*";
+    }
+    &::after {
+      content: ":";
+      position: relative;
+      top: -0.5px;
+      margin: 0 8px 0 2px;
+    }
+  }
+  &-itemBox {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+  }
+  &-lable {
+    color: @neutral-color-title;
+  }
+}

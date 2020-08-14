@@ -1,3 +1,15 @@
 import React from 'react';
+import { Icon } from '@lib/index';
+export interface IconDemoProps {
 
-<Icon name="cancle"/>
+}
+
+const IconDemo: React.SFC<IconDemoProps> = () => {
+    return (
+        <div>
+            <Icon name="cancel" />
+        </div>
+    );
+}
+
+export default IconDemo;
