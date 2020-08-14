@@ -28,11 +28,11 @@ const Input: React.SFC<InputProps> = (props) => {
     const { formItemStore, dispatchForFormItem } = useContext(FormItemContext)
     const [inputValue, setInputValue] = useState(defaultValue || value || '')
     const InputBase = (cls: string) => {
-        let disabled = false
+        let localDisabled = false
         if (!error && disabled) {
-            disabled = true
+            localDisabled = true
         }
-        return (<input ref={inputRef} {...others} className={cls} value={inputValue} onChange={handleOnChange} onFocus={handleOnFocus} onBlur={handleOnBlur} disabled={disabled} type={type} />)
+        return (<input ref={inputRef} {...others} className={cls} value={inputValue} onChange={handleOnChange} onFocus={handleOnFocus} onBlur={handleOnBlur} disabled={localDisabled} placeholder={placeholder} type={type} />)
     }
 
     let baseInputCls = c('inputLabel')
@@ -42,7 +42,7 @@ const Input: React.SFC<InputProps> = (props) => {
     const inputRef = useRef<HTMLInputElement>(null)
 
     const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (!formItemStore) {
+        if (formItemStore) {
             dispatchForFormItem({ type: "UPDATE", playload: { value: inputValue } })
         }
         setInputValue(e.target.value)
@@ -52,15 +52,17 @@ const Input: React.SFC<InputProps> = (props) => {
         if (!error && (preIconFix || sufIconFix)) {
             setFocus(true)
         }
-        if (!formItemStore) {
+        if (formItemStore) {
             dispatchForFormItem({ type: "UPDATE", playload: { value: inputValue } })
         }
+
         onFocus && onFocus(e)
     }
     const handleOnBlur = (e: React.FocusEvent<HTMLInputElement>) => {
         if (!error && (preIconFix || sufIconFix)) {
             setFocus(false)
         }
+
         onBlur && onBlur(e)
     }
 

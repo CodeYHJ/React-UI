@@ -42,7 +42,6 @@
     .code-ui-input-icon-base();
     & .code-ui-svg {
       margin: 0 5px 0 0;
-      color: @neutral-color-border;
     }
   }
   // only sufIconFix style
@@ -50,7 +49,6 @@
     .code-ui-input-icon-base();
     & .code-ui-svg {
       margin: 0 0 0 5px;
-      color: @neutral-color-border;
     }
   }
   // sufIconFix and preIconFix style
@@ -58,11 +56,9 @@
     .code-ui-input-icon-base();
     & > :nth-child(1) {
       margin: 0 5px 0 0;
-      color: @neutral-color-border;
     }
     & > :nth-child(3) {
       margin: 0 0 0 5px;
-      color: @neutral-color-border;
     }
   }
   // only preStrFix style
@@ -179,6 +175,7 @@
   // sufIconFix or preIconFix have Icon
   &-icon {
     display: inline-flex;
+    color: @neutral-color-sub;
   }
 }
 // onlay input
@@ -221,7 +218,7 @@
   }
   &:focus {
     border-color: @fun-color-danger;
-    box-shadow:none;
+    box-shadow: none;
   }
 }
 // have Icon focus

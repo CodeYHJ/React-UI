@@ -17,6 +17,7 @@ import ModalExample from './pages/ModalExample';
 import { classPre } from "./util/index";
 import './app.less'
 import FormExample from './pages/FormExample';
+import InputExample from './pages/InputExample';
 
 interface AppProps {
 
@@ -43,6 +44,7 @@ const App: React.SFC<AppProps> = () => {
                                 <Route path="/icon" exact component={IconExample} />
                                 <Route path="/modal" exact component={ModalExample} />
                                 <Route path="/form" exact component={FormExample} />
+                                <Route path="/input" exact component={InputExample} />
                                 <Redirect exact to="/introduction" from="/" />
                             </Switch>
 
@@ -56,5 +58,5 @@ const App: React.SFC<AppProps> = () => {
     )
 
 }
-ReactDOM.render(<StrictMode><App /></StrictMode> , document.getElementById('app'))
+ReactDOM.render(<StrictMode><App /></StrictMode>, document.getElementById('app'))
 export default App;

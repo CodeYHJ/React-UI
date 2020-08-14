@@ -1,0 +1,562 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`input iconFix renders an \`preIconFix and sufIconFix\` component  1`] = `
+<span
+  className="code-ui-input-allIconFix"
+  onClick={[Function]}
+>
+  <span
+    className="code-ui-input-icon"
+  >
+    <svg
+      className="code-ui-svg"
+    >
+      <use
+        xlinkHref="#user"
+      />
+    </svg>
+  </span>
+  <input
+    className="code-ui-input-inputLabel"
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="前/后置Icon"
+    type="text"
+    value=""
+  />
+  <span
+    className="code-ui-input-icon"
+    onClick={[Function]}
+  >
+    <svg
+      className="code-ui-svg"
+    >
+      <use
+        xlinkHref="#password"
+      />
+    </svg>
+  </span>
+</span>
+`;
+
+exports[`input iconFix renders an \`preIconFix\` component  1`] = `
+<span
+  className="code-ui-input-preIconFix"
+>
+  <span
+    className="code-ui-input-icon"
+    onClick={[Function]}
+  >
+    <svg
+      className="code-ui-svg"
+    >
+      <use
+        xlinkHref="#user"
+      />
+    </svg>
+  </span>
+  <input
+    className="code-ui-input-inputLabel"
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="前置Icon"
+    type="text"
+    value=""
+  />
+</span>
+`;
+
+exports[`input iconFix renders an \`sufIconFix\` component  1`] = `
+<span
+  className="code-ui-input-sufIconFix"
+>
+  <input
+    className="code-ui-input-inputLabel"
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="后置Icon"
+    type="text"
+    value=""
+  />
+  <span
+    className="code-ui-input-icon"
+    onClick={[Function]}
+  >
+    <svg
+      className="code-ui-svg"
+    >
+      <use
+        xlinkHref="#password"
+      />
+    </svg>
+  </span>
+</span>
+`;
+
+exports[`input input type renders an \`type=number\` component 1`] = `
+<input
+  className="code-ui-input-inputLabel"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  placeholder="number"
+  type="number"
+  value=""
+/>
+`;
+
+exports[`input input type renders an \`type=password\` component 1`] = `
+<input
+  className="code-ui-input-inputLabel"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  placeholder="password"
+  type="password"
+  value=""
+/>
+`;
+
+exports[`input input type renders an \`type=text\` component 1`] = `
+<input
+  className="code-ui-input-inputLabel"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  placeholder="text"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`input status render iconFix Disabled renders an \`preIconFix Disabled\` component  1`] = `
+<span
+  className="code-ui-input-preIconFix code-ui-input-iconDisabled"
+>
+  <span
+    className="code-ui-input-icon"
+    onClick={[Function]}
+  >
+    <svg
+      className="code-ui-svg"
+    >
+      <use
+        xlinkHref="#user"
+      />
+    </svg>
+  </span>
+  <input
+    className="code-ui-input-inputLabel"
+    disabled={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="前置Icon"
+    type="text"
+    value=""
+  />
+</span>
+`;
+
+exports[`input status render iconFix Disabled renders an \`preIconFix and sufIconFix Disabled\` component  1`] = `
+<span
+  className="code-ui-input-allIconFix code-ui-input-iconDisabled"
+  onClick={[Function]}
+>
+  <span
+    className="code-ui-input-icon"
+  >
+    <svg
+      className="code-ui-svg"
+    >
+      <use
+        xlinkHref="#user"
+      />
+    </svg>
+  </span>
+  <input
+    className="code-ui-input-inputLabel"
+    disabled={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="前/后置Icon"
+    type="text"
+    value=""
+  />
+  <span
+    className="code-ui-input-icon"
+    onClick={[Function]}
+  >
+    <svg
+      className="code-ui-svg"
+    >
+      <use
+        xlinkHref="#password"
+      />
+    </svg>
+  </span>
+</span>
+`;
+
+exports[`input status render iconFix Disabled renders an \`sufIconFix Disabled\` component  1`] = `
+<span
+  className="code-ui-input-sufIconFix code-ui-input-iconDisabled"
+>
+  <input
+    className="code-ui-input-inputLabel"
+    disabled={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="后置Icon"
+    type="text"
+    value=""
+  />
+  <span
+    className="code-ui-input-icon"
+    onClick={[Function]}
+  >
+    <svg
+      className="code-ui-svg"
+    >
+      <use
+        xlinkHref="#password"
+      />
+    </svg>
+  </span>
+</span>
+`;
+
+exports[`input status render iconFix Error renders an \`preIconFix Error\` component  1`] = `
+<span
+  className="code-ui-input-preIconFix code-ui-input-iconError"
+>
+  <span
+    className="code-ui-input-icon"
+    onClick={[Function]}
+  >
+    <svg
+      className="code-ui-svg"
+    >
+      <use
+        xlinkHref="#user"
+      />
+    </svg>
+  </span>
+  <input
+    className="code-ui-input-inputLabel"
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="前置Icon"
+    type="text"
+    value=""
+  />
+</span>
+`;
+
+exports[`input status render iconFix Error renders an \`preIconFix and sufIconFix Error\` component  1`] = `
+<span
+  className="code-ui-input-allIconFix code-ui-input-iconError"
+  onClick={[Function]}
+>
+  <span
+    className="code-ui-input-icon"
+  >
+    <svg
+      className="code-ui-svg"
+    >
+      <use
+        xlinkHref="#user"
+      />
+    </svg>
+  </span>
+  <input
+    className="code-ui-input-inputLabel"
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="前/后置Icon"
+    type="text"
+    value=""
+  />
+  <span
+    className="code-ui-input-icon"
+    onClick={[Function]}
+  >
+    <svg
+      className="code-ui-svg"
+    >
+      <use
+        xlinkHref="#password"
+      />
+    </svg>
+  </span>
+</span>
+`;
+
+exports[`input status render iconFix Error renders an \`sufIconFix Error\` component  1`] = `
+<span
+  className="code-ui-input-sufIconFix code-ui-input-iconError"
+>
+  <input
+    className="code-ui-input-inputLabel"
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="后置Icon"
+    type="text"
+    value=""
+  />
+  <span
+    className="code-ui-input-icon"
+    onClick={[Function]}
+  >
+    <svg
+      className="code-ui-svg"
+    >
+      <use
+        xlinkHref="#password"
+      />
+    </svg>
+  </span>
+</span>
+`;
+
+exports[`input status render strFix Disabled renders an \`preStrFix Disabled\` component  1`] = `
+<span
+  className="code-ui-input-preStrFix code-ui-input-strDisabled"
+>
+  <div
+    className="code-ui-input-str"
+    onClick={[Function]}
+  >
+    http://
+  </div>
+  <input
+    className="code-ui-input-inputLabel"
+    disabled={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="固定文字块 Error"
+    type="text"
+    value=""
+  />
+</span>
+`;
+
+exports[`input status render strFix Disabled renders an \`preStrFix and sufStrFix Disabled\` component  1`] = `
+<span
+  className="code-ui-input-allStrFix code-ui-input-strDisabled"
+  onClick={[Function]}
+>
+  <span
+    className="code-ui-input-str"
+  >
+    http://
+  </span>
+  <input
+    className="code-ui-input-inputLabel"
+    disabled={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="baidu"
+    type="text"
+    value=""
+  />
+  <span
+    className="code-ui-input-str"
+    onClick={[Function]}
+  >
+    .com
+  </span>
+</span>
+`;
+
+exports[`input status render strFix Disabled renders an \`sufStrFix Disabled\` component  1`] = `
+<span
+  className="code-ui-input-sufStrFix code-ui-input-strDisabled"
+>
+  <input
+    className="code-ui-input-inputLabel"
+    disabled={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="http://baidu"
+    type="text"
+    value=""
+  />
+  <div
+    className="code-ui-input-str"
+    onClick={[Function]}
+  >
+    .com
+  </div>
+</span>
+`;
+
+exports[`input status render strFix Error renders an \`preStrFix Error\` component  1`] = `
+<span
+  className="code-ui-input-preStrFix code-ui-input-strError"
+>
+  <div
+    className="code-ui-input-str"
+    onClick={[Function]}
+  >
+    http://
+  </div>
+  <input
+    className="code-ui-input-inputLabel"
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="固定文字块 Error"
+    type="text"
+    value=""
+  />
+</span>
+`;
+
+exports[`input status render strFix Error renders an \`preStrFix and sufStrFix Error\` component  1`] = `
+<span
+  className="code-ui-input-allStrFix code-ui-input-strError"
+  onClick={[Function]}
+>
+  <span
+    className="code-ui-input-str"
+  >
+    http://
+  </span>
+  <input
+    className="code-ui-input-inputLabel"
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="baidu"
+    type="text"
+    value=""
+  />
+  <span
+    className="code-ui-input-str"
+    onClick={[Function]}
+  >
+    .com
+  </span>
+</span>
+`;
+
+exports[`input status render strFix Error renders an \`sufStrFix Error\` component  1`] = `
+<span
+  className="code-ui-input-sufStrFix code-ui-input-strError"
+>
+  <input
+    className="code-ui-input-inputLabel"
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="http://baidu"
+    type="text"
+    value=""
+  />
+  <div
+    className="code-ui-input-str"
+    onClick={[Function]}
+  >
+    .com
+  </div>
+</span>
+`;
+
+exports[`input strFix renders an \`preStrFix and sufStrFix\` component  1`] = `
+<span
+  className="code-ui-input-allStrFix"
+  onClick={[Function]}
+>
+  <span
+    className="code-ui-input-str"
+  >
+    http://
+  </span>
+  <input
+    className="code-ui-input-inputLabel"
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="baidu"
+    type="text"
+    value=""
+  />
+  <span
+    className="code-ui-input-str"
+    onClick={[Function]}
+  >
+    .com
+  </span>
+</span>
+`;
+
+exports[`input strFix renders an \`preStrFix\` component  1`] = `
+<span
+  className="code-ui-input-preStrFix"
+>
+  <div
+    className="code-ui-input-str"
+    onClick={[Function]}
+  >
+    http://
+  </div>
+  <input
+    className="code-ui-input-inputLabel"
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="baidu.com"
+    type="text"
+    value=""
+  />
+</span>
+`;
+
+exports[`input strFix renders an \`sufStrFix\` component  1`] = `
+<span
+  className="code-ui-input-sufStrFix"
+>
+  <input
+    className="code-ui-input-inputLabel"
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="http://baidu"
+    type="text"
+    value=""
+  />
+  <div
+    className="code-ui-input-str"
+    onClick={[Function]}
+  >
+    .com
+  </div>
+</span>
+`;
