@@ -1,6 +1,19 @@
-export { default as Layout } from "./Layout";
-export { default as Content } from "./Content";
-export { default as Aside } from "./Aside";
-export { default as Footer } from "./Footer";
-export { default as Header } from "./Header";
+import L from "./Layout";
+import C from "./Content";
+import A from "./Aside";
+import F from "./Footer";
+import H from "./Header";
 
+type Layout = typeof L & { Content: typeof C, Aside: typeof C, Footer: typeof F, Header: typeof H }
+
+const Layout = L as Layout
+
+Layout.Content = C
+
+Layout.Aside = A
+
+Layout.Footer = F
+
+Layout.Header = H
+
+export default Layout

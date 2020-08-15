@@ -1,2 +1,11 @@
-export { default as createIcon } from "./createIcon"
-export { default as Icon } from "./localIcon"
+
+import I from './localIcon'
+import c from './createIcon'
+
+type IconType = typeof I & { createIcon: typeof c }
+
+const Icon = I as IconType
+
+Icon.createIcon = c
+
+export default Icon

@@ -1,9 +1,8 @@
 import React, { Fragment, MouseEventHandler, ReactNode, HtmlHTMLAttributes, useEffect } from 'react';
-import "./index.less"
+import "./Dialog.less"
 import { createPortal } from 'react-dom';
 import { classPre } from '@lib/utils';
-import Button from '@lib/Button';
-import { Icon } from '@lib/Icon';
+import { Icon, Button } from '@lib/index';
 import Transition from '@lib/Transition';
 export interface DailogProps extends HtmlHTMLAttributes<HTMLElement> {
     visible: boolean,
@@ -14,7 +13,11 @@ export interface DailogProps extends HtmlHTMLAttributes<HTMLElement> {
     footer?: ReactNode,
     headerText?: string,
     okText?: string,
-    cancelText?: string
+    cancelText?: string,
+    opencb?: () => void
+    closecb?: () => void
+
+
 }
 const c = classPre('dialog')
 
@@ -50,12 +53,18 @@ const Dialog: React.SFC<DailogProps> = (props) => {
             <Icon name="cancel" />
         </div> : null
     }
+    const handleOpencb = () => {
+        props.opencb && props.opencb()
+    }
+    const handleClosecb = () => {
+        props.closecb && props.closecb()
+    }
     return createPortal((
         <Fragment>
             <Transition visible={visible} beforeEnter={{ opacity: 0 }} enter={{ opacity: 1 }} leave={{ opacity: 0 }} time={.5}>
                 <div className={c('mask')} onClick={onClickMask}></div>
             </Transition>
-            <Transition visible={visible} beforeEnter={{ opacity: 0, transform: 'scale(0)' }} enter={{ opacity: 1, transform: 'scale(1)' }} leave={{ transform: 'scale(0)' }} time={.5}>
+            <Transition opencb={handleOpencb} closecb={handleClosecb} visible={visible} beforeEnter={{ opacity: 0, transform: 'scale(0)' }} enter={{ opacity: 1, transform: 'scale(1)' }} leave={{ transform: 'scale(0)' }} time={.5}>
                 <div className={c()}>
                     {CloseIcon()}
                     {Header()}

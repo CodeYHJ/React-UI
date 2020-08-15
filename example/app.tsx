@@ -8,7 +8,8 @@ import Color from "./pages/Color"
 
 
 
-import { Layout, Aside, Content, Header, Footer } from "@lib/Layout";
+import { Layout } from "@lib/index";
+const { Header, Content, Aside, Footer } = Layout
 import HeaderPage from './component/Header'
 import AsidePage from './component/Aside'
 import IconExample from './pages/IconExample';

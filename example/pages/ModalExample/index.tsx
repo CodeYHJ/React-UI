@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { classPre } from "../../util/index"
 import "./index.less";
 import ExampleBox from '../../component/ExampleBox';
-import Button from '@lib/Button';
-import Modal from '@lib/Modal';
+import { Button, Modal } from '@lib/index';
 import ExampleApi from '../../component/ExampleApi';
 
 export interface ModalExampleProps {
@@ -64,7 +63,7 @@ const ModalExample: React.SFC<ModalExampleProps> = () => {
         { name: 'className', dsc: '容器className', type: ['string'], value: '--' },
         { name: 'style', dsc: '指定样式', type: ['CSSProperties'], value: '--' },
     ]
-    const handleMethodData=[
+    const handleMethodData = [
         { name: 'mainText', dsc: '主要内容', type: ['string'], value: '--' },
         { name: 'okText', dsc: '确定按钮内容', type: ['string'], value: '--' },
 

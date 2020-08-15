@@ -1,10 +1,10 @@
 import React from 'react';
 import { classPre } from "../../util/index"
 import ExampleBox from '../../component/ExampleBox';
-import Icon from '@lib/Icon/localIcon';
 import ExampleApi from '../../component/ExampleApi';
 import "./index.less";
-import createIcon from '@lib/Icon/createIcon';
+import { Icon } from "@lib/index"
+const { createIcon } = Icon
 export interface IconExampleProps {
 
 }
@@ -19,11 +19,11 @@ const IconExample: React.SFC<IconExampleProps> = () => {
     return (
         <div className={c()}>
             <section>
-                <h1  className={c('title')}>Icon</h1>
-                <p  className={c('p')}>SVG图形</p>
+                <h1 className={c('title')}>Icon</h1>
+                <p className={c('p')}>SVG图形</p>
             </section>
             <section>
-                <h2  className={c('title')}>代码示例</h2>
+                <h2 className={c('title')}>代码示例</h2>
                 <ExampleBox title="Icon" description="UI库Icon展示" code={require('!!raw-loader!./code/baseCode.tsx')}>
                     <Icon name="cancel" className={c('icon-demo')} />
                     <Icon name="arror-down" className={c('icon-demo')} />

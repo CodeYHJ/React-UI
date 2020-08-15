@@ -4,8 +4,8 @@ import renderer from "react-test-renderer";
 import { shallow, mount } from "enzyme";
 import { Icon } from '@lib/index';
 
-describe('input', () => {
-    describe("input type", () => {
+describe('<Input/>', () => {
+    describe("type", () => {
         it('renders an `type=text` component', () => {
             const json = renderer.create(<Input placeholder="text" />)
             expect(json).toMatchSnapshot()
@@ -19,8 +19,8 @@ describe('input', () => {
             expect(json).toMatchSnapshot()
         })
     })
-    describe('input event', () => {
-        it(' should handle onChange Event', () => {
+    describe('event', () => {
+        it('should handle onChange Event', () => {
             const fn = jest.fn();
             const wrapper = shallow(<Input onChange={fn} />);
             wrapper.find('.code-ui-input-inputLabel').simulate('change', {
@@ -35,13 +35,13 @@ describe('input', () => {
                 }
             });
         })
-        it(' should handle onFocus Event', () => {
+        it('should handle onFocus Event', () => {
             const fn = jest.fn();
             const wrapper = shallow(<Input onFocus={fn} />);
             wrapper.find('.code-ui-input-inputLabel').simulate('focus')
             expect(fn).toHaveBeenCalled();
         })
-        it(' should handle onBlur Event', () => {
+        it('should handle onBlur Event', () => {
             const fn = jest.fn();
             const wrapper = shallow(<Input onBlur={fn} />);
             wrapper.find('.code-ui-input-inputLabel').simulate('blur')

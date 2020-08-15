@@ -1,7 +1,7 @@
 import React, { MouseEventHandler, HtmlHTMLAttributes, ReactNode } from 'react';
 import "./index.less"
 import { classPre } from '@lib/utils';
-import { Icon } from '@lib/Icon';
+import { Icon } from '@lib/index';
 
 type ButtonType = 'primary' | 'danger' | 'warn' | 'default' | 'success' | 'dashed'
 

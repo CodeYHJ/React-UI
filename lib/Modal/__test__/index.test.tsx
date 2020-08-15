@@ -1,22 +1,67 @@
-import Modal from ".."
+import React from 'react';
+import Modal from "../index"
 import renderer from "react-test-renderer"
-import { mount } from "enzyme"
+import { mount, shallow } from "enzyme"
 
 describe('Modal', () => {
-    it('renders a `.code-ui-modal-info`', () => {
-        Modal.info({ mainText: 'test' })
-        expect(document.querySelectorAll('.code-ui-modal-info').length).toBe(1)
+    describe('render', () => {
+        it('renders a base', (done) => {
+            const reactWarpper = mount(
+                <Modal opencb={() => { done() }} headerText="基本" okText="ok" cancelText="cancel" visible={true} >
+                    Modal
+                </Modal>
+            )
+            const maskNum = reactWarpper.find('.code-ui-dialog-mask').getElements().length
+            const dialogNum = reactWarpper.find('.code-ui-dialog').getElements().length
+            expect(maskNum + dialogNum).toBe(2)
+        })
+        it('renders a no footer', (done) => {
+            const reactWarpper = mount(
+                <Modal opencb={() => { done() }} headerText="基本" okText="ok" cancelText="cancel" visible={true} footer={null}>
+                    Modal
+                </Modal>
+            )
+            const footNum = reactWarpper.find('.code-ui-dialog-footer').getElements().length
+            expect(footNum).toBe(0)
+        })
+        it('renders a no header', (done) => {
+            const reactWarpper = mount(
+                <Modal opencb={() => { done() }} headerText="" okText="ok" cancelText="cancel" visible={true} footer={null}>
+                    Modal
+                </Modal>
+            )
+            const headerNum = reactWarpper.find('.code-ui-dialog-header').getElements().length
+            expect(headerNum).toBe(0)
+        })
+        it('api.info', () => {
+            Modal.info({ mainText: 'test' })
+            expect(document.querySelectorAll('.code-ui-modal-info').length).toBe(1)
+        })
+        it('api.error', () => {
+            Modal.error({ mainText: 'test' })
+            expect(document.querySelectorAll('.code-ui-modal-danger').length).toBe(1)
+        })
+        it('api.warn', () => {
+            Modal.warn({ mainText: 'test' })
+            expect(document.querySelectorAll('.code-ui-modal-warn').length).toBe(1)
+        })
+        it('api.success', () => {
+            Modal.success({ mainText: 'test' })
+            expect(document.querySelectorAll('.code-ui-modal-success').length).toBe(1)
+        })
     })
-    it('renders a `.code-ui-modal-danger`', () => {
-        Modal.error({ mainText: 'test' })
-        expect(document.querySelectorAll('.code-ui-modal-danger').length).toBe(1)
-    })
-    it('renders a `.code-ui-modal-warn`', () => {
-        Modal.warn({ mainText: 'test' })
-        expect(document.querySelectorAll('.code-ui-modal-warn').length).toBe(1)
-    })
-    it('renders a `.code-ui-modal-success`', () => {
-        Modal.success({ mainText: 'test' })
-        expect(document.querySelectorAll('.code-ui-modal-success').length).toBe(1)
+    describe('event', () => {
+        it('should handle onCancel Event', () => {
+            const onCancel = jest.fn()
+            const reactWarpper = shallow(<Modal visible={true} onCancel={onCancel} />);
+            reactWarpper.find('.code-ui-dialog-cancel').simulate('click')
+            expect(onCancel).toBeCalled()
+        })
+        it('should handle onOk Event', () => {
+            const onOk = jest.fn()
+            const wrapper = shallow(<Modal visible={true} onOk={onOk} />);
+            wrapper.find('.code-ui-dialog-ok').simulate('click')
+            expect(onOk).toBeCalled()
+        })
     })
 })

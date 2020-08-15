@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Button/> Component renders an \`.code-ui-button-danger\` component 1`] = `
+exports[`<Button/> Component render renders an \`.code-ui-button-danger\` component 1`] = `
 <button
   className="code-ui-button code-ui-button-danger"
   onClick={[Function]}
@@ -9,7 +9,7 @@ exports[`<Button/> Component renders an \`.code-ui-button-danger\` component 1`]
 </button>
 `;
 
-exports[`<Button/> Component renders an \`.code-ui-button-dashed\` component 1`] = `
+exports[`<Button/> Component render renders an \`.code-ui-button-dashed\` component 1`] = `
 <button
   className="code-ui-button code-ui-button-dashed"
   onClick={[Function]}
@@ -18,7 +18,7 @@ exports[`<Button/> Component renders an \`.code-ui-button-dashed\` component 1`]
 </button>
 `;
 
-exports[`<Button/> Component renders an \`.code-ui-button-default\` component 1`] = `
+exports[`<Button/> Component render renders an \`.code-ui-button-default\` component 1`] = `
 <button
   className="code-ui-button code-ui-button-default"
   onClick={[Function]}
@@ -27,7 +27,7 @@ exports[`<Button/> Component renders an \`.code-ui-button-default\` component 1`
 </button>
 `;
 
-exports[`<Button/> Component renders an \`.code-ui-button-primary\` component 1`] = `
+exports[`<Button/> Component render renders an \`.code-ui-button-primary\` component 1`] = `
 <button
   className="code-ui-button code-ui-button-primary"
   onClick={[Function]}
@@ -36,7 +36,7 @@ exports[`<Button/> Component renders an \`.code-ui-button-primary\` component 1`
 </button>
 `;
 
-exports[`<Button/> Component renders an \`.code-ui-button-success\` component 1`] = `
+exports[`<Button/> Component render renders an \`.code-ui-button-success\` component 1`] = `
 <button
   className="code-ui-button code-ui-button-success"
   onClick={[Function]}
@@ -45,7 +45,7 @@ exports[`<Button/> Component renders an \`.code-ui-button-success\` component 1`
 </button>
 `;
 
-exports[`<Button/> Component renders an \`.code-ui-button-warn\` component 1`] = `
+exports[`<Button/> Component render renders an \`.code-ui-button-warn\` component 1`] = `
 <button
   className="code-ui-button code-ui-button-warn"
   onClick={[Function]}
@@ -54,7 +54,7 @@ exports[`<Button/> Component renders an \`.code-ui-button-warn\` component 1`] =
 </button>
 `;
 
-exports[`<Button/> Component renders an disabled of dashed 1`] = `
+exports[`<Button/> Component render renders an disabled of dashed 1`] = `
 <button
   className="code-ui-button code-ui-button-dashed code-ui-button-dashed-disabled"
   onClick={[Function]}
@@ -63,7 +63,7 @@ exports[`<Button/> Component renders an disabled of dashed 1`] = `
 </button>
 `;
 
-exports[`<Button/> Component renders an disabled of default 1`] = `
+exports[`<Button/> Component render renders an disabled of default 1`] = `
 <button
   className="code-ui-button code-ui-button-default code-ui-button-disabled"
   onClick={[Function]}
@@ -72,7 +72,7 @@ exports[`<Button/> Component renders an disabled of default 1`] = `
 </button>
 `;
 
-exports[`<Button/> Component renders an disabled of primary 1`] = `
+exports[`<Button/> Component render renders an disabled of primary 1`] = `
 <button
   className="code-ui-button code-ui-button-primary code-ui-button-disabled"
   onClick={[Function]}
@@ -81,7 +81,7 @@ exports[`<Button/> Component renders an disabled of primary 1`] = `
 </button>
 `;
 
-exports[`<Button/> Component renders loading 1`] = `
+exports[`<Button/> Component render renders loading 1`] = `
 <button
   className="code-ui-button code-ui-button-primary"
   onClick={[Function]}

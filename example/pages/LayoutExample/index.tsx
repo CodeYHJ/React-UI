@@ -1,9 +1,6 @@
 import React from 'react';
-import Layout from "@lib/Layout/Layout";
-import Herader from '@lib/Layout/Header';
-import Content from '@lib/Layout/Content';
-import Footer from '@lib/Layout/Footer';
-import Aside from '@lib/Layout/Aside';
+import { Layout } from "@lib/index";
+const { Header, Content, Aside, Footer } = Layout
 import { classPre } from "../../util/index";
 import "./index.less"
 import ExampleBox from '../../component/ExampleBox';
@@ -38,14 +35,14 @@ const LayoutExample: React.SFC<LayoutExampleProps> = () => {
                 <ExampleBox className={c("exampleBox")} title="基本结构" description="页面布局">
                     <section>
                         <Layout style={{ color: '#ffffff' }}>
-                            <Herader className={c('header')} >Header</Herader>
+                            <Header className={c('header')} >Header</Header>
                             <Content className={c('content')} >Content</Content>
                             <Footer className={c('footer')} >Footer</Footer>
                         </Layout>
                     </section>
                     <section>
                         <Layout style={{ color: '#ffffff' }}>
-                            <Herader className={c('header')}>Header</Herader>
+                            <Header className={c('header')}>Header</Header>
                             <Layout style={{ color: '#ffffff' }}>
                                 <Aside className={c('aside')}>Aside</Aside>
                                 <Content className={c('content')}>Content</Content>
@@ -55,7 +52,7 @@ const LayoutExample: React.SFC<LayoutExampleProps> = () => {
                     </section>
                     <section>
                         <Layout style={{ color: '#ffffff' }}>
-                            <Herader className={c('header')}>Header</Herader>
+                            <Header className={c('header')}>Header</Header>
                             <Layout style={{ color: '#ffffff' }}>
                                 <Content className={c('content')}>Content</Content>
                                 <Aside className={c('aside')}>Aside</Aside>
@@ -67,7 +64,7 @@ const LayoutExample: React.SFC<LayoutExampleProps> = () => {
                         <Layout style={{ color: '#ffffff' }}>
                             <Aside className={c('aside')}>Aside</Aside>
                             <Layout style={{ color: '#ffffff' }}>
-                                <Herader className={c('header')}>Header</Herader>
+                                <Header className={c('header')}>Header</Header>
                                 <Content className={c('content')}>Content</Content>
                                 <Footer className={c('footer')} >Footer</Footer>
                             </Layout>

@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout render Layout modal modale four 1`] = `
+<div
+  className="code-ui-layout"
+>
+  <header
+    className="code-ui-layout-header"
+  >
+    Header
+  </header>
+  <main
+    className="code-ui-layout-content"
+  >
+    <div
+      className="code-ui-layout"
+    >
+      <header
+        className="code-ui-layout-header"
+      >
+        Header
+      </header>
+      <main
+        className="code-ui-layout-content"
+      >
+        Content
+      </main>
+      <footer
+        className="code-ui-layout-footer"
+      >
+        Footer
+      </footer>
+    </div>
+  </main>
+  <footer
+    className="code-ui-layout-footer"
+  >
+    Footer
+  </footer>
+</div>
+`;
+
+exports[`Layout render Layout modal modale one 1`] = `
+<div
+  className="code-ui-layout"
+>
+  <header
+    className="code-ui-layout-header"
+  >
+    Header
+  </header>
+  <main
+    className="code-ui-layout-content"
+  >
+    Content
+  </main>
+  <footer
+    className="code-ui-layout-footer"
+  >
+    Footer
+  </footer>
+</div>
+`;
+
+exports[`Layout render Layout modal modale three 1`] = `
+<div
+  className="code-ui-layout"
+>
+  <header
+    className="code-ui-layout-header"
+  >
+    Header
+  </header>
+  <main
+    className="code-ui-layout-content"
+  >
+    <div
+      className="code-ui-layout code-ui-layout-hasAside"
+    >
+      <main
+        className="code-ui-layout-content"
+      >
+        Content
+      </main>
+      <aside
+        className="code-ui-layout-aside"
+      >
+        <div
+          className="code-ui-layout-aside-children"
+        >
+          Aside
+        </div>
+      </aside>
+    </div>
+  </main>
+  <footer
+    className="code-ui-layout-footer"
+  >
+    Footer
+  </footer>
+</div>
+`;
+
+exports[`Layout render Layout modal modale two 1`] = `
+<div
+  className="code-ui-layout"
+>
+  <header
+    className="code-ui-layout-header"
+  >
+    Header
+  </header>
+  <main
+    className="code-ui-layout-content"
+  >
+    <div
+      className="code-ui-layout code-ui-layout-hasAside"
+    >
+      <aside
+        className="code-ui-layout-aside"
+      >
+        <div
+          className="code-ui-layout-aside-children"
+        >
+          Aside
+        </div>
+      </aside>
+      <main
+        className="code-ui-layout-content"
+      >
+        Content
+      </main>
+    </div>
+  </main>
+  <footer
+    className="code-ui-layout-footer"
+  >
+    Footer
+  </footer>
+</div>
+`;

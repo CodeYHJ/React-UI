@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`input iconFix renders an \`preIconFix and sufIconFix\` component  1`] = `
+exports[`<Input/> iconFix renders an \`preIconFix and sufIconFix\` component  1`] = `
 <span
   className="code-ui-input-allIconFix"
   onClick={[Function]}
@@ -41,7 +41,7 @@ exports[`input iconFix renders an \`preIconFix and sufIconFix\` component  1`] =
 </span>
 `;
 
-exports[`input iconFix renders an \`preIconFix\` component  1`] = `
+exports[`<Input/> iconFix renders an \`preIconFix\` component  1`] = `
 <span
   className="code-ui-input-preIconFix"
 >
@@ -70,7 +70,7 @@ exports[`input iconFix renders an \`preIconFix\` component  1`] = `
 </span>
 `;
 
-exports[`input iconFix renders an \`sufIconFix\` component  1`] = `
+exports[`<Input/> iconFix renders an \`sufIconFix\` component  1`] = `
 <span
   className="code-ui-input-sufIconFix"
 >
@@ -99,46 +99,7 @@ exports[`input iconFix renders an \`sufIconFix\` component  1`] = `
 </span>
 `;
 
-exports[`input input type renders an \`type=number\` component 1`] = `
-<input
-  className="code-ui-input-inputLabel"
-  disabled={false}
-  onBlur={[Function]}
-  onChange={[Function]}
-  onFocus={[Function]}
-  placeholder="number"
-  type="number"
-  value=""
-/>
-`;
-
-exports[`input input type renders an \`type=password\` component 1`] = `
-<input
-  className="code-ui-input-inputLabel"
-  disabled={false}
-  onBlur={[Function]}
-  onChange={[Function]}
-  onFocus={[Function]}
-  placeholder="password"
-  type="password"
-  value=""
-/>
-`;
-
-exports[`input input type renders an \`type=text\` component 1`] = `
-<input
-  className="code-ui-input-inputLabel"
-  disabled={false}
-  onBlur={[Function]}
-  onChange={[Function]}
-  onFocus={[Function]}
-  placeholder="text"
-  type="text"
-  value=""
-/>
-`;
-
-exports[`input status render iconFix Disabled renders an \`preIconFix Disabled\` component  1`] = `
+exports[`<Input/> status render iconFix Disabled renders an \`preIconFix Disabled\` component  1`] = `
 <span
   className="code-ui-input-preIconFix code-ui-input-iconDisabled"
 >
@@ -167,7 +128,7 @@ exports[`input status render iconFix Disabled renders an \`preIconFix Disabled\`
 </span>
 `;
 
-exports[`input status render iconFix Disabled renders an \`preIconFix and sufIconFix Disabled\` component  1`] = `
+exports[`<Input/> status render iconFix Disabled renders an \`preIconFix and sufIconFix Disabled\` component  1`] = `
 <span
   className="code-ui-input-allIconFix code-ui-input-iconDisabled"
   onClick={[Function]}
@@ -208,7 +169,7 @@ exports[`input status render iconFix Disabled renders an \`preIconFix and sufIco
 </span>
 `;
 
-exports[`input status render iconFix Disabled renders an \`sufIconFix Disabled\` component  1`] = `
+exports[`<Input/> status render iconFix Disabled renders an \`sufIconFix Disabled\` component  1`] = `
 <span
   className="code-ui-input-sufIconFix code-ui-input-iconDisabled"
 >
@@ -237,7 +198,7 @@ exports[`input status render iconFix Disabled renders an \`sufIconFix Disabled\`
 </span>
 `;
 
-exports[`input status render iconFix Error renders an \`preIconFix Error\` component  1`] = `
+exports[`<Input/> status render iconFix Error renders an \`preIconFix Error\` component  1`] = `
 <span
   className="code-ui-input-preIconFix code-ui-input-iconError"
 >
@@ -266,7 +227,7 @@ exports[`input status render iconFix Error renders an \`preIconFix Error\` compo
 </span>
 `;
 
-exports[`input status render iconFix Error renders an \`preIconFix and sufIconFix Error\` component  1`] = `
+exports[`<Input/> status render iconFix Error renders an \`preIconFix and sufIconFix Error\` component  1`] = `
 <span
   className="code-ui-input-allIconFix code-ui-input-iconError"
   onClick={[Function]}
@@ -307,7 +268,7 @@ exports[`input status render iconFix Error renders an \`preIconFix and sufIconFi
 </span>
 `;
 
-exports[`input status render iconFix Error renders an \`sufIconFix Error\` component  1`] = `
+exports[`<Input/> status render iconFix Error renders an \`sufIconFix Error\` component  1`] = `
 <span
   className="code-ui-input-sufIconFix code-ui-input-iconError"
 >
@@ -336,7 +297,7 @@ exports[`input status render iconFix Error renders an \`sufIconFix Error\` compo
 </span>
 `;
 
-exports[`input status render strFix Disabled renders an \`preStrFix Disabled\` component  1`] = `
+exports[`<Input/> status render strFix Disabled renders an \`preStrFix Disabled\` component  1`] = `
 <span
   className="code-ui-input-preStrFix code-ui-input-strDisabled"
 >
@@ -359,7 +320,7 @@ exports[`input status render strFix Disabled renders an \`preStrFix Disabled\` c
 </span>
 `;
 
-exports[`input status render strFix Disabled renders an \`preStrFix and sufStrFix Disabled\` component  1`] = `
+exports[`<Input/> status render strFix Disabled renders an \`preStrFix and sufStrFix Disabled\` component  1`] = `
 <span
   className="code-ui-input-allStrFix code-ui-input-strDisabled"
   onClick={[Function]}
@@ -388,7 +349,7 @@ exports[`input status render strFix Disabled renders an \`preStrFix and sufStrFi
 </span>
 `;
 
-exports[`input status render strFix Disabled renders an \`sufStrFix Disabled\` component  1`] = `
+exports[`<Input/> status render strFix Disabled renders an \`sufStrFix Disabled\` component  1`] = `
 <span
   className="code-ui-input-sufStrFix code-ui-input-strDisabled"
 >
@@ -411,7 +372,7 @@ exports[`input status render strFix Disabled renders an \`sufStrFix Disabled\` c
 </span>
 `;
 
-exports[`input status render strFix Error renders an \`preStrFix Error\` component  1`] = `
+exports[`<Input/> status render strFix Error renders an \`preStrFix Error\` component  1`] = `
 <span
   className="code-ui-input-preStrFix code-ui-input-strError"
 >
@@ -434,7 +395,7 @@ exports[`input status render strFix Error renders an \`preStrFix Error\` compone
 </span>
 `;
 
-exports[`input status render strFix Error renders an \`preStrFix and sufStrFix Error\` component  1`] = `
+exports[`<Input/> status render strFix Error renders an \`preStrFix and sufStrFix Error\` component  1`] = `
 <span
   className="code-ui-input-allStrFix code-ui-input-strError"
   onClick={[Function]}
@@ -463,7 +424,7 @@ exports[`input status render strFix Error renders an \`preStrFix and sufStrFix E
 </span>
 `;
 
-exports[`input status render strFix Error renders an \`sufStrFix Error\` component  1`] = `
+exports[`<Input/> status render strFix Error renders an \`sufStrFix Error\` component  1`] = `
 <span
   className="code-ui-input-sufStrFix code-ui-input-strError"
 >
@@ -486,7 +447,7 @@ exports[`input status render strFix Error renders an \`sufStrFix Error\` compone
 </span>
 `;
 
-exports[`input strFix renders an \`preStrFix and sufStrFix\` component  1`] = `
+exports[`<Input/> strFix renders an \`preStrFix and sufStrFix\` component  1`] = `
 <span
   className="code-ui-input-allStrFix"
   onClick={[Function]}
@@ -515,7 +476,7 @@ exports[`input strFix renders an \`preStrFix and sufStrFix\` component  1`] = `
 </span>
 `;
 
-exports[`input strFix renders an \`preStrFix\` component  1`] = `
+exports[`<Input/> strFix renders an \`preStrFix\` component  1`] = `
 <span
   className="code-ui-input-preStrFix"
 >
@@ -538,7 +499,7 @@ exports[`input strFix renders an \`preStrFix\` component  1`] = `
 </span>
 `;
 
-exports[`input strFix renders an \`sufStrFix\` component  1`] = `
+exports[`<Input/> strFix renders an \`sufStrFix\` component  1`] = `
 <span
   className="code-ui-input-sufStrFix"
 >
@@ -559,4 +520,43 @@ exports[`input strFix renders an \`sufStrFix\` component  1`] = `
     .com
   </div>
 </span>
+`;
+
+exports[`<Input/> type renders an \`type=number\` component 1`] = `
+<input
+  className="code-ui-input-inputLabel"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  placeholder="number"
+  type="number"
+  value=""
+/>
+`;
+
+exports[`<Input/> type renders an \`type=password\` component 1`] = `
+<input
+  className="code-ui-input-inputLabel"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  placeholder="password"
+  type="password"
+  value=""
+/>
+`;
+
+exports[`<Input/> type renders an \`type=text\` component 1`] = `
+<input
+  className="code-ui-input-inputLabel"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  placeholder="text"
+  type="text"
+  value=""
+/>
 `;

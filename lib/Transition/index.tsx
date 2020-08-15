@@ -5,7 +5,9 @@ export interface TransitionProps extends HtmlHTMLAttributes<HTMLDivElement> {
     enter: CSSProperties,
     leave: CSSProperties,
     beforeEnter?: CSSProperties,
-    time: number
+    time: number,
+    opencb?: () => void,
+    closecb?: () => void
 }
 
 const Transition: React.SFC<TransitionProps> = (props) => {
@@ -46,6 +48,7 @@ const Transition: React.SFC<TransitionProps> = (props) => {
             updateRef.current = true
             if (childrenRef.current) {
                 show(childrenRef.current)
+                props.opencb && props.opencb()
             }
             setControllerVisible(true)
         } else if (updateRef.current && !props.visible) {
@@ -54,6 +57,7 @@ const Transition: React.SFC<TransitionProps> = (props) => {
                 updateRef.current = false
                 const timer = setTimeout(() => {
                     setControllerVisible(false)
+                    props.closecb && props.closecb()
                     clearTimeout(timer)
                 }, props.time * 1000);
             }
