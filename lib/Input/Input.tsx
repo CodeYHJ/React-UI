@@ -18,13 +18,14 @@ export interface InputProps extends HtmlHTMLAttributes<HTMLInputElement> {
     preStrFix?: string
     sufStrFix?: string
     error?: boolean
-    type?: 'text' | 'password' | 'number'
+    type?: 'text' | 'password' | 'number',
+    name?: string
 }
 const c = classPre('input')
 
 const Input: React.SFC<InputProps> = (props) => {
 
-    const { className, value, defaultValue, placeholder, onChange, onFocus, onBlur, preIconFix, sufIconFix, preStrFix, sufStrFix, disabled, error, type, ...others } = props
+    const { className, value, defaultValue, placeholder, onChange, onFocus, onBlur, preIconFix, sufIconFix, preStrFix, sufStrFix, disabled, error, name, type, ...others } = props
     const { formItemStore, dispatchForFormItem } = useContext(FormItemContext)
     const [inputValue, setInputValue] = useState(defaultValue || value || '')
     const InputBase = (cls: string) => {
@@ -43,7 +44,8 @@ const Input: React.SFC<InputProps> = (props) => {
 
     const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (formItemStore) {
-            dispatchForFormItem({ type: "UPDATE", playload: { value: inputValue } })
+            if (!name) throw ('Input标签必须定义name属性')
+            dispatchForFormItem({ type: "UPDATE", playload: { [name]: e.target.value } })
         }
         setInputValue(e.target.value)
         onChange && onChange(e)
@@ -53,7 +55,8 @@ const Input: React.SFC<InputProps> = (props) => {
             setFocus(true)
         }
         if (formItemStore) {
-            dispatchForFormItem({ type: "UPDATE", playload: { value: inputValue } })
+            if (!name) return
+            dispatchForFormItem({ type: "UPDATE", playload: { [name]: e.target.value } })
         }
 
         onFocus && onFocus(e)

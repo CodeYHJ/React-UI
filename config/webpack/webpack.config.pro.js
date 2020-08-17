@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const optimizeCssPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlwebpackPlugin = require("html-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const pathFn = require("./utils");
+const { pathFn } = require("./utils");
 /**
  * @type {import('webpack').Configuration}
  */

@@ -2,7 +2,7 @@
 import React, { Dispatch, createContext, useReducer } from 'react';
 
 type InitValue = {
-    value: string
+    [key in string]: string
 }
 type Action = { type: "UPDATE", playload: InitValue }
 
@@ -11,7 +11,6 @@ type FormItemContext = {
     dispatchForFormItem: Dispatch<Action>
 }
 const initValue = {
-    value: ''
 }
 const formItemReducer = (state: InitValue, action: Action) => {
     switch (action.type) {

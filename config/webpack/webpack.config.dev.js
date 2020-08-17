@@ -4,7 +4,7 @@ const HtmlwebpackPlugin = require("html-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const HardSourceWebpackPlugin = require("hard-source-webpack-plugin");
 
-const pathFn = require("./utils");
+const { pathFn } = require("./utils");
 
 /**
  * @type {import('webpack').Configuration}

@@ -1,4 +1,4 @@
-const pathFn = require("./utils");
+const { pathFn } = require("./utils");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
@@ -26,11 +26,9 @@ module.exports = {
       include: pathFn("./lib"),
       exclude: /node_modules/,
       use: [
-        process.env.NODE_ENV === "dev"
-          ? "style-loader"
-          : process.env.NODE_ENV === "lib"
-          ? ""
-          : MiniCssExtractPlugin.loader,
+        process.env.NODE_ENV === "lib"
+          ? MiniCssExtractPlugin.loader
+          : "style-loader",
         "css-loader",
         "less-loader",
         // 在这里引入要增加的全局less文件
@@ -57,7 +55,10 @@ module.exports = {
         {
           loader: "style-resources-loader",
           options: {
-            patterns: [pathFn("./lib/var.less"),pathFn("./example/util/util.less")],
+            patterns: [
+              pathFn("./lib/var.less"),
+              pathFn("./example/util/util.less"),
+            ],
           },
         },
       ],

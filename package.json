@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --config ./config/webpack/webpack.config.dev.js --hot",
     "build:doces": "cross-env NODE_ENV=pro webpack --config ./config/webpack/webpack.config.pro.js",
-    "build:lib": "cross-env NODE_ENV=lib webpack --config ./config/webpack/webpack.config.lib.js",
+    "build:lib": "cross-env NODE_ENV=lib webpack --config ./config/webpack/webpack.config.lib.js && tsc --declaration",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",

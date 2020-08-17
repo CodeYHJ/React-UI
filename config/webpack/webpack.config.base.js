@@ -1,4 +1,4 @@
-const pathFn = require("./utils");
+const { pathFn } = require("./utils");
 const modules = require("./moduleConfig");
 const webpack = require("webpack");
 /**
@@ -16,7 +16,7 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js", ".jsx"],
     alias: {
       "@lib": pathFn("./lib"),
-      "@assets":pathFn("./example/assets"),
+      "@assets": pathFn("./example/assets"),
     },
   },
   module: modules,

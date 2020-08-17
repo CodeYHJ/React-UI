@@ -1,27 +1,38 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const pathFn = require("./utils");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { pathFn, getEntry } = require("./utils");
 const modules = require("./moduleConfig");
-
+// console.log(getEntry())
 /**
  * @type {import('webpack').Configuration}
  */
 const proConfig = {
   mode: "production",
-  entry: { index: pathFn("./lib/index.tsx") },
+  // entry: { index: pathFn("./lib/index.tsx") },
+  entry: getEntry(),
   output: {
     path: pathFn("./dist/lib"),
     filename: "[name]/index.js",
-    library: "CodeUI",
+    library: "code-ui-react",
     libraryTarget: "umd",
+    libraryExport: "default",
+    umdNamedDefine: true,
   },
-  module:modules,
+  module: modules,
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx"],
     alias: {
       "@lib": pathFn("./lib"),
     },
   },
-  plugins: [new CleanWebpackPlugin()],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "[name]/index.css",
+      chunkFilename: "[name]/index.css",
+      ignoreOrder: true, // Enable to remove warnings about conflicting order
+    }),
+  ],
 
   externals: {
     react: {

@@ -1,29 +1,40 @@
-import React from 'react';
+import React, { useContext, useEffect, useMemo, cloneElement, ReactElement } from 'react';
 
 import { classPre } from '@lib/utils';
 
 import './FormItem.less'
-import { FormItemProvider } from './FormItemContext';
-// type ruleProps = [require]
+import { FormItemProvider, FormItemContext } from './FormItemContext';
+type ruleProps = { require: boolean, message: string }
 export interface FormItemProps {
-    require?: boolean,
+    require?: [ruleProps],
     label: string,
 }
 const c = classPre('formItem')
 
 const FormItem: React.SFC<FormItemProps> = (props) => {
+
+    const { formItemStore, dispatchForFormItem } = useContext(FormItemContext)
+
+    const isPass = useMemo(() => {
+        return true
+    }, [])
+
+    useEffect(() => {
+        console.log(formItemStore, 'formItemStore')
+
+    }, [formItemStore])
+
     return (
         <div className={c()}>
             <div className={c('itemBox')}>
                 <span className={c('label')}>{props.label}</span>
                 <FormItemProvider>
-                    {props.children}
+                    {cloneElement(props.children as ReactElement, { error: false })}
                 </FormItemProvider>
             </div>
         </div>
+
     );
 }
-FormItem.defaultProps = {
-    require: false
-}
+
 export default FormItem;
