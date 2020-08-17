@@ -16,9 +16,9 @@ const Header: React.SFC<HeaderProps> = () => {
             <span className={c('component')}>
                 <Link to="/" >组件</Link>
             </span>
-            <span className={c('document')}>
+            {/* <span className={c('document')}>
                 <Link to="/" >文档</Link>
-            </span>
+            </span> */}
             <span className={c('github')}>
                 <a className={c('github-link')} href="https://github.com/CodeYHJ/React-UI" target="_blank" rel="noopener noreferrer">
                     <span className={c('github-png')}></span>

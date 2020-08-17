@@ -4,7 +4,6 @@ import ExampleBox from '../../component/ExampleBox';
 import Icon from '@lib/Icon/localIcon';
 import ExampleApi from '../../component/ExampleApi';
 import "./index.less";
-import createIcon from '@lib/Icon/createIcon';
 import { Form, Input } from '@lib/index';
 export interface FormExampleProps {
 
