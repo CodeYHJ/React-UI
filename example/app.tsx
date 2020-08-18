@@ -38,15 +38,15 @@ const App: React.SFC<AppProps> = () => {
                         </Aside>
                         <Content >
                             <Switch>
-                                <Route path="/introduction" exact component={Introduction} />
-                                <Route path="/color" exact component={Color} />
-                                <Route path="/layout" exact component={LayoutExample} />
-                                <Route path="/button" exact component={ButtonExample} />
-                                <Route path="/icon" exact component={IconExample} />
-                                <Route path="/modal" exact component={ModalExample} />
-                                <Route path="/form" exact component={FormExample} />
-                                <Route path="/input" exact component={InputExample} />
-                                <Redirect exact to="/introduction" from="/" />
+                                <Route path="/react/introduction" exact component={Introduction} />
+                                <Route path="/react/color" exact component={Color} />
+                                <Route path="/react/layout" exact component={LayoutExample} />
+                                <Route path="/react/button" exact component={ButtonExample} />
+                                <Route path="/react/icon" exact component={IconExample} />
+                                <Route path="/react/modal" exact component={ModalExample} />
+                                <Route path="/react/form" exact component={FormExample} />
+                                <Route path="/react/input" exact component={InputExample} />
+                                <Redirect exact to="/react/introduction" from="/react" />
                             </Switch>
 
                         </Content>

@@ -11,10 +11,10 @@ const Header: React.SFC<HeaderProps> = () => {
     return (
         <div className={c()}>
             <span className={c('logo')}>
-                <Link to="/" >CodeUI</Link>
+                <Link to="/react" >CodeUI</Link>
             </span>
             <span className={c('component')}>
-                <Link to="/" >组件</Link>
+                <Link to="/react" >组件</Link>
             </span>
             {/* <span className={c('document')}>
                 <Link to="/" >文档</Link>

@@ -15,7 +15,7 @@ const proConfig = {
     path: pathFn("./examplePage"),
     filename: "js/[name].[chunkhash].js",
     chunkFilename: "js/[name].[chunkhash].js",
-    publicPath: "/",
+    publicPath: "/react",
   },
 
   plugins: [

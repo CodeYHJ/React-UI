@@ -13,28 +13,28 @@ const Aside: React.SFC<AsideProps> = () => {
             <h3 className={c('title')}>组件</h3>
             <ul className={c('ul')}>
                 <li className={c('li')}>
-                    <NavLink className={c('navLink')} to="/introduction" >Introduction</NavLink>
+                    <NavLink className={c('navLink')} to="/react/introduction" >Introduction</NavLink>
                 </li>
                 <li className={c('li')}>
-                    <NavLink className={c('navLink')} to="/color" >Color</NavLink>
+                    <NavLink className={c('navLink')} to="/react/color" >Color</NavLink>
                 </li>
                 <li className={c('li')}>
-                    <NavLink className={c('navLink')} to="/layout" >layout</NavLink>
+                    <NavLink className={c('navLink')} to="/react/layout" >layout</NavLink>
                 </li>
                 <li className={c('li')}>
-                    <NavLink className={c('navLink')} to="/button" >Button</NavLink>
+                    <NavLink className={c('navLink')} to="/react/button" >Button</NavLink>
                 </li>
                 <li className={c('li')}>
-                    <NavLink className={c('navLink')} to="/icon" >Icon</NavLink>
+                    <NavLink className={c('navLink')} to="/react/icon" >Icon</NavLink>
                 </li>
                 <li className={c('li')}>
-                    <NavLink className={c('navLink')} to="/modal" >Modal</NavLink>
+                    <NavLink className={c('navLink')} to="/react/modal" >Modal</NavLink>
                 </li>
                 {/* <li className={c('li')}>
-                    <NavLink className={c('navLink')} to="/form" >Form</NavLink>
+                    <NavLink className={c('navLink')} to="/react/form" >Form</NavLink>
                 </li> */}
                 <li className={c('li')}>
-                    <NavLink className={c('navLink')} to="/input" >Input</NavLink>
+                    <NavLink className={c('navLink')} to="/react/input" >Input</NavLink>
                 </li>
             </ul>
         </div>
