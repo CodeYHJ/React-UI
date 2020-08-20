@@ -8482,7 +8482,7 @@ typedarray@^0.0.6:
 
 typescript@^3.9.7:
   version "3.9.7"
-  resolved "https://registry.npm.taobao.org/typescript/download/typescript-3.9.7.tgz?cache=0&sync_timestamp=1596755619589&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftypescript%2Fdownload%2Ftypescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
+  resolved "https://registry.npm.taobao.org/typescript/download/typescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
   integrity sha1-mNYApevcOPQMsndSLxLcgA6eJfo=
 
 uglify-js@3.4.x:

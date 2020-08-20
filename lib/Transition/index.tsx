@@ -1,5 +1,6 @@
-import React, { useRef, useState, CSSProperties, HtmlHTMLAttributes, cloneElement, ReactElement, useEffect } from 'react';
+import React, { useRef, useState, CSSProperties, HtmlHTMLAttributes, cloneElement, ReactElement, useEffect, useLayoutEffect } from 'react';
 import './index.less'
+import { DefaultProps } from 'prism-react-renderer';
 export interface TransitionProps extends HtmlHTMLAttributes<HTMLDivElement> {
     visible: boolean,
     enter: CSSProperties,
@@ -7,10 +8,12 @@ export interface TransitionProps extends HtmlHTMLAttributes<HTMLDivElement> {
     beforeEnter?: CSSProperties,
     time: number,
     opencb?: () => void,
-    closecb?: () => void
+    closecb?: () => void,
 }
 
-const Transition: React.SFC<TransitionProps> = (props) => {
+
+const Transition: React.SFC<TransitionProps> & { defaultProps: typeof defaultProps } = (props) => {
+    // const { time = .5 } = props
     const childrenRef = useRef<HTMLDivElement>(null)
     const updateRef = useRef<Boolean>(false)
     const [controllerVisible, setControllerVisible] = useState(false)
@@ -25,6 +28,7 @@ const Transition: React.SFC<TransitionProps> = (props) => {
         Object.assign(node.style, defaultStyle, style)
     }
     const handleEnter = (node: HTMLElement) => {
+        node.getBoundingClientRect()
         setStyle(node, props.enter as CSSProperties, props.time)
     }
     const handleLeave = (node: HTMLElement) => {
@@ -41,7 +45,7 @@ const Transition: React.SFC<TransitionProps> = (props) => {
     const hide = (node: HTMLElement) => {
         handleLeave(node)
     }
-    useEffect(() => {
+    useLayoutEffect(() => {
         // 首次渲染
         if (!updateRef.current && props.visible) {
             // 记录是否首次予以判断是否更新
@@ -67,7 +71,11 @@ const Transition: React.SFC<TransitionProps> = (props) => {
 
     return (props.visible || controllerVisible) ? cloneElement(props.children as ReactElement, { style: !controllerVisible ? props.beforeEnter : {}, ref: childrenRef }) : null
 }
-Transition.defaultProps = {
-    time: .5
-}
+
+const defaultProps = { time: .5 }
+
+Transition.defaultProps = defaultProps
+
+
+
 export default Transition;

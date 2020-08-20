@@ -1,8 +1,8 @@
-import React, { PropsWithChildren, ReactElement } from 'react';
-
+import React, { ReactElement, useEffect, useContext } from 'react';
 import { classPre } from '@lib/utils';
 import './Form.less'
 import FormItem, { FormItemProps } from './FormItem';
+import { FormItemProvider, FormItemContext } from './FormItemContext';
 export interface FormProps {
     children: ReactElement<typeof FormItem>[]
 }
@@ -10,9 +10,16 @@ export interface FormProps {
 const c = classPre('form')
 
 const Form: React.SFC<FormProps> = (props) => {
+
+
+
+
     return (
         <form className={c()}>
-            {props.children}
+            <FormItemProvider>
+                {props.children}
+            </FormItemProvider>
+
         </form>
     );
 }

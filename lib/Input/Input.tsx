@@ -3,7 +3,6 @@ import React, { HtmlHTMLAttributes, ReactNode, useState, useRef, useContext } fr
 import { classPre } from '@lib/utils';
 
 import './input.less'
-import { FormItemContext } from '@lib/Form/FormItemContext';
 
 export interface InputProps extends HtmlHTMLAttributes<HTMLInputElement> {
     value?: string
@@ -26,14 +25,12 @@ const c = classPre('input')
 const Input: React.SFC<InputProps> = (props) => {
 
     const { className, value, defaultValue, placeholder, onChange, onFocus, onBlur, preIconFix, sufIconFix, preStrFix, sufStrFix, disabled, error, name, type, ...others } = props
-    const { formItemStore, dispatchForFormItem } = useContext(FormItemContext)
-    const [inputValue, setInputValue] = useState(defaultValue || value || '')
     const InputBase = (cls: string) => {
         let localDisabled = false
         if (!error && disabled) {
             localDisabled = true
         }
-        return (<input ref={inputRef} {...others} className={cls} value={inputValue} onChange={handleOnChange} onFocus={handleOnFocus} onBlur={handleOnBlur} disabled={localDisabled} placeholder={placeholder} type={type} />)
+        return (<input ref={inputRef} {...others} defaultValue={props.defaultValue} className={cls} value={props.value} onChange={handleOnChange} onFocus={handleOnFocus} onBlur={handleOnBlur} disabled={localDisabled} placeholder={placeholder} type={type} />)
     }
 
     let baseInputCls = c('inputLabel')
@@ -43,29 +40,18 @@ const Input: React.SFC<InputProps> = (props) => {
     const inputRef = useRef<HTMLInputElement>(null)
 
     const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (formItemStore) {
-            if (!name) throw ('Input标签必须定义name属性')
-            dispatchForFormItem({ type: "UPDATE", playload: { [name]: e.target.value } })
-        }
-        setInputValue(e.target.value)
         onChange && onChange(e)
     }
     const handleOnFocus = (e: React.FocusEvent<HTMLInputElement>) => {
         if (!error && (preIconFix || sufIconFix)) {
             setFocus(true)
         }
-        if (formItemStore) {
-            if (!name) return
-            dispatchForFormItem({ type: "UPDATE", playload: { [name]: e.target.value } })
-        }
-
         onFocus && onFocus(e)
     }
     const handleOnBlur = (e: React.FocusEvent<HTMLInputElement>) => {
         if (!error && (preIconFix || sufIconFix)) {
             setFocus(false)
         }
-
         onBlur && onBlur(e)
     }
 
@@ -207,4 +193,5 @@ Input.defaultProps = {
     error: false,
     type: 'text'
 }
+
 export default Input;

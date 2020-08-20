@@ -12,7 +12,7 @@ type FormItemContext = {
 }
 const initValue = {
 }
-const formItemReducer = (state: InitValue, action: Action) => {
+const formItemReducer = (state: InitValue = initValue, action: Action) => {
     switch (action.type) {
         case "UPDATE":
             return { ...state, ...action.playload }
