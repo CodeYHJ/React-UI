@@ -1,8 +1,7 @@
 import React from 'react';
-import Input from "../index";
 import renderer from "react-test-renderer";
 import { shallow, mount } from "enzyme";
-import { Icon } from '@lib/index';
+import { Icon, Input } from '@lib/index';
 
 describe('<Input/>', () => {
     describe("type", () => {

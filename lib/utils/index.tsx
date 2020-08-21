@@ -31,3 +31,6 @@ export const verification = (value: string | number, rule: RuleType, message: st
     }
     return baseResult
 }
+export const hasOwn = (target: Object, key: string) => {
+    return Object.prototype.hasOwnProperty.call(target, key)
+}

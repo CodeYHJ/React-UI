@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form render render an Form Component 1`] = `
+<form
+  className="code-ui-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="code-ui-formItem"
+  >
+    <div
+      className="code-ui-formItem-itemBox"
+    >
+      <span
+        className="code-ui-formItem-label"
+      >
+        test
+      </span>
+      <div
+        className="code-ui-formItemInput"
+      >
+        <div
+          className="code-ui-formItemInput-input"
+        >
+          <input
+            className="code-ui-input-inputLabel"
+            disabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+`;

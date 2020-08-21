@@ -24,7 +24,6 @@ exports[`<Input/> iconFix renders an \`preIconFix and sufIconFix\` component  1`
     onFocus={[Function]}
     placeholder="前/后置Icon"
     type="text"
-    value=""
   />
   <span
     className="code-ui-input-icon"
@@ -65,7 +64,6 @@ exports[`<Input/> iconFix renders an \`preIconFix\` component  1`] = `
     onFocus={[Function]}
     placeholder="前置Icon"
     type="text"
-    value=""
   />
 </span>
 `;
@@ -82,7 +80,6 @@ exports[`<Input/> iconFix renders an \`sufIconFix\` component  1`] = `
     onFocus={[Function]}
     placeholder="后置Icon"
     type="text"
-    value=""
   />
   <span
     className="code-ui-input-icon"
@@ -123,7 +120,6 @@ exports[`<Input/> status render iconFix Disabled renders an \`preIconFix Disable
     onFocus={[Function]}
     placeholder="前置Icon"
     type="text"
-    value=""
   />
 </span>
 `;
@@ -152,7 +148,6 @@ exports[`<Input/> status render iconFix Disabled renders an \`preIconFix and suf
     onFocus={[Function]}
     placeholder="前/后置Icon"
     type="text"
-    value=""
   />
   <span
     className="code-ui-input-icon"
@@ -181,7 +176,6 @@ exports[`<Input/> status render iconFix Disabled renders an \`sufIconFix Disable
     onFocus={[Function]}
     placeholder="后置Icon"
     type="text"
-    value=""
   />
   <span
     className="code-ui-input-icon"
@@ -222,7 +216,6 @@ exports[`<Input/> status render iconFix Error renders an \`preIconFix Error\` co
     onFocus={[Function]}
     placeholder="前置Icon"
     type="text"
-    value=""
   />
 </span>
 `;
@@ -251,7 +244,6 @@ exports[`<Input/> status render iconFix Error renders an \`preIconFix and sufIco
     onFocus={[Function]}
     placeholder="前/后置Icon"
     type="text"
-    value=""
   />
   <span
     className="code-ui-input-icon"
@@ -280,7 +272,6 @@ exports[`<Input/> status render iconFix Error renders an \`sufIconFix Error\` co
     onFocus={[Function]}
     placeholder="后置Icon"
     type="text"
-    value=""
   />
   <span
     className="code-ui-input-icon"
@@ -315,7 +306,6 @@ exports[`<Input/> status render strFix Disabled renders an \`preStrFix Disabled\
     onFocus={[Function]}
     placeholder="固定文字块 Error"
     type="text"
-    value=""
   />
 </span>
 `;
@@ -338,7 +328,6 @@ exports[`<Input/> status render strFix Disabled renders an \`preStrFix and sufSt
     onFocus={[Function]}
     placeholder="baidu"
     type="text"
-    value=""
   />
   <span
     className="code-ui-input-str"
@@ -361,7 +350,6 @@ exports[`<Input/> status render strFix Disabled renders an \`sufStrFix Disabled\
     onFocus={[Function]}
     placeholder="http://baidu"
     type="text"
-    value=""
   />
   <div
     className="code-ui-input-str"
@@ -390,7 +378,6 @@ exports[`<Input/> status render strFix Error renders an \`preStrFix Error\` comp
     onFocus={[Function]}
     placeholder="固定文字块 Error"
     type="text"
-    value=""
   />
 </span>
 `;
@@ -413,7 +400,6 @@ exports[`<Input/> status render strFix Error renders an \`preStrFix and sufStrFi
     onFocus={[Function]}
     placeholder="baidu"
     type="text"
-    value=""
   />
   <span
     className="code-ui-input-str"
@@ -436,7 +422,6 @@ exports[`<Input/> status render strFix Error renders an \`sufStrFix Error\` comp
     onFocus={[Function]}
     placeholder="http://baidu"
     type="text"
-    value=""
   />
   <div
     className="code-ui-input-str"
@@ -465,7 +450,6 @@ exports[`<Input/> strFix renders an \`preStrFix and sufStrFix\` component  1`] =
     onFocus={[Function]}
     placeholder="baidu"
     type="text"
-    value=""
   />
   <span
     className="code-ui-input-str"
@@ -494,7 +478,6 @@ exports[`<Input/> strFix renders an \`preStrFix\` component  1`] = `
     onFocus={[Function]}
     placeholder="baidu.com"
     type="text"
-    value=""
   />
 </span>
 `;
@@ -511,7 +494,6 @@ exports[`<Input/> strFix renders an \`sufStrFix\` component  1`] = `
     onFocus={[Function]}
     placeholder="http://baidu"
     type="text"
-    value=""
   />
   <div
     className="code-ui-input-str"
@@ -531,7 +513,6 @@ exports[`<Input/> type renders an \`type=number\` component 1`] = `
   onFocus={[Function]}
   placeholder="number"
   type="number"
-  value=""
 />
 `;
 
@@ -544,7 +525,6 @@ exports[`<Input/> type renders an \`type=password\` component 1`] = `
   onFocus={[Function]}
   placeholder="password"
   type="password"
-  value=""
 />
 `;
 
@@ -557,6 +537,5 @@ exports[`<Input/> type renders an \`type=text\` component 1`] = `
   onFocus={[Function]}
   placeholder="text"
   type="text"
-  value=""
 />
 `;

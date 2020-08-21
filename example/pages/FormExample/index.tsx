@@ -1,54 +1,50 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, useContext } from 'react';
 import { classPre } from "../../util/index"
 import ExampleBox from '../../component/ExampleBox';
 import Icon from '@lib/Icon/localIcon';
 import ExampleApi from '../../component/ExampleApi';
 import "./index.less";
-import { Form, Input } from '@lib/index';
+import { Form, Input, Button } from '@lib/index';
+import { FormContext } from '@lib/Form/FormContext';
 export interface FormExampleProps {
 
 }
 
-const c = classPre('Form')
+const c = classPre('form')
 
 const FormExample: React.SFC<FormExampleProps> = () => {
-    const icon = <Icon name="cancel" />
-    const [value, setValue] = useState('')
-    const [value1, setValue1] = useState('')
+    const passwordIcon = <Icon name="password" />
+    const userIcon = <Icon name="user" />
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setValue(e.target.value)
+    const [userValue, setUserValue] = useState('')
+    const [passwordValue, setPasswordValue] = useState('')
+
+    const handleUserChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setUserValue(e.target.value)
     }
-    const handleChange1 = (e: ChangeEvent<HTMLInputElement>) => {
-        setValue1(e.target.value)
+    const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setPasswordValue(e.target.value)
     }
+    const forRef = Form.userForm()
     return (
         <div className={c()}>
-            <ExampleBox description="Form表单" title="Form">
-                <Form>
-                    <Form.Item label="bsese" rule={{ require: true, message: "check", rule: { type: 'text', len: 10, min: 3, max: 10 } }}>
-                        <Input name="test" onChange={handleChange} value={value} />
-                    </Form.Item>
-                    <Form.Item label="preIconFix">
-                        <Input name="test1" preIconFix={icon} onChange={handleChange1} value={value1} />
-                    </Form.Item>
-                    {/* <Form.Item label="sufIconFix">
-                        <Input sufIconFix={icon} />
-                    </Form.Item>
-                    <Form.Item label="allIconFix" >
-                        <Input sufIconFix={icon} defaultValue='asdasd' preIconFix={icon} />
-                    </Form.Item>
-                    <Form.Item label="preStrFix">
-                        <Input preStrFix='http://' />
-                    </Form.Item>
-                    <Form.Item label="sufStrFix">
-                        <Input sufStrFix='.com' />
-                    </Form.Item>
-                    <Form.Item label="allStrFix">
-                        <Input preStrFix='http://' sufStrFix='.com' />
-                    </Form.Item> */}
-                </Form>
-            </ExampleBox>
+            <section>
+                <h1 className={c('title')}>Form</h1>
+                <p className={c('p')}>Form表单</p>
+            </section>
+            <section>
+                <h2 className={c('title')}>代码示例</h2>
+                <ExampleBox description="表单数据验证，提交，是否必填" title="基本使用" code={require('!!raw-loader!./code/baseCode.tsx')}>
+                    <Form form={forRef}>
+                        <Form.Item label="账号" rule={{ require: true, message: "账号长度必须大于等于3", formatterRule: { type: 'text', len: 10, min: 3, max: 10 } }}>
+                            <Input name="user" preIconFix={userIcon} onChange={handleUserChange} value={userValue} />
+                        </Form.Item>
+                        <Form.Item label="密码" rule={{ message: "密码长度必须大于3，小于10", formatterRule: { type: 'text', len: 10, min: 3, max: 10 }, trigger: "blur" }}>
+                            <Input name="password" preIconFix={passwordIcon} onChange={handlePasswordChange} value={passwordValue} />
+                        </Form.Item>
+                    </Form>
+                </ExampleBox>
+            </section>
         </div>
     );
 }

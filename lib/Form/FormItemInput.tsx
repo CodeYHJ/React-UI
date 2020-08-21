@@ -10,7 +10,6 @@ const c = classPre('formItemInput')
 const FormItemInput: React.SFC<FormItemInputProps> = (props) => {
     const { errorVisible = false, message } = props
     const cls = [c(), props.className].filter(Boolean).join(' ')
-    console.log("input",props)
     return (
         <div className={cls} >
             <div className={c('input')}>
