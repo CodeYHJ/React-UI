@@ -1,6 +1,6 @@
 .code-ui-example-app {
-  width: "100vw";
-  height: "100vh";
+  min-height: 100vh;
+  overflow-x: hidden;
   &-footer {
     text-align: center;
     line-height: 50px;
@@ -8,4 +8,10 @@
     background: #000000;
     color: #ffffff;
   }
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
 }

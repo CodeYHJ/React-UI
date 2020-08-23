@@ -19,6 +19,7 @@ import { classPre } from "./util/index";
 import './app.less'
 import FormExample from './pages/FormExample';
 import InputExample from './pages/InputExample';
+import GirdExample from './pages/GirdExample';
 
 interface AppProps {
 
@@ -27,7 +28,7 @@ const c = classPre('app')
 const App: React.SFC<AppProps> = () => {
     return (
         <Router>
-            <Layout className={c()} style={{ width: '100vw', height: '100vh' }}>
+            <Layout className={c()} >
                 <Header>
                     <HeaderPage />
                 </Header>
@@ -46,6 +47,8 @@ const App: React.SFC<AppProps> = () => {
                                 <Route path="/react/modal" exact component={ModalExample} />
                                 <Route path="/react/form" exact component={FormExample} />
                                 <Route path="/react/input" exact component={InputExample} />
+                                <Route path="/react/gird" exact component={GirdExample} />
+
                                 <Redirect exact to="/react/introduction" from="/react" />
                             </Switch>
 

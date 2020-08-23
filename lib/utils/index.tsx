@@ -1,8 +1,14 @@
 import { RuleType } from "@lib/Form/FormItem"
 
-export const classPre = (pre?: string) => {
+export const classPre = (pre?: string | number) => {
+    if (pre && typeof pre === 'number') {
+        pre = String(pre)
+    }
     const preClass = ['code-ui', pre].filter(Boolean).join('-')
-    return function (className?: string) {
+    return function (className?: string | number) {
+        if (pre && typeof pre === 'number') {
+            pre = String(pre)
+        }
         return [preClass, className].filter(Boolean).join('-')
     }
 }

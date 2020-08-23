@@ -1,10 +1,12 @@
-import React, { useContext, useMemo, cloneElement, ReactElement, useState, useRef } from 'react';
+import React, { useContext, useMemo, cloneElement, ReactElement } from 'react';
 import { classPre, verification, hasOwn } from '@lib/utils';
 import './FormItem.less'
 import { InputProps } from '@lib/Input/Input';
 import FormItemInput from './FormItemInput';
 import { FormContext } from './FormContext';
 import { FormInstance } from './hook/useForm';
+import Row from '@lib/Gird';
+const { Col } = Row
 export type RuleType = {
     type: 'text',
     len: number,
@@ -128,12 +130,20 @@ const FormItem: React.SFC<FormItemProps> = (props) => {
     return (
         <div className={c()} >
             <div className={c('itemBox')}>
-                <span className={labelCls}>{props.label}</span>
-                <FormItemInput errorVisible={
-                    result.err
-                } message={result.message} >
-                    {cloneElement(props.children as ReactElement, childProps)}
-                </FormItemInput>
+                <Row>
+                    <Col span={8}>
+                        <span className={labelCls}>{props.label}</span>
+                    </Col>
+                    <Col span={12}>
+                        <FormItemInput errorVisible={
+                            result.err
+                        } message={result.message} >
+                            {cloneElement(props.children as ReactElement, childProps)}
+                        </FormItemInput>
+                    </Col>
+
+                </Row>
+
             </div>
         </div>
 

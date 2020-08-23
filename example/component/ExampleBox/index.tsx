@@ -1,8 +1,7 @@
 import React, { HtmlHTMLAttributes, useState, ReactNode } from 'react';
 import { classPre } from "../../util/index";
 import './index.less'
-import Transition from '../Transition';
-import Icon from '@lib/Icon/localIcon';
+import { Transition, Icon } from '@lib/index';
 import Highlight, { defaultProps } from "prism-react-renderer";
 export interface ExampleBoxProps extends HtmlHTMLAttributes<HTMLDivElement> {
     title: string,
@@ -20,8 +19,7 @@ const ExampleBox: React.SFC<ExampleBoxProps> = (props) => {
     }
     const renderTransition = () => {
         if (props.code) {
-            return <Transition visible={open} beforeEnter={{ maxHeight: '0px' }} enter={{ maxHeight: "1000vh" }
-            } leave={{ maxHeight: '0px' }
+            return <Transition visible={open} beforeEnter={{ maxHeight: '0px' }} enter={{ maxHeight: '1000vh' }} leave={{ maxHeight: '0px' }
             } time={.6} >
                 <div>
                     <Highlight {...defaultProps} code={props.code.default} language="jsx">

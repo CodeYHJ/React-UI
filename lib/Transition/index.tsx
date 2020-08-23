@@ -13,9 +13,10 @@ export interface TransitionProps extends HtmlHTMLAttributes<HTMLDivElement> {
 
 
 const Transition: React.SFC<TransitionProps> & { defaultProps: typeof defaultProps } = (props) => {
-    // const { time = .5 } = props
     const childrenRef = useRef<HTMLDivElement>(null)
     const updateRef = useRef<Boolean>(false)
+    const timeRef = useRef<NodeJS.Timeout>()
+
     const [controllerVisible, setControllerVisible] = useState(false)
     const setStyle = (node: HTMLElement, style: CSSProperties, time: number) => {
         const defaultStyle: CSSProperties = {
@@ -25,13 +26,17 @@ const Transition: React.SFC<TransitionProps> & { defaultProps: typeof defaultPro
             willChange: 'all',
             overflow: 'hidden',
         }
-        Object.assign(node.style, defaultStyle, style)
+        const megerStyle = { ...defaultStyle, ...style }
+        for (let s in megerStyle) {
+            node.style[s] = megerStyle[s]
+        }
     }
     const handleEnter = (node: HTMLElement) => {
         node.getBoundingClientRect()
         setStyle(node, props.enter as CSSProperties, props.time)
     }
     const handleLeave = (node: HTMLElement) => {
+        node.getBoundingClientRect()
         setStyle(node, props.leave as CSSProperties, props.time)
     }
 
@@ -46,6 +51,7 @@ const Transition: React.SFC<TransitionProps> & { defaultProps: typeof defaultPro
         handleLeave(node)
     }
     useLayoutEffect(() => {
+        if (timeRef.current) return
         // 首次渲染
         if (!updateRef.current && props.visible) {
             // 记录是否首次予以判断是否更新
@@ -59,17 +65,20 @@ const Transition: React.SFC<TransitionProps> & { defaultProps: typeof defaultPro
             if (childrenRef.current) {
                 hide(childrenRef.current)
                 updateRef.current = false
-                const timer = setTimeout(() => {
+                timeRef.current = setTimeout(() => {
                     setControllerVisible(false)
                     props.closecb && props.closecb()
-                    clearTimeout(timer)
+                    if (timeRef.current) {
+                        clearTimeout(timeRef.current);
+                        timeRef.current = undefined
+
+                    }
                 }, props.time * 1000);
             }
         }
     }, [props.visible])
 
-
-    return (props.visible || controllerVisible) ? cloneElement(props.children as ReactElement, { style: !controllerVisible ? props.beforeEnter : {}, ref: childrenRef }) : null
+    return (props.visible || controllerVisible) ? cloneElement(props.children as ReactElement, { style: props.beforeEnter, ref: childrenRef }) : null
 }
 
 const defaultProps = { time: .5 }

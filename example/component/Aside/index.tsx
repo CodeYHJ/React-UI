@@ -36,6 +36,9 @@ const Aside: React.SFC<AsideProps> = () => {
                 <li className={c('li')}>
                     <NavLink className={c('navLink')} to="/react/input" >Input</NavLink>
                 </li>
+                <li className={c('li')}>
+                    <NavLink className={c('navLink')} to="/react/gird" >Gird</NavLink>
+                </li>
             </ul>
         </div>
     );
