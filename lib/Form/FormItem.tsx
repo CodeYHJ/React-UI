@@ -8,20 +8,10 @@ import { FormInstance } from './hook/useForm';
 import Row from '@lib/Gird';
 const { Col } = Row
 export type RuleType = {
-    type: 'text',
-    len: number,
-    max: number,
-    min: number
-} | {
-    type: 'number',
-    len: number,
-    max: number,
-    min: number
-} | {
-    type: 'email',
-
-} | {
-    type: 'phone',
+    type: string,
+    len?: number,
+    max?: number,
+    min?: number
 }
 type validateTrigger = 'blur' | 'change'
 

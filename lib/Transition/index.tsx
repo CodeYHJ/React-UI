@@ -1,4 +1,4 @@
-import React, { useRef, useState, CSSProperties, HtmlHTMLAttributes, cloneElement, ReactElement, useEffect, useLayoutEffect } from 'react';
+import React, { useRef, useState, CSSProperties, HtmlHTMLAttributes, cloneElement, ReactElement, useLayoutEffect } from 'react';
 import './index.less'
 import { DefaultProps } from 'prism-react-renderer';
 export interface TransitionProps extends HtmlHTMLAttributes<HTMLDivElement> {
@@ -19,17 +19,19 @@ const Transition: React.SFC<TransitionProps> & { defaultProps: typeof defaultPro
 
     const [controllerVisible, setControllerVisible] = useState(false)
     const setStyle = (node: HTMLElement, style: CSSProperties, time: number) => {
-        const defaultStyle: CSSProperties = {
+        const defaultStyle:CSSProperties = {
             transitionProperty: "all",
             transitionDuration: `${time}s`,
             transitionTimingFunction: "cubic-bezier(0.645, 0.045, 0.355, 1)",
             willChange: 'all',
             overflow: 'hidden',
         }
-        const megerStyle = { ...defaultStyle, ...style }
-        for (let s in megerStyle) {
-            node.style[s] = megerStyle[s]
-        }
+
+        const megerStyle = Object.assign(defaultStyle, style)
+        Object.keys(megerStyle).forEach(key => {
+            node.style[key] = megerStyle[key]
+        })
+
     }
     const handleEnter = (node: HTMLElement) => {
         node.getBoundingClientRect()

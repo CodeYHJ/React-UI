@@ -11,6 +11,18 @@ export interface GirdExampleProps {
 const c = classPre('gird')
 
 const GirdExample: React.SFC<GirdExampleProps> = () => {
+    const handleRowData = [
+        { name: 'justify', dsc: 'flex排列方式', type: ['start', 'end', 'center', 'space-around', 'space-between'], value: '--' },
+        { name: 'align', dsc: 'flex排列方式', type: ['top', 'middle', 'bottom'], value: '--' },
+        { name: 'gutter', dsc: '栅格间隔（px）', type: ['number', 'number[]'], value: '--' },
+    ]
+    const handleColData = [
+        { name: 'span', dsc: '占位格数', type: ['number'], value: '24' },
+        { name: 'offset', dsc: '位移格数', type: ['number'], value: '0' },
+        { name: 'sm', dsc: '响应式栅格，> 576px 生效', type: ['number'], value: '0' },
+        { name: 'md', dsc: '响应式栅格，> 768px 生效', type: ['number'], value: '0' }, { name: 'lg', dsc: '响应式栅格，> 992px 生效', type: ['number'], value: '0' },
+        { name: 'xl', dsc: '响应式栅格，> 1200px 生效', type: ['number'], value: '0' },
+    ]
 
     return (<div className={c()}>
         <section>
@@ -271,7 +283,10 @@ const GirdExample: React.SFC<GirdExampleProps> = () => {
 
             </ExampleBox>
         </section>
-        {/* <ExampleApi data={handleData}></ExampleApi> */}
+        <h2>Api</h2>
+        <ExampleApi title="Row" data={handleRowData}></ExampleApi>
+        <ExampleApi title="Col" data={handleColData}></ExampleApi>
+
     </div>);
 }
 

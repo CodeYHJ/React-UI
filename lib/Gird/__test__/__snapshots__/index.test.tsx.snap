@@ -1,0 +1,612 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gird render align 1`] = `
+<div>
+  <div
+    className="code-ui-row code-ui-row-align-top top"
+    style={
+      Object {
+        "marginLeft": "-12px",
+        "marginRight": "-12px",
+      }
+    }
+  >
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={
+        Object {
+          "paddingLeft": "12px",
+          "paddingRight": "12px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={
+        Object {
+          "paddingLeft": "12px",
+          "paddingRight": "12px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={
+        Object {
+          "paddingLeft": "12px",
+          "paddingRight": "12px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+  </div>
+  <div
+    className="code-ui-row code-ui-row-align-middle middle"
+    style={
+      Object {
+        "marginLeft": "-12px",
+        "marginRight": "-12px",
+      }
+    }
+  >
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={
+        Object {
+          "paddingLeft": "12px",
+          "paddingRight": "12px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={
+        Object {
+          "paddingLeft": "12px",
+          "paddingRight": "12px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={
+        Object {
+          "paddingLeft": "12px",
+          "paddingRight": "12px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+  </div>
+  <div
+    className="code-ui-row code-ui-row-align-bottom bottom"
+    style={
+      Object {
+        "marginLeft": "-12px",
+        "marginRight": "-12px",
+      }
+    }
+  >
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={
+        Object {
+          "paddingLeft": "12px",
+          "paddingRight": "12px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={
+        Object {
+          "paddingLeft": "12px",
+          "paddingRight": "12px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={
+        Object {
+          "paddingLeft": "12px",
+          "paddingRight": "12px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Gird render base 1`] = `
+<div>
+  <div
+    className="code-ui-row"
+    style={Object {}}
+  >
+    <div
+      className="code-ui-col code-ui-col-24"
+      style={Object {}}
+    >
+      24
+    </div>
+  </div>
+  <div
+    className="code-ui-row"
+    style={Object {}}
+  >
+    <div
+      className="code-ui-col code-ui-col-12"
+      style={Object {}}
+    >
+      12
+    </div>
+    <div
+      className="code-ui-col code-ui-col-12"
+      style={Object {}}
+    >
+      12
+    </div>
+  </div>
+  <div
+    className="code-ui-row"
+    style={Object {}}
+  >
+    <div
+      className="code-ui-col code-ui-col-8"
+      style={Object {}}
+    >
+      8
+    </div>
+    <div
+      className="code-ui-col code-ui-col-8"
+      style={Object {}}
+    >
+      8
+    </div>
+    <div
+      className="code-ui-col code-ui-col-8"
+      style={Object {}}
+    >
+      8
+    </div>
+  </div>
+  <div
+    className="code-ui-row"
+    style={Object {}}
+  >
+    <div
+      className="code-ui-col code-ui-col-6"
+      style={Object {}}
+    >
+      4
+    </div>
+    <div
+      className="code-ui-col code-ui-col-6"
+      style={Object {}}
+    >
+      4
+    </div>
+    <div
+      className="code-ui-col code-ui-col-6"
+      style={Object {}}
+    >
+      4
+    </div>
+    <div
+      className="code-ui-col code-ui-col-6"
+      style={Object {}}
+    >
+      4
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Gird render gutter 1`] = `
+<div>
+  <div
+    className="code-ui-row"
+    style={
+      Object {
+        "marginLeft": "-6px",
+        "marginRight": "-6px",
+      }
+    }
+  >
+    <div
+      className="code-ui-col code-ui-col-8"
+      style={
+        Object {
+          "paddingLeft": "6px",
+          "paddingRight": "6px",
+        }
+      }
+    >
+      <div>
+        8
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-8"
+      style={
+        Object {
+          "paddingLeft": "6px",
+          "paddingRight": "6px",
+        }
+      }
+    >
+      <div>
+        8
+      </div>
+    </div>
+  </div>
+  <div
+    className="code-ui-row"
+    style={
+      Object {
+        "margin": "-12px -6px 12px",
+      }
+    }
+  >
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={
+        Object {
+          "padding": "12px 6px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={
+        Object {
+          "padding": "12px 6px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={
+        Object {
+          "padding": "12px 6px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Gird render justify 1`] = `
+<div>
+  <div
+    className="code-ui-row code-ui-row-justify-start"
+    style={Object {}}
+  >
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={Object {}}
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={Object {}}
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={Object {}}
+    >
+      <div>
+        4
+      </div>
+    </div>
+  </div>
+  <div
+    className="code-ui-row code-ui-row-justify-center"
+    style={Object {}}
+  >
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={Object {}}
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={Object {}}
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={Object {}}
+    >
+      <div>
+        4
+      </div>
+    </div>
+  </div>
+  <div
+    className="code-ui-row code-ui-row-justify-end"
+    style={Object {}}
+  >
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={Object {}}
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={Object {}}
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={Object {}}
+    >
+      <div>
+        4
+      </div>
+    </div>
+  </div>
+  <div
+    className="code-ui-row code-ui-row-justify-space-around"
+    style={Object {}}
+  >
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={Object {}}
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={Object {}}
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={Object {}}
+    >
+      <div>
+        4
+      </div>
+    </div>
+  </div>
+  <div
+    className="code-ui-row code-ui-row-justify-space-between"
+    style={Object {}}
+  >
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={Object {}}
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={Object {}}
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4"
+      style={Object {}}
+    >
+      <div>
+        4
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Gird render offset 1`] = `
+<div>
+  <div
+    className="code-ui-row"
+    style={Object {}}
+  >
+    <div
+      className="code-ui-col code-ui-col-8"
+      style={Object {}}
+    >
+      8
+    </div>
+    <div
+      className="code-ui-col code-ui-col-8 code-ui-col-offset-8"
+      style={Object {}}
+    >
+      offset-8
+    </div>
+  </div>
+  <div
+    className="code-ui-row"
+    style={Object {}}
+  >
+    <div
+      className="code-ui-col code-ui-col-4 code-ui-col-offset-1"
+      style={Object {}}
+    >
+      offset-1
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4 code-ui-col-offset-3"
+      style={Object {}}
+    >
+      offset-3
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4 code-ui-col-offset-5"
+      style={Object {}}
+    >
+      offset-5
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Gird render responsive 1`] = `
+<div>
+  <div
+    className="code-ui-row"
+    style={
+      Object {
+        "marginLeft": "-6px",
+        "marginRight": "-6px",
+      }
+    }
+  >
+    <div
+      className="code-ui-col code-ui-col-4 code-ui-col-sm-4 code-ui-col-md-2 code-ui-col-lg-4 code-ui-col-xl-1"
+      style={
+        Object {
+          "paddingLeft": "6px",
+          "paddingRight": "6px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4 code-ui-col-sm-4 code-ui-col-md-4 code-ui-col-lg-4 code-ui-col-xl-2"
+      style={
+        Object {
+          "paddingLeft": "6px",
+          "paddingRight": "6px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4 code-ui-col-sm-4 code-ui-col-md-3 code-ui-col-lg-4 code-ui-col-xl-3"
+      style={
+        Object {
+          "paddingLeft": "6px",
+          "paddingRight": "6px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4 code-ui-col-sm-4 code-ui-col-md-1 code-ui-col-lg-4 code-ui-col-xl-4"
+      style={
+        Object {
+          "paddingLeft": "6px",
+          "paddingRight": "6px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4 code-ui-col-sm-4 code-ui-col-md-2 code-ui-col-lg-4 code-ui-col-xl-5"
+      style={
+        Object {
+          "paddingLeft": "6px",
+          "paddingRight": "6px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-4 code-ui-col-sm-4 code-ui-col-md-5 code-ui-col-lg-4 code-ui-col-xl-6"
+      style={
+        Object {
+          "paddingLeft": "6px",
+          "paddingRight": "6px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+  </div>
+</div>
+`;
