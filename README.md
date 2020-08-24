@@ -6,11 +6,7 @@
 
 > 本组件库仅供学习交流，请勿在生产环境中使用
 
-## Install
 
-```npm
-npm install 
-```
 
 ## Links
 
