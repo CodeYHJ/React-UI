@@ -118,24 +118,24 @@ const FormItem: React.SFC<FormItemProps> = (props) => {
 
 
     return (
-        <div className={c()} >
-            <div className={c('itemBox')}>
-                <Row>
-                    <Col span={8}>
-                        <span className={labelCls}>{props.label}</span>
-                    </Col>
-                    <Col span={12}>
-                        <FormItemInput errorVisible={
-                            result.err
-                        } message={result.message} >
-                            {cloneElement(props.children as ReactElement, childProps)}
-                        </FormItemInput>
-                    </Col>
+        // <div className={c()} >
+        //     <div >
+        <Row className={c()}>
+            <Col span={8} className={c('col')}>
+                <div className={labelCls}>{props.label}</div>
+            </Col>
+            <Col span={16}>
+                <FormItemInput errorVisible={
+                    result.err
+                } message={result.message} >
+                    {cloneElement(props.children as ReactElement, childProps)}
+                </FormItemInput>
+            </Col>
 
-                </Row>
+        </Row>
 
-            </div>
-        </div>
+        //     </div>
+        // </div>
 
     );
 }

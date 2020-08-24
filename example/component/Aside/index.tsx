@@ -22,6 +22,9 @@ const Aside: React.SFC<AsideProps> = () => {
                     <NavLink className={c('navLink')} to="/react/layout" >layout</NavLink>
                 </li>
                 <li className={c('li')}>
+                    <NavLink className={c('navLink')} to="/react/gird" >Gird</NavLink>
+                </li>
+                <li className={c('li')}>
                     <NavLink className={c('navLink')} to="/react/button" >Button</NavLink>
                 </li>
                 <li className={c('li')}>
@@ -30,15 +33,13 @@ const Aside: React.SFC<AsideProps> = () => {
                 <li className={c('li')}>
                     <NavLink className={c('navLink')} to="/react/modal" >Modal</NavLink>
                 </li>
-                <li className={c('li')}>
+                {/* <li className={c('li')}>
                     <NavLink className={c('navLink')} to="/react/form" >Form</NavLink>
-                </li>
+                </li> */}
                 <li className={c('li')}>
                     <NavLink className={c('navLink')} to="/react/input" >Input</NavLink>
                 </li>
-                <li className={c('li')}>
-                    <NavLink className={c('navLink')} to="/react/gird" >Gird</NavLink>
-                </li>
+
             </ul>
         </div>
     );

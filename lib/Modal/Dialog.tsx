@@ -61,18 +61,21 @@ const Dialog: React.SFC<DailogProps> = (props) => {
     }
     return createPortal((
         <Fragment>
-            <Transition visible={visible} beforeEnter={{ opacity: 0 }} enter={{ opacity: 1 }} leave={{ opacity: 0 }} time={.5}>
+            <Transition visible={visible} enter={{ opacity: 1 }} leave={{ opacity: 0 }} time={.5}>
                 <div className={c('mask')} onClick={onClickMask}></div>
             </Transition>
-            <Transition opencb={handleOpencb} closecb={handleClosecb} visible={visible} beforeEnter={{ opacity: 0, transform: 'scale(0)' }} enter={{ opacity: 1, transform: 'scale(1)' }} leave={{ transform: 'scale(0)' }} time={.5}>
-                <div className={c()}>
-                    {CloseIcon()}
-                    {Header()}
-                    <main className={c('main')}>
-                        {props.children}
-                    </main>
-                    {Footer()}
+            <Transition opencb={handleOpencb} closecb={handleClosecb} visible={visible} enter={{ opacity: 1, transform: 'scale(1)' }} leave={{ transform: 'scale(0)' }} time={.5}>
+                <div className={c()} onClick={onClickMask}>
+                    <div className={c('box')}>
+                        {CloseIcon()}
+                        {Header()}
+                        <main className={c('main')}>
+                            {props.children}
+                        </main>
+                        {Footer()}
+                    </div>
                 </div>
+
             </Transition>
         </Fragment>
     ), document.body)

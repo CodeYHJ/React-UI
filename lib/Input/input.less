@@ -13,6 +13,7 @@
 // 含有Icon的基本样式
 .code-ui-input-icon-base() {
   display: inline-flex;
+  flex: 1;
   align-items: center;
   border: 1px solid @neutral-color-border;
   border-radius: 3px;
@@ -22,6 +23,8 @@
     border-color: @main-color-primary;
   }
   & > .code-ui-input-inputLabel {
+    border-radius: 0;
+    flex: 1;
     .code-ui-input-inputLabel-noBorder();
   }
 }
@@ -30,10 +33,12 @@
   list-style: none;
   box-sizing: border-box;
   display: inline-flex;
+  flex: 1;
   position: relative;
   color: @neutral-color-content;
   & > .code-ui-input-inputLabel {
     border-radius: 0;
+    flex: 1;
   }
 }
 .code-ui-input {
@@ -127,10 +132,10 @@
   // icon error
   &-iconError {
     border: 1px solid @fun-color-danger!important;
-    box-shadow: none!important;
+    box-shadow: none !important;
     &:focus {
       border-color: @fun-color-danger!important;
-      box-shadow: none!important;
+      box-shadow: none !important;
     }
     &:hover {
       border-color: @fun-color-danger!important;

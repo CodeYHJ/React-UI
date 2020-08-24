@@ -12,9 +12,7 @@ const FormItemInput: React.SFC<FormItemInputProps> = (props) => {
     const cls = [c(), props.className].filter(Boolean).join(' ')
     return (
         <div className={cls} >
-            <div className={c('input')}>
                 {props.children}
-            </div>
             <Transition visible={errorVisible} enter={{ visibility: "visible", opacity: 1 }} leave={{ visibility: 'hidden', opacity: 0 }} >
                 <div className={c('checkTip')}>{message}</div>
             </Transition>

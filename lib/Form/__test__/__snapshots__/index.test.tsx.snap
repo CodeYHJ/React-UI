@@ -6,46 +6,34 @@ exports[`Form render render an Form Component 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="code-ui-formItem"
+    className="code-ui-row code-ui-formItem"
+    style={Object {}}
   >
     <div
-      className="code-ui-formItem-itemBox"
+      className="code-ui-col code-ui-col-8 code-ui-formItem-col"
+      style={Object {}}
     >
       <div
-        className="code-ui-row"
-        style={Object {}}
+        className="code-ui-formItem-label"
       >
-        <div
-          className="code-ui-col code-ui-col-8"
-          style={Object {}}
-        >
-          <span
-            className="code-ui-formItem-label"
-          >
-            test
-          </span>
-        </div>
-        <div
-          className="code-ui-col code-ui-col-12"
-          style={Object {}}
-        >
-          <div
-            className="code-ui-formItemInput"
-          >
-            <div
-              className="code-ui-formItemInput-input"
-            >
-              <input
-                className="code-ui-input-inputLabel"
-                disabled={false}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                type="text"
-              />
-            </div>
-          </div>
-        </div>
+        test
+      </div>
+    </div>
+    <div
+      className="code-ui-col code-ui-col-16"
+      style={Object {}}
+    >
+      <div
+        className="code-ui-formItemInput"
+      >
+        <input
+          className="code-ui-input-inputLabel"
+          disabled={false}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="text"
+        />
       </div>
     </div>
   </div>

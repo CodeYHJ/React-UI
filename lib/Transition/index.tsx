@@ -1,4 +1,4 @@
-import React, { useRef, useState, CSSProperties, HtmlHTMLAttributes, cloneElement, ReactElement, useLayoutEffect } from 'react';
+import React, { useRef, useState, CSSProperties, HtmlHTMLAttributes, cloneElement, ReactElement, useLayoutEffect, useEffect } from 'react';
 import './index.less'
 import { DefaultProps } from 'prism-react-renderer';
 export interface TransitionProps extends HtmlHTMLAttributes<HTMLDivElement> {
@@ -26,7 +26,6 @@ const Transition: React.SFC<TransitionProps> & { defaultProps: typeof defaultPro
             willChange: 'all',
             overflow: 'hidden',
         }
-
         const megerStyle = Object.assign(defaultStyle, style)
         Object.keys(megerStyle).forEach(key => {
             node.style[key] = megerStyle[key]
@@ -52,7 +51,7 @@ const Transition: React.SFC<TransitionProps> & { defaultProps: typeof defaultPro
     const hide = (node: HTMLElement) => {
         handleLeave(node)
     }
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (timeRef.current) return
         // 首次渲染
         if (!updateRef.current && props.visible) {

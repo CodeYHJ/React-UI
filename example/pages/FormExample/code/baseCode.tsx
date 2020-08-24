@@ -28,14 +28,19 @@ const FormDemo: React.SFC<FormDemoProps> = () => {
                 <Form.Item
                     label="账号"
                     rule={{
-                        require: true, message: "账号长度必须大于等于3", formatterRule: {
+                        require: true,
+                        message: "账号长度必须大于等于3",
+                        formatterRule: {
                             type: 'text',
                             len: 10,
                             min: 3,
                             max: 10
                         }
                     }}>
-                    <Input name="user" preIconFix={userIcon} onChange={handleUserChange} value={userValue} />
+                    <Input
+                        name="user"
+                        preIconFix={userIcon}
+                        onChange={handleUserChange} value={userValue} />
                 </Form.Item>
                 <Form.Item
                     label="密码"
@@ -49,7 +54,10 @@ const FormDemo: React.SFC<FormDemoProps> = () => {
                         },
                         trigger: "blur"
                     }}>
-                    <Input name="password" preIconFix={passwordIcon} onChange={handlePasswordChange} value={passwordValue} />
+                    <Input name="password"
+                        preIconFix={passwordIcon}
+                        onChange={handlePasswordChange}
+                        value={passwordValue} />
                 </Form.Item>
             </Form>
         </div>
