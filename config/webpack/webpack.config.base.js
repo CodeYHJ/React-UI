@@ -5,7 +5,7 @@ const webpack = require("webpack");
  * @type {import('webpack').Configuration}
  */
 module.exports = {
-  entry: pathFn("./example/app.tsx"),
+  entry: pathFn("./site/app.tsx"),
   output: {
     path: pathFn("./examplePage"),
     filename: "js/[name].[hash].js",
