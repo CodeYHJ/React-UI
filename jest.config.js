@@ -18,7 +18,7 @@ module.exports = {
   collectCoverage: false,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  collectCoverageFrom: ["lib/**/*.{ts,tsx}", "!**/node_modules/**"],
+  collectCoverageFrom: ["components/**/*.{ts,tsx}", "!**/node_modules/**"],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: "coverage",
@@ -64,8 +64,8 @@ module.exports = {
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    "^@com(.*)$": "<rootDir>/lib/$1",
-    "^@utils(.*)$": "<rootDir>/lib/utils/$1",
+    "^@com(.*)$": "<rootDir>/components/$1",
+    "^@utils(.*)$": "<rootDir>/components/utils/$1",
     "^.+\\.(css|less)$": "<rootDir>/tests/mock/styles.ts",
   },
 
