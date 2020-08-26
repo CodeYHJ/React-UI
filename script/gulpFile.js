@@ -26,7 +26,6 @@ const paths = {
   dest: {
     lib: "../lib",
     esm: "../esm",
-    dist: "../dist",
   },
   styles: "../lib/**/*.less",
   scripts: ["../lib/**/*.{ts,tsx}", "!../lib/**/__tests__/*.{ts,tsx}"],

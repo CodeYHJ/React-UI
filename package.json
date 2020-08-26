@@ -5,7 +5,9 @@
   "license": "MIT",
   "title": "Code UI",
   "files": [
-    "dist/**/*"
+    "dist",
+    "lib",
+    "esm"
   ],
   "keywords": [
     "component",
@@ -18,15 +20,15 @@
   "main": "dist/lib/index.js",
   "module": "'dist/esm/index.js",
   "sideEffects": [
-    "dist/dist/*",
-    "dist/esm/**/style/*",
-    "dist/lib/**/style/*",
+    "dist/*",
+    "esm/**/style/*",
+    "lib/**/style/*",
     "*.less"
   ],
   "scripts": {
-    "build:cmjs": "tsc --emitDeclarationOnly --outDir ./dist/lib && gulp -f ./script/gulpFile.js",
-    "build:esm": "tsc --emitDeclarationOnly --outDir ./dist/esm && gulp -f ./script/gulpFile.js",
-    "build:umd": "cross-env NODE_ENV=lib webpack --config ./config/webpack/webpack.config.lib.js && tsc --emitDeclarationOnly",
+    "build:cmjs": "tsc --emitDeclarationOnly --outDir ./lib && gulp -f ./script/gulpFile.js",
+    "build:esm": "tsc --emitDeclarationOnly --outDir ./esm && gulp -f ./script/gulpFile.js",
+    "build:umd": "cross-env NODE_ENV=lib webpack --config ./config/webpack/webpack.config.lib.js && tsc --emitDeclarationOnly --outDir ./dist",
     "build:doces": "cross-env NODE_ENV=pro webpack --config ./config/webpack/webpack.config.pro.js",
     "build:all":"yarn build:cmjs && yarn build:esm && yarn build:umd",
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --config ./config/webpack/webpack.config.dev.js --hot",

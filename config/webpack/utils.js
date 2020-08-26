@@ -6,13 +6,13 @@ const pathFn = (url) => {
   return path.resolve(root, url);
 };
 const getEntry = () => {
-  const rootDir = pathFn("./lib");
+  const rootDir = pathFn("./components");
   const files = fs.readdirSync(rootDir, {
     encoding: "utf-8",
     withFileTypes: true,
   });
   const entry = files.reduce((prev, { name }) => {
-    const ignore = [".DS_Store", "var.less",'index.tsx'].includes(name);
+    const ignore = [".DS_Store", "style",'index.tsx'].includes(name);
     if (!ignore) {
       prev[name] = path.join("", `${rootDir}/${name}/index.tsx`);
     }
