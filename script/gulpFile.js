@@ -28,7 +28,7 @@ const paths = {
     esm: "../esm",
   },
   styles: "../lib/**/*.less",
-  scripts: ["../lib/**/*.{ts,tsx}", "!../lib/**/__tests__/*.{ts,tsx}"],
+  scripts: ["../components/**/*.{ts,tsx}", "!../components/**/__tests__/*.{ts,tsx}"],
 };
 function compileScripts(babelEnv, destDir) {
   const { scripts } = paths;
@@ -58,6 +58,10 @@ function compileScripts(babelEnv, destDir) {
               ],
             ],
           },
+          lib:{
+            presets: ["@babel/env", "@babel/typescript", "@babel/react"],
+            plugins: ["@babel/plugin-transform-runtime"],
+          }
         },
       })
     ) // 使用gulp-babel处理
@@ -113,8 +117,6 @@ function cssInjection(content) {
 const buildScripts = gulp.series(compileCJS, compileESM);
 
 const build = gulp.parallel(buildScripts, copyLess, less2css);
-
-// const build = gulp.parallel(buildScripts);
 
 exports.build = build;
 

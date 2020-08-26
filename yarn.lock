@@ -1063,10 +1063,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@codeyhj/react-ui@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.npmjs.org/@codeyhj/react-ui/-/react-ui-0.0.2.tgz#d37771c05df048301027faecfceb0f4130321473"
-  integrity sha512-PLyvhV9ClAmJlg8nOIbWaU3CJ+SIHIcK5dtzosovQDziHi6tn3KeeZW4fqQa0vAYe+XbwElzSc1L2T8Zk6eeDw==
+"@codeyhj/react-ui@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.npmjs.org/@codeyhj/react-ui/-/react-ui-0.0.3.tgz#f238a8581177a6767049b56fbeb5a1baf8b1c7f2"
+  integrity sha512-i5lZTMakZwQArVdQhAHd+dN6GE/E48NQdSCx3cvqirU4cq1SaGxVypKMabqvklfpH1IhcTJrdw8r8z0HKu1EBA==
   dependencies:
     axios "^0.19.2"
     react "^16.13.1"
