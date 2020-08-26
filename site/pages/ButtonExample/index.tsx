@@ -1,8 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { classPre } from "../../util/index";
 import ExampleBox from "../../component/ExampleBox";
-import { Button, Icon } from '@com/index';
-// import { Button, Icon } from "@codeyhj/react-ui";
+import { Button, Icon } from "@codeyhj/react-ui";
 
 import './index.less'
 import ExampleApi from '../../component/ExampleApi';

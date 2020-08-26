@@ -44,7 +44,7 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
-    "@codeyhj/react-ui": "^0.0.3",
+    "@codeyhj/react-ui": "^0.0.4",
     "@types/axios": "^0.14.0",
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",

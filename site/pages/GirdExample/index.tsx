@@ -1,7 +1,7 @@
 import React from 'react';
 import { classPre } from "../../util/index";
 import ExampleBox from "../../component/ExampleBox";
-import { Row } from '@com/index';
+import { Row } from "@codeyhj/react-ui";
 const { Col } = Row
 import './index.less'
 import ExampleApi from '../../component/ExampleApi';

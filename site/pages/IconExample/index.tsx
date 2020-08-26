@@ -3,7 +3,8 @@ import { classPre } from "../../util/index"
 import ExampleBox from '../../component/ExampleBox';
 import ExampleApi from '../../component/ExampleApi';
 import "./index.less";
-import { Icon } from "@com/index"
+import { Icon } from "@codeyhj/react-ui";
+
 const { createIcon } = Icon
 export interface IconExampleProps {
 

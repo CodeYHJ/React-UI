@@ -36,8 +36,10 @@ module.exports = {
     // site 样式
     {
       test: /\.less/,
-      include: pathFn("./site"),
-      exclude: /node_modules/,
+      // include: [pathFn("./site")],
+      include: [/[\\/]node_modules[\\/]@codeyhj[\\/]react-ui[\\/]/,pathFn("./site")],
+
+      // exclude: /node_modules/,
       use: [
         process.env.NODE_ENV === "dev"
           ? "style-loader"
