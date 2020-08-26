@@ -82,6 +82,5 @@
     "node_modules/**/**",
     "tests",
     "site",
-    "components"
   ]
 }
