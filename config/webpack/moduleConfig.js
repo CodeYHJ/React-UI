@@ -20,10 +20,10 @@ module.exports = {
       test: /\.svg$/,
       loader: "svg-sprite-loader",
     },
-    // lib内样式
+    // components内样式
     {
       test: /\.less/,
-      include: pathFn("./lib"),
+      include: pathFn("./components"),
       exclude: /node_modules/,
       use: [
         process.env.NODE_ENV === "lib"
@@ -31,19 +31,12 @@ module.exports = {
           : "style-loader",
         "css-loader",
         "less-loader",
-        // 在这里引入要增加的全局less文件
-        {
-          loader: "style-resources-loader",
-          options: {
-            patterns: pathFn("./lib/var.less"),
-          },
-        },
       ],
     },
-    // example 样式
+    // site 样式
     {
       test: /\.less/,
-      include: pathFn("./example"),
+      include: pathFn("./site"),
       exclude: /node_modules/,
       use: [
         process.env.NODE_ENV === "dev"
@@ -51,22 +44,12 @@ module.exports = {
           : MiniCssExtractPlugin.loader,
         "css-loader",
         "less-loader",
-        // 在这里引入要增加的全局less文件
-        {
-          loader: "style-resources-loader",
-          options: {
-            patterns: [
-              pathFn("./lib/var.less"),
-              pathFn("./example/util/util.less"),
-            ],
-          },
-        },
       ],
     },
     // img优化
     {
       test: /\.(png|svg|jpg|gif|jpeg)$/,
-      include: pathFn("./example"),
+      include: pathFn("./site"),
       use: [
         {
           loader: "url-loader",

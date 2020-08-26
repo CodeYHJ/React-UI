@@ -1,7 +1,7 @@
 import React, { HtmlHTMLAttributes, useState, ReactNode } from 'react';
 import { classPre } from "../../util/index";
 import './index.less'
-import { Transition, Icon } from '@lib';
+import { Transition, Icon } from '@com';
 import Highlight, { defaultProps } from "prism-react-renderer";
 export interface ExampleBoxProps extends HtmlHTMLAttributes<HTMLDivElement> {
     title: string,

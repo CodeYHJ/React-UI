@@ -1,0 +1,43 @@
+@import "../../style/var.less";
+.code-ui-formItem {
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  list-style: none;
+  padding: 0 0 30px 0;
+  position: relative;
+  & &-col {
+    flex-grow: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: right;
+    vertical-align: middle;
+  }
+  &-label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    &::after {
+      content: ":";
+      position: relative;
+      top: -0.5px;
+      margin: 0 8px 0 2px;
+    }
+  }
+  &-label-require {
+    &::before {
+      display: inline-block;
+      margin-right: 4px;
+      color: #ff4d4f;
+      font-size: 14px;
+      font-family: SimSun, sans-serif;
+      line-height: 1;
+      content: "*";
+    }
+  }
+
+  &-lable {
+    color: @neutral-color-title;
+  }
+}

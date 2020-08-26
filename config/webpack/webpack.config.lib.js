@@ -11,9 +11,9 @@ const proConfig = {
   // entry: { index: pathFn("./lib/index.tsx") },
   entry: getEntry(),
   output: {
-    path: pathFn("./dist/lib"),
+    path: pathFn("./dist"),
     filename: "[name]/index.js",
-    library: "code-ui-react",
+    library: "react-ui",
     libraryTarget: "umd",
     libraryExport: "default",
     umdNamedDefine: true,
@@ -22,7 +22,7 @@ const proConfig = {
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx"],
     alias: {
-      "@lib": pathFn("./lib"),
+      "@com": pathFn("./components"),
     },
   },
   plugins: [

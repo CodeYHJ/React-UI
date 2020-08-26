@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent } from 'react';
-import { Form, Input, Icon } from '@lib/index';
+import { Form, Input, Icon } from '@com/index';
 export interface FormDemoProps {
 
 }

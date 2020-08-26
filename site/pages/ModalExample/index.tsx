@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { classPre } from "../../util/index"
 import "./index.less";
 import ExampleBox from '../../component/ExampleBox';
-import { Button, Modal } from '@lib/index';
+import { Button, Modal } from '@com/index';
 import ExampleApi from '../../component/ExampleApi';
 
 export interface ModalExampleProps {

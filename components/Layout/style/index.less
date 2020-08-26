@@ -1,0 +1,31 @@
+@import "../../style/var.less";
+.code-ui-layout {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  &-header {
+    margin: 0;
+    padding: 0;
+  }
+  &-content {
+    display: flex;
+    flex-grow: 1;
+    overflow-x: hidden;
+  }
+  &-footer {
+    margin: 0;
+    padding: 0;
+  }
+  &-aside {
+    min-width: 200px;
+    position: relative;
+    &-children {
+      height: 100%;
+      overflow: hidden;
+    }
+  }
+  &-hasAside {
+    display: flex;
+    flex-direction: row;
+  }
+}

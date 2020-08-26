@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Button, Modal } from '@lib/index';
+import { Button, Modal } from '@com/index';
 
 export interface ModalDemoProps {
 

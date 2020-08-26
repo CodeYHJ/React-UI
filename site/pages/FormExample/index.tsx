@@ -1,11 +1,11 @@
 import React, { useState, ChangeEvent, useContext } from 'react';
 import { classPre } from "../../util/index"
 import ExampleBox from '../../component/ExampleBox';
-import Icon from '@lib/Icon/localIcon';
+import Icon from '@com/Icon/localIcon';
 import ExampleApi from '../../component/ExampleApi';
 import "./index.less";
-import { Form, Input, Button } from '@lib/index';
-import { FormContext } from '@lib/Form/FormContext';
+import { Form, Input, Button } from '@com/index';
+import { FormContext } from '@com/Form/FormContext';
 export interface FormExampleProps {
 
 }

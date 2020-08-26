@@ -10,10 +10,10 @@
     // "checkJs": true,                       /* Report errors in .js files. */
     "jsx": "react" /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */,
     "declaration": true, /* Generates corresponding '.d.ts' file. */
-    "declarationMap": true, /* Generates a sourcemap for each corresponding '.d.ts' file. */
+    "declarationMap": false, /* Generates a sourcemap for each corresponding '.d.ts' file. */
     "sourceMap": true, /* Generates corresponding '.map' file. */
     // "outFile": "./dist",                       /* Concatenate and emit output to single file. */
-    "outDir": "./dist" /* Redirect output structure to the directory. */,
+    // "outDir": "./dist" /* Redirect output structure to the directory. */,
     // "rootDir": "./lib",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
     // "composite": true,                     /* Enable project compilation */
     // "tsBuildInfoFile": "./",               /* Specify file to store incremental compilation information */
@@ -30,7 +30,7 @@
     // "strictBindCallApply": true,           /* Enable strict 'bind', 'call', and 'apply' methods on functions. */
     // "strictPropertyInitialization": true,  /* Enable strict checking of property initialization in classes. */
     // "noImplicitThis": true,                /* Raise error on 'this' expressions with an implied 'any' type. */
-    // "alwaysStrict": true,                  /* Parse in strict mode and emit "use strict" for each source file. */
+    "alwaysStrict": true, /* Parse in strict mode and emit "use strict" for each source file. */
     /* Additional Checks */
     // "noUnusedLocals": true,                /* Report errors on unused locals. */
     // "noUnusedParameters": true,            /* Report errors on unused parameters. */
@@ -40,8 +40,8 @@
     "moduleResolution": "node" /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */,
     "baseUrl": "." /* Base directory to resolve non-absolute module names. */,
     "paths": {
-      "@lib/*": [
-        "./lib/*"
+      "@com/*": [
+        "./components/*"
       ],
       "@assets/*": [
         "site/assets/*"
@@ -74,11 +74,13 @@
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
   "include": [
-    "lib",
+    "components",
     "tests",
     "site"
   ],
   "exclude": [
-    "node_modules/**/**"
+    "node_modules/**/**",
+    "tests",
+    "site"
   ]
 }

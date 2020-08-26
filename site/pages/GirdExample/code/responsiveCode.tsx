@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Row } from '@lib/index';
+import { Row } from '@com/index';
 
 const { Col } = Row
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Button,Icon} from '@lib/index';
+import {Button,Icon} from '@com/index';
 export interface ButtonDemoProps {
 
 }

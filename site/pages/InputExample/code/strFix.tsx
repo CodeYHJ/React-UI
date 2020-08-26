@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Input } from '@lib/index';
+import { Input } from '@com/index';
 
 export interface InputDemoProps {
 

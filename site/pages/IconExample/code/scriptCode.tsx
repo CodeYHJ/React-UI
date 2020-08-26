@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from '@lib/index';
+import { Icon } from '@com/index';
 const { createIcon } = Icon
 export interface IconDemoProps {
 

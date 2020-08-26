@@ -15,8 +15,8 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx"],
     alias: {
-      "@lib": pathFn("./lib"),
-      "@assets": pathFn("./example/assets"),
+      "@com": pathFn("./components"),
+      "@assets": pathFn("./site/assets"),
     },
   },
   module: modules,

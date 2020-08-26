@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout } from "@lib/index";
+import { Layout } from "@com/index";
 const { Header, Content, Aside, Footer } = Layout
 import { classPre } from "../../util/index";
 import "./index.less"
