@@ -38,7 +38,9 @@ const generateIconBaseTemplete = (tsName, componentName) => {
   import React, { SVGAttributes } from 'react';
 
   import info from '../iconInfo/${tsName}Info'
-  
+
+  import "../style/index.less";
+
   import { classPre } from '@com/utils';
   
   export interface ${componentName}Props extends SVGAttributes<SVGElement> {

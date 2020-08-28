@@ -3,7 +3,9 @@
   import React, { SVGAttributes } from 'react';
 
   import info from '../iconInfo/successInfo'
-  
+
+  import "../style/index.less";
+
   import { classPre } from '@com/utils';
   
   export interface SuccessIconProps extends SVGAttributes<SVGElement> {

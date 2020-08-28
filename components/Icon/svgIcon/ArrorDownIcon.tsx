@@ -3,7 +3,9 @@
   import React, { SVGAttributes } from 'react';
 
   import info from '../iconInfo/arrorDownInfo'
-  
+
+  import "../style/index.less";
+
   import { classPre } from '@com/utils';
   
   export interface ArrorDownIconProps extends SVGAttributes<SVGElement> {

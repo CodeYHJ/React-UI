@@ -3,7 +3,9 @@
   import React, { SVGAttributes } from 'react';
 
   import info from '../iconInfo/passwordInfo'
-  
+
+  import "../style/index.less";
+
   import { classPre } from '@com/utils';
   
   export interface PasswordIconProps extends SVGAttributes<SVGElement> {

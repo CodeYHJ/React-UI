@@ -3,7 +3,9 @@
   import React, { SVGAttributes } from 'react';
 
   import info from '../iconInfo/mainInfo'
-  
+
+  import "../style/index.less";
+
   import { classPre } from '@com/utils';
   
   export interface MainIconProps extends SVGAttributes<SVGElement> {
