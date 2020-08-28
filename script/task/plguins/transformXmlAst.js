@@ -1,8 +1,7 @@
 const through = require("through2");
 const parseXML = require("@rgrove/parse-xml");
-const SVGO = require("svgo");
-const { generateTemplete } = require("./templete");
-const { dashToCamel } = require("./util");
+const { generateIconInfoTemplete } = require("./templete");
+const { dashToCamel } = require("../../util/util");
 const filterXML = (svgStr) => {
   let xmlObj = parseXML(svgStr);
   return xmlObj.children[0];
@@ -11,9 +10,13 @@ const filterXML = (svgStr) => {
 const handleSVGAST = (obj) => {
   return Object.keys(obj).reduce((s, key) => {
     const value = obj[key];
-    if (key === "name" || key === "attributes") {
+    if ((key === "name") | (key === "attributes")) {
       s[key] = value;
+      if (s[key].class) {
+        delete s[key].class;
+      }
     }
+
     if (key === "children") {
       obj[key].forEach((el) => {
         if (el.name === "path") {
@@ -28,8 +31,12 @@ const handleSVGAST = (obj) => {
 const createFile = (file, svg) => {
   if (file.basename) {
     file.basename = file.basename.replace(/.svg/g, "");
-    file.basename = dashToCamel(file.basename);
-    const templete = generateTemplete(file.basename, JSON.stringify(svg));
+    file.basename = dashToCamel(file.basename) + "Info";
+    svg.attributes.key = `code-svg-${file.basename}`;
+    const templete = generateIconInfoTemplete(
+      file.basename,
+      JSON.stringify(svg)
+    );
     file.contents = Buffer.from(templete);
     file.extname = ".ts";
   }
@@ -43,7 +50,7 @@ const transform = () => {
         const svg = handleSVGAST(ast);
         createFile(file, svg);
         done(null, file);
-      } catch {
+      } catch (err) {
         done(err, null);
       }
     } else {

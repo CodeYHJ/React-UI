@@ -4,6 +4,7 @@ import ExampleBox from '../../component/ExampleBox';
 import ExampleApi from '../../component/ExampleApi';
 import "./index.less";
 import { Icon } from "@codeyhj/react-ui";
+import TestIcon from "../../../components/Icon/IconTemplete"
 
 const { createIcon } = Icon
 export interface IconExampleProps {
@@ -26,6 +27,7 @@ const IconExample: React.SFC<IconExampleProps> = () => {
             <section>
                 <h2 className={c('title')}>代码示例</h2>
                 <ExampleBox title="Icon" description="UI库Icon展示" code={require('!!raw-loader!./code/baseCode.tsx')}>
+                    <TestIcon />
                     <Icon name="cancel" className={c('icon-demo')} />
                     <Icon name="arror-down" className={c('icon-demo')} />
                     <Icon name="arror-up" className={c('icon-demo')} />
