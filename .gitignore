@@ -121,3 +121,5 @@ esm
 dist
 
 lib
+
+script/svg

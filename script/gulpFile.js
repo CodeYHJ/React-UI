@@ -1,40 +1,72 @@
-const gulp = require("gulp");
+const { src, series, parallel, dest } = require("gulp");
 const gulpBabel = require("gulp-babel");
 const less = require("gulp-less");
+const svgmin = require("gulp-svgmin");
 const autoprefixer = require("gulp-autoprefixer");
 const cssnano = require("gulp-cssnano");
 const through2 = require("through2");
 const path = require("path");
 const fs = require("fs");
+const del = require("delete");
+const { transform } = require("./util/transformXmlAst.js");
 
-const formatterLess = () => {
-  const targetObj = {};
-  const lessVar = fs.readFileSync("../lib/var.less").toString();
-  const filterRandN = lessVar.replace(/(\r|\n)*/g, "");
-
-  const targetLessStrList = filterRandN.split(";");
-
-  const filterEmtyStr = targetLessStrList.filter((less) => less !== "");
-
-  filterEmtyStr.forEach((less) => {
-    const [key, Value] = less.split(":");
-    targetObj[key] = Value;
-  });
-  return targetObj;
-};
 const paths = {
   dest: {
     lib: "../lib",
     esm: "../esm",
+    svgInfo: "./svg/iconInfo",
   },
   styles: "../lib/**/*.less",
-  scripts: ["../components/**/*.{ts,tsx}", "!../components/**/__tests__/*.{ts,tsx}"],
+  scripts: [
+    "../components/**/*.{ts,tsx}",
+    "!../components/**/__test__/*.{ts,tsx}",
+  ],
+  svg: "../components/Icon/svg/*.svg",
+  ts: "./svg/SvgInfo.ts",
+  svgConfig: {
+    plugins: [
+      { removeStyleElement: true },
+      { cleanupAttrs: true },
+      { removeDoctype: true },
+      { removeXMLProcInst: true },
+      { removeXMLNS: true },
+      { removeComments: true },
+      { removeMetadata: true },
+      { removeTitle: true },
+      { removeDesc: true },
+      { removeUselessDefs: true },
+      { removeEditorsNSData: true },
+      { removeEmptyAttrs: true },
+      { removeHiddenElems: true },
+      { removeEmptyText: true },
+      { removeEmptyContainers: true },
+      { removeViewBox: false },
+      { cleanupEnableBackground: true },
+      { convertStyleToAttrs: true },
+      { convertColors: true },
+      { convertPathData: true },
+      { convertTransform: true },
+      { removeUnknownsAndDefaults: true },
+      { removeNonInheritableGroupAttrs: true },
+      { removeUselessStrokeAndFill: true },
+      { removeUnusedNS: true },
+      { cleanupIDs: true },
+      { cleanupNumericValues: true },
+      { moveElemsAttrsToGroup: true },
+      { moveGroupAttrsToElems: true },
+      { collapseGroups: true },
+      { removeRasterImages: false },
+      { mergePaths: true },
+      { convertShapeToPath: true },
+      { sortAttrs: true },
+      { removeDimensions: true },
+    ],
+  },
 };
 function compileScripts(babelEnv, destDir) {
   const { scripts } = paths;
   process.env.BABEL_ENV = babelEnv;
-  return gulp
-    .src(scripts)
+  return src(scripts)
     .pipe(
       gulpBabel({
         presets: ["@babel/env", "@babel/typescript", "@babel/react"],
@@ -58,10 +90,10 @@ function compileScripts(babelEnv, destDir) {
               ],
             ],
           },
-          lib:{
+          lib: {
             presets: ["@babel/env", "@babel/typescript", "@babel/react"],
             plugins: ["@babel/plugin-transform-runtime"],
-          }
+          },
         },
       })
     ) // 使用gulp-babel处理
@@ -82,28 +114,45 @@ function compileScripts(babelEnv, destDir) {
     )
     .pipe(gulp.dest(destDir));
 }
-const compileCJS = () => {
-  const { dest } = paths;
-  return compileScripts("cjs", dest.lib);
+const handleSVgFile = () => {
+  return src(paths.svg)
+    .pipe(svgmin(paths.svgConfig))
+    .pipe(transform())
+    .pipe(dest(paths.dest.svgInfo));
+};
+const clean = (dirs, options = {}) => {
+  return () => del(dirs, options);
+};
+const handleSvgTsFile = () => {
+  return src("./util/SvgInfo.ts").pipe(dest(paths.ts));
 };
 const compileESM = () => {
   const { dest } = paths;
   return compileScripts("esm", dest.esm);
 };
-const copyLess = () => {
-  return gulp
-    .src(paths.styles)
-    .pipe(gulp.dest(paths.dest.lib))
-    .pipe(gulp.dest(paths.dest.esm));
+const compileCJS = () => {
+  const { dest } = paths;
+  return compileScripts("cjs", dest.lib);
 };
-const less2css = () => {
-  return gulp
-    .src(paths.styles)
+const copyCjsLess = () => {
+  return src(paths.styles).pipe(dest(paths.dest.lib));
+};
+const copyEsmLess = () => {
+  return src(paths.styles).pipe(dest(paths.dest.esm));
+};
+const esmLess2css = () => {
+  return src(paths.styles)
     .pipe(less()) // 处理less文件
     .pipe(autoprefixer()) // 根据browserslistrc增加前缀
     .pipe(cssnano({ zindex: false, reduceIdents: false })) // 压缩
-    .pipe(gulp.dest(paths.dest.lib))
-    .pipe(gulp.dest(paths.dest.esm));
+    .pipe(dest(paths.dest.esm));
+};
+const cjsLess2css = () => {
+  return src(paths.styles)
+    .pipe(less()) // 处理less文件
+    .pipe(autoprefixer()) // 根据browserslistrc增加前缀
+    .pipe(cssnano({ zindex: false, reduceIdents: false })) // 压缩
+    .pipe(dest(paths.dest.lib));
 };
 
 function cssInjection(content) {
@@ -112,11 +161,31 @@ function cssInjection(content) {
     .replace(/\/style\/?"/g, '/style/css"')
     .replace(/\.less/g, ".css");
 }
+const envConfig = {
+  esm: [compileESM, copyEsmLess, esmLess2css],
+  cjs: [compileCJS, copyCjsLess, cjsLess2css],
+  all: [
+    // esm
+    compileESM,
+    copyEsmLess,
+    esmLess2css,
+    // cjs
+    compileCJS,
+    copyCjsLess,
+    cjsLess2css,
+    // icon
+    handleSVgFile,
+    handleSvgTsFile,
+  ],
+  icon: [handleSVgFile, handleSvgTsFile],
+};
 
+buildScripts = series(...envConfig[process.env.GULP_ENV]);
 // 并行任务 后续加入样式处理 可以并行处理
-const buildScripts = gulp.series(compileCJS, compileESM);
-
-const build = gulp.parallel(buildScripts, copyLess, less2css);
+const build = parallel(
+  clean(["../dist", "../esm", "../lib", "svg"], { force: true }),
+  buildScripts
+);
 
 exports.build = build;
 
