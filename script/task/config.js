@@ -4,7 +4,7 @@ const paths = {
     esm: "../esm",
     distInfo: "./dist/iconInfo",
     distIcon: "./dist/svgIcon",
-    distTs: "./dist/iconInfo",
+    distTs: "./dist",
     index: "./dist",
     iconLib: "../components/Icon",
   },

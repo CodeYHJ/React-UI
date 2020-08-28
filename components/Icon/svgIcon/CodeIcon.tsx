@@ -2,7 +2,7 @@
 
   import React, { SVGAttributes } from 'react';
 
-  import info from '../iconInfo/CodeIcon'
+  import info from '../iconInfo/codeInfo'
   
   import { classPre } from '@com/utils';
   

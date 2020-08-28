@@ -2,7 +2,7 @@
 
   import React, { SVGAttributes } from 'react';
 
-  import info from '../iconInfo/ArrorDownIcon'
+  import info from '../iconInfo/arrorDownInfo'
   
   import { classPre } from '@com/utils';
   

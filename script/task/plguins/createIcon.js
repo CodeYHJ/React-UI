@@ -8,11 +8,11 @@ const createIcon = () => {
   return through.obj((file, encoding, done) => {
     if (file.isBuffer()) {
       try {
-        let name = file.basename.replace(/Info\.ts/g, "");
-        name = fristToUpperCase(name) + "Icon";
-        const str = generateIconBaseTemplete(name);
+        const tsName = file.basename.replace(/Info\.ts/g, "");
+        const componentName = fristToUpperCase(tsName) + "Icon";
+        const str = generateIconBaseTemplete(tsName, componentName);
         file.contents = Buffer.from(str);
-        file.basename = name;
+        file.basename = componentName;
         file.extname = ".tsx";
         done(null, file);
       } catch (err) {

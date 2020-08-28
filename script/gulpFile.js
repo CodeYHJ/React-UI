@@ -51,7 +51,17 @@ const clean = (dirs, options = {}) => {
 const buildScripts = series(...envConfig[process.env.GULP_ENV]);
 // 并行任务 后续加入样式处理 可以并行处理
 const build = parallel(
-  clean(["../dist", "../esm", "../lib", "svg"], { force: true }),
+  clean(
+    [
+      "../dist",
+      "../esm",
+      "../lib",
+      "dist",
+      "../components/Icon/iconInfo",
+      "../components/Icon/svgIcon",
+    ],
+    { force: true }
+  ),
   buildScripts
 );
 

@@ -1,6 +1,6 @@
 const generateIconInfoTemplete = (svgComponent, content) => {
   const str = `
-import {SvgInfo} from "./SvgInfo.ts"
+import { SvgInfo } from "../svgInfo"
 
 const ${svgComponent}: SvgInfo =  ${content};
 
@@ -32,21 +32,21 @@ const generateIconIndexTemplete = (iconList) => {
   return str;
 };
 
-const generateIconBaseTemplete = (iconName) => {
+const generateIconBaseTemplete = (tsName, componentName) => {
   const str = `
 
   import React, { SVGAttributes } from 'react';
 
-  import info from '../iconInfo/${iconName}'
+  import info from '../iconInfo/${tsName}Info'
   
   import { classPre } from '@com/utils';
   
-  export interface ${iconName}Props extends SVGAttributes<SVGElement> {
+  export interface ${componentName}Props extends SVGAttributes<SVGElement> {
   
   }
   const c = classPre("svg")
   
-  const ${iconName}: React.SFC<${iconName}Props> = (props) => {
+  const ${componentName}: React.SFC<${componentName}Props> = (props) => {
   
       const { className, ...others } = props
   
@@ -55,7 +55,7 @@ const generateIconBaseTemplete = (iconName) => {
       return React.createElement('svg', { ...info.attributes, className: cls, ...others }, React.createElement('path', { d: info.path }))
   }
   
-  export default ${iconName};
+  export default ${componentName};
 
   `;
 

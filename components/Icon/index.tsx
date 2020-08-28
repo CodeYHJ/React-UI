@@ -55,10 +55,6 @@
 
   
 
-  export { default as SvgIcon } from "./svgIcon/SvgIcon"
-
-  
-
   export { default as UserIcon } from "./svgIcon/UserIcon"
 
   

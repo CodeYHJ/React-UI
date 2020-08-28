@@ -2,7 +2,7 @@
 
   import React, { SVGAttributes } from 'react';
 
-  import info from '../iconInfo/DangerIcon'
+  import info from '../iconInfo/dangerInfo'
   
   import { classPre } from '@com/utils';
   
