@@ -10,20 +10,29 @@ export default  ${svgComponent};
 
   return str;
 };
-const generateIconIndexTemplete = (iconList) => {
+const greateSvgIconIndexTemplete = (content) => {
+  const str = content;
+  return str;
+};
+const generateIconIndexTemplete = () => {
   const str = `
 
   import I from './localIcon'
 
   import c from './createIcon'
+
+  import *  as IconList from './svgIcon'
   
-  type IconType = typeof I & { createIcon: typeof c }
+  type IconType = typeof I & { createIcon: typeof c } & typeof IconList
   
   const Icon = I as IconType
   
   Icon.createIcon = c
 
-  ${iconList}
+  Object.keys(IconList).reduce((pre: any, next: any) => {
+    Icon[next] = IconList[next]
+    return Icon;
+  }, Icon)
   
   export default Icon
 
@@ -65,7 +74,7 @@ const generateIconBaseTemplete = (tsName, componentName) => {
 };
 const generateIconExportTemplete = (iconName) => {
   const str = `
-  export { default as ${iconName} } from "./svgIcon/${iconName}"\n
+  export { default as ${iconName} } from "./${iconName}"\n
   `;
   return str;
 };
@@ -74,4 +83,5 @@ module.exports = {
   generateIconIndexTemplete,
   generateIconBaseTemplete,
   generateIconExportTemplete,
+  greateSvgIconIndexTemplete,
 };

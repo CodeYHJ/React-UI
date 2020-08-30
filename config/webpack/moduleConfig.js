@@ -20,33 +20,10 @@ module.exports = {
       test: /\.svg$/,
       loader: "svg-sprite-loader",
     },
-    // components内样式
-    {
-      test: /\.less/,
-      include: pathFn("./components"),
-      exclude: /node_modules/,
-      use: [
-        process.env.NODE_ENV === "lib"
-          ? MiniCssExtractPlugin.loader
-          : "style-loader",
-        "css-loader",
-        "less-loader",
-      ],
-    },
-    // site 样式
-    {
-      test: /\.less/,
-      // include: [pathFn("./site")],
-      include: [/[\\/]node_modules[\\/]@codeyhj[\\/]react-ui[\\/]/,pathFn("./site")],
 
-      // exclude: /node_modules/,
-      use: [
-        process.env.NODE_ENV === "dev"
-          ? "style-loader"
-          : MiniCssExtractPlugin.loader,
-        "css-loader",
-        "less-loader",
-      ],
+    {
+      test: /\.less/,
+      use: ["style-loader", "css-loader", "less-loader"],
     },
     // img优化
     {

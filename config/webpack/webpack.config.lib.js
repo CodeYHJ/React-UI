@@ -2,21 +2,18 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { pathFn, getEntry } = require("./utils");
 const modules = require("./moduleConfig");
-// console.log(getEntry())
 /**
  * @type {import('webpack').Configuration}
  */
 const proConfig = {
   mode: "production",
-  // entry: { index: pathFn("./lib/index.tsx") },
-  entry: getEntry(),
+  entry: { index: pathFn("./components/index.tsx") },
+  // entry: getEntry(),
   output: {
     path: pathFn("./dist"),
-    filename: "[name]/index.js",
+    filename: "index.js",
     library: "react-ui",
     libraryTarget: "umd",
-    libraryExport: "default",
-    umdNamedDefine: true,
   },
   module: modules,
   resolve: {
@@ -28,8 +25,8 @@ const proConfig = {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "[name]/index.css",
-      chunkFilename: "[name]/index.css",
+      filename: "[name].css",
+      chunkFilename: "[name].css",
       ignoreOrder: true, // Enable to remove warnings about conflicting order
     }),
   ],

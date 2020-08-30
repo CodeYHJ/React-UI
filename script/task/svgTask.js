@@ -4,7 +4,11 @@ const concat = require("gulp-concat");
 const { paths } = require("./config");
 const { transform } = require("./plguins/transformXmlAst");
 const { createIcon } = require("./plguins/createIcon");
-const { createExportIcons, createIndex } = require("./plguins/createIndex");
+const {
+  createExportIcons,
+  createIndex,
+  createSvgIconIndex,
+} = require("./plguins/createIndex");
 
 const handleSvgInfoFile = () => {
   return src(paths.entry.svg)
@@ -20,12 +24,14 @@ const handleSvgTsFile = () => {
 const handleSvgIcon = () => {
   return src(paths.entry.distInfo)
     .pipe(createIcon())
+    .pipe(dest(paths.dest.distIcon))
+    .pipe(createExportIcons())
+    .pipe(concat("cach.tsx"))
+    .pipe(createSvgIconIndex())
     .pipe(dest(paths.dest.distIcon));
 };
 const handleSvgIndex = () => {
   return src(paths.entry.distIcon)
-    .pipe(createExportIcons())
-    .pipe(concat("cach.tsx"))
     .pipe(createIndex())
     .pipe(dest(paths.dest.index));
 };

@@ -17,54 +17,44 @@ const { copy2Lib } = require("./task/copy2Lib");
 
 const del = require("delete");
 
+const clean = (dirs, options = { force: true }) => {
+  return () => del(dirs, options);
+};
+
 const envConfig = {
-  esm: [compileESM, copyEsmLess, esmLess2css],
-  cjs: [compileCJS, copyCjsLess, cjsLess2css],
-  all: [
-    // icon
+  icon: [
+    clean([
+      "dist",
+      "../components/Icon/iconInfo",
+      "../components/Icon/svgIcon",
+    ]),
     handleSvgInfoFile,
     handleSvgTsFile,
     handleSvgIcon,
     handleSvgIndex,
     copy2Lib,
-    // esm
+  ],
+  esm: () => [
+    clean(["../esm"]),
+    ...envConfig.icon,
     compileESM,
     copyEsmLess,
     esmLess2css,
-    // cjs
+  ],
+  cjs: () => [
+    clean(["../lib"]),
+    ...envConfig.icon,
     compileCJS,
     copyCjsLess,
     cjsLess2css,
   ],
-  icon: [
-    handleSvgInfoFile,
-    handleSvgTsFile,
-    handleSvgIcon,
-    handleSvgIndex,
-    copy2Lib,
-  ],
-};
-const clean = (dirs, options = {}) => {
-  return () => del(dirs, options);
+  all: () => [...envConfig.esm(), ...envConfig.cjs()],
 };
 
-const buildScripts = series(...envConfig[process.env.GULP_ENV]);
+const buildScripts = series(...envConfig[process.env.GULP_ENV]());
 
 // 并行任务 后续加入样式处理 可以并行处理
-const build = parallel(
-  clean(
-    [
-      "../dist",
-      "../esm",
-      "../lib",
-      "dist",
-      "../components/Icon/iconInfo",
-      "../components/Icon/svgIcon",
-    ],
-    { force: true }
-  ),
-  buildScripts
-);
+const build = parallel(buildScripts);
 
 exports.build = build;
 

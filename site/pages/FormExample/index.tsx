@@ -3,7 +3,7 @@ import { classPre } from "../../util/index"
 import ExampleBox from '../../component/ExampleBox';
 import ExampleApi from '../../component/ExampleApi';
 import "./index.less";
-import { Button, Icon, Input, Form } from "@codeyhj/react-ui";
+import { Button, Icon, Input, Form } from "../../../dist";
 
 export interface FormExampleProps {
 
