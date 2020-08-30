@@ -26,12 +26,12 @@
     "*.less"
   ],
   "scripts": {
-    "build:cmjs": "cross-env GULP_ENV=cjs tsc --emitDeclarationOnly --outDir ./lib && gulp -f ./script/gulpFile.js",
-    "build:esm": "cross-env GULP_ENV=esm tsc --emitDeclarationOnly --outDir ./esm && gulp -f ./script/gulpFile.js",
+    "build:cmjs": "cross-env GULP_ENV=cjs  gulp -f ./script/gulpFile.js && tsc --emitDeclarationOnly --outDir ./lib",
+    "build:esm": "cross-env GULP_ENV=esm  gulp -f ./script/gulpFile.js && tsc --emitDeclarationOnly --outDir ./esm",
     "build:icon": "cross-env GULP_ENV=icon gulp -f ./script/gulpFile.js",
-    "build:umd": "cross-env GULP_ENV=all cross-env NODE_ENV=lib webpack --config ./config/webpack/webpack.config.lib.js && tsc --emitDeclarationOnly --outDir ./dist",
+    "build:umd": "cross-env NODE_ENV=lib webpack --config ./config/webpack/webpack.config.lib.js && tsc --emitDeclarationOnly --outDir ./dist",
     "build:doces": "cross-env NODE_ENV=pro webpack --config ./config/webpack/webpack.config.pro.js",
-    "build": "yarn build:cmjs && yarn build:esm && yarn build:umd",
+    "build": "cross-env GULP_ENV=all gulp -f ./script/gulpFile.js && tsc --emitDeclarationOnly --outDir ./lib && tsc --emitDeclarationOnly --outDir ./esm && yarn build:umd",
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --config ./config/webpack/webpack.config.dev.js --hot",
     "test": "jest",
     "test:watch": "jest --watch",

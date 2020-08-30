@@ -21,6 +21,12 @@ const envConfig = {
   esm: [compileESM, copyEsmLess, esmLess2css],
   cjs: [compileCJS, copyCjsLess, cjsLess2css],
   all: [
+    // icon
+    handleSvgInfoFile,
+    handleSvgTsFile,
+    handleSvgIcon,
+    handleSvgIndex,
+    copy2Lib,
     // esm
     compileESM,
     copyEsmLess,
@@ -29,12 +35,6 @@ const envConfig = {
     compileCJS,
     copyCjsLess,
     cjsLess2css,
-    // icon
-    handleSvgInfoFile,
-    handleSvgTsFile,
-    handleSvgIcon,
-    handleSvgIndex,
-    copy2Lib,
   ],
   icon: [
     handleSvgInfoFile,
@@ -49,6 +49,7 @@ const clean = (dirs, options = {}) => {
 };
 
 const buildScripts = series(...envConfig[process.env.GULP_ENV]);
+
 // 并行任务 后续加入样式处理 可以并行处理
 const build = parallel(
   clean(

@@ -1,4 +1,9 @@
 const { src, series, parallel, dest } = require("gulp");
+const gulpBabel = require("gulp-babel");
+const less = require("gulp-less");
+const autoprefixer = require("gulp-autoprefixer");
+const cssnano = require("gulp-cssnano");
+const through2 = require("through2");
 const { paths } = require("./config");
 
 function compileScripts(babelEnv, destDir) {
@@ -50,7 +55,7 @@ function compileScripts(babelEnv, destDir) {
         }
       })
     )
-    .pipe(gulp.dest(destDir));
+    .pipe(dest(destDir));
 }
 
 const compileESM = () => {
