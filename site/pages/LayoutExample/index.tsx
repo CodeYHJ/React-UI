@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout } from "../../../dist";
+import { Layout } from "@codeyhj/react-ui";
 const { Header, Content, Aside, Footer } = Layout
 import { classPre } from "../../util/index";
 import "./index.less"
