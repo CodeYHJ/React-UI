@@ -1,5 +1,4 @@
 import React, { SVGAttributes } from 'react';
-import "./importAll"
 import "./style/index.less";
 import { classPre } from '@com/utils';
 export interface IconProps extends SVGAttributes<SVGElement> {
