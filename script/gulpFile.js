@@ -27,6 +27,8 @@ const envConfig = {
       "dist",
       "../components/Icon/iconInfo",
       "../components/Icon/svgIcon",
+      "../test-results",
+      "../coverage",
     ]),
     handleSvgInfoFile,
     handleSvgTsFile,

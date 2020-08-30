@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState } from 'react';
-import { Form, Input, Icon } from "../../index"
+import { Form, Input } from "../../index"
 import { shallow, mount } from 'enzyme';
 import renderer from "react-test-renderer"
 
@@ -61,7 +61,7 @@ describe('Form', () => {
                 }
             }
             const wrapper = mount(form)
-            wrapper.find('input').simulate('change',mockEvent)
+            wrapper.find('input').simulate('change', mockEvent)
             wrapper.find('input').simulate('blur')
             const tipNum = wrapper.find('.code-ui-formItemInput-checkTip').getElements().length
             expect(tipNum).toBe(1)

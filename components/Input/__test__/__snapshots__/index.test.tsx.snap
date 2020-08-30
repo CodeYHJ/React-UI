@@ -10,9 +10,10 @@ exports[`<Input/> iconFix renders an \`preIconFix and sufIconFix\` component  1`
   >
     <svg
       className="code-ui-svg"
+      viewBox="0 0 1024 1024"
     >
-      <use
-        xlinkHref="#user"
+      <path
+        d="M512 160c-123.36 0-224 100.64-224 224 0 77.12 39.36 145.6 99.008 186.016C272.864 618.976 192 732.256 192 864h64c0-141.76 114.24-256 256-256s256 114.24 256 256h64c0-131.744-80.864-244.992-195.008-294.016A224.768 224.768 0 00736 384c0-123.36-100.64-224-224-224zm0 64c88.736 0 160 71.264 160 160s-71.264 160-160 160-160-71.264-160-160 71.264-160 160-160z"
       />
     </svg>
   </span>
@@ -31,9 +32,10 @@ exports[`<Input/> iconFix renders an \`preIconFix and sufIconFix\` component  1`
   >
     <svg
       className="code-ui-svg"
+      viewBox="0 0 1024 1024"
     >
-      <use
-        xlinkHref="#password"
+      <path
+        d="M505.4 566.3c-17.7 0-32 14.3-32 32v123.8c0 17.7 14.3 32 32 32s32-14.3 32-32V598.3c0-17.7-14.3-32-32-32z"
       />
     </svg>
   </span>
@@ -50,9 +52,10 @@ exports[`<Input/> iconFix renders an \`preIconFix\` component  1`] = `
   >
     <svg
       className="code-ui-svg"
+      viewBox="0 0 1024 1024"
     >
-      <use
-        xlinkHref="#user"
+      <path
+        d="M512 160c-123.36 0-224 100.64-224 224 0 77.12 39.36 145.6 99.008 186.016C272.864 618.976 192 732.256 192 864h64c0-141.76 114.24-256 256-256s256 114.24 256 256h64c0-131.744-80.864-244.992-195.008-294.016A224.768 224.768 0 00736 384c0-123.36-100.64-224-224-224zm0 64c88.736 0 160 71.264 160 160s-71.264 160-160 160-160-71.264-160-160 71.264-160 160-160z"
       />
     </svg>
   </span>
@@ -87,9 +90,10 @@ exports[`<Input/> iconFix renders an \`sufIconFix\` component  1`] = `
   >
     <svg
       className="code-ui-svg"
+      viewBox="0 0 1024 1024"
     >
-      <use
-        xlinkHref="#password"
+      <path
+        d="M505.4 566.3c-17.7 0-32 14.3-32 32v123.8c0 17.7 14.3 32 32 32s32-14.3 32-32V598.3c0-17.7-14.3-32-32-32z"
       />
     </svg>
   </span>
@@ -106,9 +110,10 @@ exports[`<Input/> status render iconFix Disabled renders an \`preIconFix Disable
   >
     <svg
       className="code-ui-svg"
+      viewBox="0 0 1024 1024"
     >
-      <use
-        xlinkHref="#user"
+      <path
+        d="M512 160c-123.36 0-224 100.64-224 224 0 77.12 39.36 145.6 99.008 186.016C272.864 618.976 192 732.256 192 864h64c0-141.76 114.24-256 256-256s256 114.24 256 256h64c0-131.744-80.864-244.992-195.008-294.016A224.768 224.768 0 00736 384c0-123.36-100.64-224-224-224zm0 64c88.736 0 160 71.264 160 160s-71.264 160-160 160-160-71.264-160-160 71.264-160 160-160z"
       />
     </svg>
   </span>
@@ -134,9 +139,10 @@ exports[`<Input/> status render iconFix Disabled renders an \`preIconFix and suf
   >
     <svg
       className="code-ui-svg"
+      viewBox="0 0 1024 1024"
     >
-      <use
-        xlinkHref="#user"
+      <path
+        d="M512 160c-123.36 0-224 100.64-224 224 0 77.12 39.36 145.6 99.008 186.016C272.864 618.976 192 732.256 192 864h64c0-141.76 114.24-256 256-256s256 114.24 256 256h64c0-131.744-80.864-244.992-195.008-294.016A224.768 224.768 0 00736 384c0-123.36-100.64-224-224-224zm0 64c88.736 0 160 71.264 160 160s-71.264 160-160 160-160-71.264-160-160 71.264-160 160-160z"
       />
     </svg>
   </span>
@@ -155,9 +161,10 @@ exports[`<Input/> status render iconFix Disabled renders an \`preIconFix and suf
   >
     <svg
       className="code-ui-svg"
+      viewBox="0 0 1024 1024"
     >
-      <use
-        xlinkHref="#password"
+      <path
+        d="M505.4 566.3c-17.7 0-32 14.3-32 32v123.8c0 17.7 14.3 32 32 32s32-14.3 32-32V598.3c0-17.7-14.3-32-32-32z"
       />
     </svg>
   </span>
@@ -183,9 +190,10 @@ exports[`<Input/> status render iconFix Disabled renders an \`sufIconFix Disable
   >
     <svg
       className="code-ui-svg"
+      viewBox="0 0 1024 1024"
     >
-      <use
-        xlinkHref="#password"
+      <path
+        d="M505.4 566.3c-17.7 0-32 14.3-32 32v123.8c0 17.7 14.3 32 32 32s32-14.3 32-32V598.3c0-17.7-14.3-32-32-32z"
       />
     </svg>
   </span>
@@ -202,9 +210,10 @@ exports[`<Input/> status render iconFix Error renders an \`preIconFix Error\` co
   >
     <svg
       className="code-ui-svg"
+      viewBox="0 0 1024 1024"
     >
-      <use
-        xlinkHref="#user"
+      <path
+        d="M512 160c-123.36 0-224 100.64-224 224 0 77.12 39.36 145.6 99.008 186.016C272.864 618.976 192 732.256 192 864h64c0-141.76 114.24-256 256-256s256 114.24 256 256h64c0-131.744-80.864-244.992-195.008-294.016A224.768 224.768 0 00736 384c0-123.36-100.64-224-224-224zm0 64c88.736 0 160 71.264 160 160s-71.264 160-160 160-160-71.264-160-160 71.264-160 160-160z"
       />
     </svg>
   </span>
@@ -230,9 +239,10 @@ exports[`<Input/> status render iconFix Error renders an \`preIconFix and sufIco
   >
     <svg
       className="code-ui-svg"
+      viewBox="0 0 1024 1024"
     >
-      <use
-        xlinkHref="#user"
+      <path
+        d="M512 160c-123.36 0-224 100.64-224 224 0 77.12 39.36 145.6 99.008 186.016C272.864 618.976 192 732.256 192 864h64c0-141.76 114.24-256 256-256s256 114.24 256 256h64c0-131.744-80.864-244.992-195.008-294.016A224.768 224.768 0 00736 384c0-123.36-100.64-224-224-224zm0 64c88.736 0 160 71.264 160 160s-71.264 160-160 160-160-71.264-160-160 71.264-160 160-160z"
       />
     </svg>
   </span>
@@ -251,9 +261,10 @@ exports[`<Input/> status render iconFix Error renders an \`preIconFix and sufIco
   >
     <svg
       className="code-ui-svg"
+      viewBox="0 0 1024 1024"
     >
-      <use
-        xlinkHref="#password"
+      <path
+        d="M505.4 566.3c-17.7 0-32 14.3-32 32v123.8c0 17.7 14.3 32 32 32s32-14.3 32-32V598.3c0-17.7-14.3-32-32-32z"
       />
     </svg>
   </span>
@@ -279,9 +290,10 @@ exports[`<Input/> status render iconFix Error renders an \`sufIconFix Error\` co
   >
     <svg
       className="code-ui-svg"
+      viewBox="0 0 1024 1024"
     >
-      <use
-        xlinkHref="#password"
+      <path
+        d="M505.4 566.3c-17.7 0-32 14.3-32 32v123.8c0 17.7 14.3 32 32 32s32-14.3 32-32V598.3c0-17.7-14.3-32-32-32z"
       />
     </svg>
   </span>

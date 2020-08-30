@@ -17,10 +17,7 @@ const paths = {
   },
 
   styles: "../components/**/*.less",
-  scripts: [
-    "../components/**/*.{ts,tsx}",
-    "!../components/**/__test__/*.{ts,tsx}",
-  ],
+  scripts: ["../components/**/*.{ts,tsx}", "!../components/**/__test__/**"],
 
   svgConfig: {
     plugins: [
