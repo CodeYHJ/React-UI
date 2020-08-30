@@ -1,14 +1,15 @@
 import React, { useState, ChangeEvent } from 'react';
-import { Form, Input, Icon } from '@com/index';
+import { Form, Input, Icon } from '@codeyhj/react-ui';
+const { PasswordIcon, UserIcon } = Icon
 export interface FormDemoProps {
 
 }
 
 const FormDemo: React.SFC<FormDemoProps> = () => {
 
-    const passwordIcon = <Icon name="password" />
+    const passwordIcon = <PasswordIcon />
 
-    const userIcon = <Icon name="user" />
+    const userIcon = <UserIcon />
 
     const [userValue, setUserValue] = useState('')
 

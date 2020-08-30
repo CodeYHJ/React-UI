@@ -3,6 +3,7 @@ import Dialog from './Dialog';
 import ReactDOM, { unmountComponentAtNode } from 'react-dom';
 import { classPre } from '@com/utils';
 import { Icon, Button } from '@com/index';
+const { MainIcon, DangerIcon, SuccessIcon, WarnIcon } = Icon
 import './style/Modal.less'
 interface PropsConfig {
     visible: boolean,
@@ -21,19 +22,17 @@ type ModalType = 'info' | 'danger' | 'warn' | 'success'
 
 const createIcon = (type: ModalType) => {
     if (type === 'danger') {
-        return <Icon name="danger" className={c("icon")} />
+        return <DangerIcon className={c("icon")} />
     } else if (type === 'info') {
-        return <Icon name="main" className={c("icon")} />
+        return <MainIcon className={c("icon")} />
     }
     else if (type === 'success') {
-        return <Icon name="success" className={c("icon")} />
-
+        return <SuccessIcon className={c("icon")} />
     }
     else if (type === 'warn') {
-        return <Icon name="warn" className={c("icon")} />
-
+        return <WarnIcon className={c("icon")} />
     } else {
-        return <Icon name="main" className={c("icon")} />
+        return <MainIcon className={c("icon")} />
     }
 }
 const ModalBase = (propsConfig: PropsConfig) => {

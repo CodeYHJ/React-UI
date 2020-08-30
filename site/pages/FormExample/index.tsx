@@ -3,8 +3,8 @@ import { classPre } from "../../util/index"
 import ExampleBox from '../../component/ExampleBox';
 import ExampleApi from '../../component/ExampleApi';
 import "./index.less";
-import { Button, Icon, Input, Form } from "../../../dist";
-
+import { Button, Icon, Input, Form } from "@codeyhj/react-ui";
+const { PasswordIcon, UserIcon } = Icon
 export interface FormExampleProps {
 
 }
@@ -12,8 +12,8 @@ export interface FormExampleProps {
 const c = classPre('form')
 
 const FormExample: React.SFC<FormExampleProps> = () => {
-    const passwordIcon = <Icon name="password" />
-    const userIcon = <Icon name="user" />
+    const passwordIcon = <PasswordIcon />
+    const userIcon = <UserIcon />
 
     const [userValue, setUserValue] = useState('')
     const [passwordValue, setPasswordValue] = useState('')

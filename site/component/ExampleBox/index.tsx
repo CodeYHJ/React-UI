@@ -1,7 +1,8 @@
 import React, { HtmlHTMLAttributes, useState, ReactNode } from 'react';
 import { classPre } from "../../util/index";
 import './index.less'
-import { Transition, Icon } from '@com';
+import { Transition, Icon } from '@codeyhj/react-ui';
+const { CodeIcon } = Icon
 import Highlight, { defaultProps } from "prism-react-renderer";
 export interface ExampleBoxProps extends HtmlHTMLAttributes<HTMLDivElement> {
     title: string,
@@ -48,7 +49,7 @@ const ExampleBox: React.SFC<ExampleBoxProps> = (props) => {
             <section className={c("meta")}>
                 <div className={c('title')}>{title}</div>
                 <div className={c('description')}>{description}</div>
-                {props.code && <Icon className={c("codeIcon")} name="code" onClick={openCode} />}
+                {props.code && <CodeIcon className={c("codeIcon")} onClick={openCode} />}
             </section>
             {renderTransition()}
         </div>

@@ -3,9 +3,9 @@ import { classPre } from "../../util/index"
 import ExampleBox from '../../component/ExampleBox';
 import ExampleApi from '../../component/ExampleApi';
 import "./index.less";
-import { Icon } from "../../../dist";
-const { CancelIcon, ArrorDownIcon, ArrorUpIcon, ArrorLeftIcon, ArrorRightIcon } = Icon
+import { Icon } from "@codeyhj/react-ui";
 
+const { CancelIcon, ArrorDownIcon, ArrorUpIcon, ArrorLeftIcon, ArrorRightIcon } = Icon
 const { createIcon } = Icon
 export interface IconExampleProps {
 

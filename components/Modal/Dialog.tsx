@@ -4,6 +4,7 @@ import { createPortal } from 'react-dom';
 import { classPre } from '@com/utils';
 import { Icon, Button } from '@com/index';
 import Transition from '@com/Transition';
+const { CancelIcon } = Icon
 export interface DailogProps extends HtmlHTMLAttributes<HTMLElement> {
     visible: boolean,
     onOk?: MouseEventHandler,
@@ -50,7 +51,7 @@ const Dialog: React.SFC<DailogProps> = (props) => {
     }
     const CloseIcon = () => {
         return closable ? <div className={c("close")} onClick={onClickClose} >
-            <Icon name="cancel" />
+            <CancelIcon />
         </div> : null
     }
     const handleOpencb = () => {

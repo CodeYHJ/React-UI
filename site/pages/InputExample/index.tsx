@@ -3,8 +3,8 @@ import { classPre } from "../../util/index"
 import ExampleBox from '../../component/ExampleBox';
 import ExampleApi from '../../component/ExampleApi';
 import "./index.less";
-import { Input, Icon } from "../../../dist";
-
+import { Input, Icon } from "@codeyhj/react-ui";
+const { UserIcon, PasswordIcon } = Icon
 export interface InputExampleProps {
 
 }
@@ -22,8 +22,8 @@ const InputExample: React.SFC<InputExampleProps> = () => {
     const handleOnBlur = (e: React.FocusEvent<HTMLInputElement>) => {
         console.log('失焦')
     }
-    const userIcon = <Icon name="user" />
-    const passwordIcon = <Icon name="password" />
+    const userIcon = <UserIcon />
+    const passwordIcon = <PasswordIcon />
     const handleData = [
         { name: 'type', dsc: 'input的类型', type: ['text', 'password', 'number'], value: 'text' },
         { name: 'value', dsc: 'input的当前值', type: ['string'], value: '--' },

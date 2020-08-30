@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import {Button,Icon} from '@com/index';
+import { Button, Icon } from '@com/index';
+const { CancelIcon } = Icon
 export interface ButtonDemoProps {
 
 }
@@ -7,12 +8,12 @@ const ButtonDemo: React.SFC<ButtonDemoProps> = () => {
 
     const [loading, setLoading] = useState(false)
 
-    const handleClick = ()=>{
+    const handleClick = () => {
         setLoading(false)
     }
 
-    const preIcon = <Icon name="cancel"/>
-    
+    const preIcon = <CancelIcon />
+
     return (
         <div>
             <Button type="danger" pre={preIcon} >danger</Button>

@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from "react-test-renderer";
 import { shallow, mount } from "enzyme";
 import { Icon, Input } from '@com/index';
-
+const { UserIcon, PasswordIcon } = Icon
 describe('<Input/>', () => {
     describe("type", () => {
         it('renders an `type=text` component', () => {
@@ -48,8 +48,8 @@ describe('<Input/>', () => {
         })
     })
     describe('iconFix', () => {
-        const userIcon = <Icon name="user" />
-        const passwordIcon = <Icon name="password" />
+        const userIcon = <UserIcon />
+        const passwordIcon = <PasswordIcon />
         it('renders an `preIconFix` component ', () => {
             const json = renderer.create(<Input placeholder="前置Icon" preIconFix={userIcon} />)
             expect(json).toMatchSnapshot()
@@ -77,10 +77,9 @@ describe('<Input/>', () => {
             expect(json).toMatchSnapshot()
         })
     })
-
     describe('status', () => {
-        const userIcon = <Icon name="user" />
-        const passwordIcon = <Icon name="password" />
+        const userIcon = <UserIcon />
+        const passwordIcon = <PasswordIcon />
         describe('render', () => {
             describe('strFix Error', () => {
                 it('renders an `preStrFix Error` component ', () => {

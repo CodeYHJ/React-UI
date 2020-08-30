@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Input, Icon } from '@com/index';
+import { Input, Icon } from '@codeyhj/react-ui';
+
+const { UserIcon } = Icon
 
 export interface InputDemoProps {
 
@@ -8,7 +10,7 @@ export interface InputDemoProps {
 
 const InputDemo: React.SFC<InputDemoProps> = () => {
 
-    const userIcon = <Icon name="user" />
+    const userIcon = <UserIcon />
 
     return (
         <div>

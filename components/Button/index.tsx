@@ -2,6 +2,7 @@ import React, { MouseEventHandler, HtmlHTMLAttributes, ReactNode } from 'react';
 import "./style/index.less"
 import { classPre } from '@com/utils';
 import { Icon } from '@com/index';
+const { LoadingIcon } = Icon
 
 type ButtonType = 'primary' | 'danger' | 'warn' | 'default' | 'success' | 'dashed'
 
@@ -35,7 +36,7 @@ const Button: React.SFC<ButtonProps> = (props) => {
     const loadingSvg = () => {
         return (
             <div className={c('loading')}>
-                <Icon name="loading"></Icon>
+                <LoadingIcon />
             </div>
         )
     }

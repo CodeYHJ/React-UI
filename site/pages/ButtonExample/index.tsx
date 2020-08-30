@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { classPre } from "../../util/index";
 import ExampleBox from "../../component/ExampleBox";
 import { Button, Icon } from "../../../dist";
-
+const { CancelIcon } = Icon
 import './index.less'
 import ExampleApi from '../../component/ExampleApi';
 export interface ButtonExampleProps {
@@ -13,7 +13,7 @@ const ButtonExample: React.SFC<ButtonExampleProps> = () => {
     const [loading, setLoading] = useState(false)
     const [loading2, setLoading2] = useState(false)
 
-    const preIcon = (<Icon name="cancel" />)
+    const preIcon = (<CancelIcon />)
     const handleClick = () => {
         setLoading(!loading)
     }

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Icon } from '@com/index';
+import { Icon } from '@codeyhj/react-ui';
+const { CancelIcon } = Icon
 export interface IconDemoProps {
 
 }
@@ -7,7 +8,7 @@ export interface IconDemoProps {
 const IconDemo: React.SFC<IconDemoProps> = () => {
     return (
         <div>
-            <Icon name="cancel" />
+            <CancelIcon />
         </div>
     );
 }

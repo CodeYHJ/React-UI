@@ -1,16 +1,16 @@
 import Icon from "../index"
-const { createIcon } = Icon
+const { createIcon, MainIcon } = Icon
 import React from "react"
 import renderer from "react-test-renderer";
 import { shallow } from "enzyme";
 describe('localIcon', () => {
     it('renders an `.code-ui-svg` component', () => {
-        const json = renderer.create(<Icon name="main" />)
+        const json = renderer.create(<MainIcon />)
         expect(json).toMatchSnapshot()
     })
     it('trigger onOK once when click on svg', () => {
         const onClick = jest.fn()
-        const wrapper = shallow(<Icon name="main" onClick={onClick} />);
+        const wrapper = shallow(<MainIcon onClick={onClick} />);
         wrapper.find('.code-ui-svg').simulate('click')
         expect(onClick).toBeCalled()
     })
