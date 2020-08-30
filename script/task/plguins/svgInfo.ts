@@ -4,5 +4,5 @@ export interface SvgInfo {
     viewBox: string;
     key: string;
   };
-  path: string;
+  path: string[];
 }

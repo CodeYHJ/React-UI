@@ -22,7 +22,7 @@ const clean = (dirs, options = { force: true }) => {
 };
 
 const envConfig = {
-  icon: [
+  icon: () => [
     clean([
       "dist",
       "../components/Icon/iconInfo",
@@ -38,14 +38,14 @@ const envConfig = {
   ],
   esm: () => [
     clean(["../esm"]),
-    ...envConfig.icon,
+    ...envConfig.icon(),
     compileESM,
     copyEsmLess,
     esmLess2css,
   ],
   cjs: () => [
     clean(["../lib"]),
-    ...envConfig.icon,
+    ...envConfig.icon(),
     compileCJS,
     copyCjsLess,
     cjsLess2css,

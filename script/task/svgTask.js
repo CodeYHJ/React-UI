@@ -11,6 +11,7 @@ const {
 } = require("./plguins/createIndex");
 
 const handleSvgInfoFile = () => {
+  // return src(paths.entry.testSvg)
   return src(paths.entry.svg)
     .pipe(svgmin(paths.svgConfig))
     .pipe(transform())

@@ -14,6 +14,7 @@ const paths = {
     distIcon: "./dist/svgIcon/*.tsx",
     distSvg: "./dist/**/*.{ts,tsx}",
     svg: "./assect/svg/*.svg",
+    testSvg: "./assect/svg/password.svg",
   },
 
   styles: "../components/**/*.less",

@@ -18,8 +18,10 @@
       const { className, ...others } = props
   
       const cls = [c(), className].filter(Boolean).join(" ")
+
+      const childrenList = info.path.map((d,index) => React.createElement('path', { d ,key:index}))
   
-      return React.createElement('svg', { ...info.attributes, className: cls, ...others }, React.createElement('path', { d: info.path }))
+      return React.createElement('svg', { ...info.attributes, className: cls, ...others }, childrenList)
   }
   
   export default DangerIcon;

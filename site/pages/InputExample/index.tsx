@@ -4,7 +4,9 @@ import ExampleBox from '../../component/ExampleBox';
 import ExampleApi from '../../component/ExampleApi';
 import "./index.less";
 import { Input, Icon } from "@codeyhj/react-ui";
+
 const { UserIcon, PasswordIcon } = Icon
+
 export interface InputExampleProps {
 
 }

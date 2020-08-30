@@ -23,7 +23,13 @@ module.exports = {
 
     {
       test: /\.less/,
-      use: ["style-loader", "css-loader", "less-loader"],
+      use: [
+        process.env.NODE_ENV === "pro"
+          ? MiniCssExtractPlugin.loader
+          : "style-loader",
+        "css-loader",
+        "less-loader",
+      ],
     },
     // img优化
     {

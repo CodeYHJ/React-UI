@@ -18,11 +18,13 @@ const handleSVGAST = (obj) => {
     }
 
     if (key === "children") {
+      const pathList = [];
       obj[key].forEach((el) => {
         if (el.name === "path") {
-          s.path = el.attributes.d;
+          pathList.push(el.attributes.d);
         }
       });
+      s.path = pathList;
     }
     return s;
   }, {});
