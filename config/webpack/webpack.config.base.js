@@ -7,7 +7,7 @@ const webpack = require("webpack");
 module.exports = {
   entry: pathFn("./site/app.tsx"),
   output: {
-    path: pathFn("./examplePage"),
+    path: pathFn("./sitePage"),
     filename: "js/[name].[hash].js",
     chunkFilename: "js/[name].[hash].js",
     publicPath: "/",
