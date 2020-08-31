@@ -1,6 +1,7 @@
 import React from 'react';
-import { Icon } from '@codeyhj/react-ui';
-const { CancelIcon } = Icon
+
+import { CancelIcon } from '@codeyhj/react-ui/lib/Icon';
+
 export interface IconDemoProps {
 
 }

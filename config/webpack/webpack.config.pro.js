@@ -23,7 +23,7 @@ const proConfig = {
 
   plugins: [
     new CleanWebpackPlugin(),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
     new HtmlwebpackPlugin({
       title: "CodeUI",
       template: pathFn("./config/HTML/index.html"),
@@ -45,19 +45,19 @@ const proConfig = {
       canPrint: true,
     }),
   ],
-  optimization: {
-    runtimeChunk: { name: "manifest" },
+  // optimization: {
+  //   runtimeChunk: { name: "manifest" },
 
-    splitChunks: {
-      cacheGroups: {
-        lib: {
-          test: /[\\/]node_modules[\\/](@codeyhj[\\/]react-ui)[\\/]/,
-          name: "codeyhjui",
-          chunks: "all",
-          priority: 2,
-        },
-      },
-    },
-  },
+  //   splitChunks: {
+  //     cacheGroups: {
+  //       lib: {
+  //         test: /[\\/]node_modules[\\/](@codeyhj[\\/]react-ui)[\\/]/,
+  //         name: "codeyhjui",
+  //         chunks: "all",
+  //         priority: 2,
+  //       },
+  //     },
+  //   },
+  // },
 };
 module.exports = merge(baseConfig, proConfig);

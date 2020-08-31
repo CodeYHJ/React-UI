@@ -45,7 +45,7 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
-    "@codeyhj/react-ui": "^0.0.9",
+    "@codeyhj/react-ui": "^0.0.10",
     "@rgrove/parse-xml": "^2.0.4",
     "@types/axios": "^0.14.0",
     "@types/enzyme": "^3.10.5",

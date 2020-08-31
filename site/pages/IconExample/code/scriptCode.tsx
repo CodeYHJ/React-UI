@@ -1,6 +1,9 @@
 import React from 'react';
-import { Icon } from '@com/index';
+
+import { Icon } from '@codeyhj/react-ui';
+
 const { createIcon } = Icon
+
 export interface IconDemoProps {
 
 }
