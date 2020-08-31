@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from "react-test-renderer";
 import { shallow, mount } from "enzyme";
-import { Icon, Input } from '@com/index';
-const { UserIcon, PasswordIcon } = Icon
+import { Input } from '@com/index';
+import { UserIcon, PasswordIcon } from '@com/Icon';
 describe('<Input/>', () => {
     describe("type", () => {
         it('renders an `type=text` component', () => {

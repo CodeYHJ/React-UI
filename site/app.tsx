@@ -48,7 +48,6 @@ const App: React.SFC<AppProps> = () => {
                                 <Route path="/react/form" exact component={FormExample} />
                                 <Route path="/react/input" exact component={InputExample} />
                                 <Route path="/react/gird" exact component={GirdExample} />
-
                                 <Redirect exact to="/react/introduction" from="/react" />
                             </Switch>
 

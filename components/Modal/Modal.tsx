@@ -2,8 +2,8 @@ import React from 'react';
 import Dialog from './Dialog';
 import ReactDOM, { unmountComponentAtNode } from 'react-dom';
 import { classPre } from '@com/utils';
-import { Icon, Button } from '@com/index';
-const { MainIcon, DangerIcon, SuccessIcon, WarnIcon } = Icon
+import { Button } from '@com/index';
+import { MainIcon, DangerIcon, SuccessIcon, WarnIcon } from "@com/Icon"
 import './style/Modal.less'
 interface PropsConfig {
     visible: boolean,

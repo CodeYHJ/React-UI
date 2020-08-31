@@ -1,5 +1,5 @@
-import Icon from "../index"
-const { createIcon, MainIcon } = Icon
+import Icon, { MainIcon } from "../index"
+const { createIcon } = Icon
 import React from "react"
 import renderer from "react-test-renderer";
 import { shallow } from "enzyme";

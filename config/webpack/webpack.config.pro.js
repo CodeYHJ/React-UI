@@ -5,6 +5,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const optimizeCssPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlwebpackPlugin = require("html-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
+
 const { pathFn } = require("./utils");
 /**
  * @type {import('webpack').Configuration}
@@ -20,6 +23,7 @@ const proConfig = {
 
   plugins: [
     new CleanWebpackPlugin(),
+    new BundleAnalyzerPlugin(),
     new HtmlwebpackPlugin({
       title: "CodeUI",
       template: pathFn("./config/HTML/index.html"),
@@ -43,41 +47,17 @@ const proConfig = {
   ],
   optimization: {
     runtimeChunk: { name: "manifest" },
-    minimizer: [
-      new TerserPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: false,
-      }),
-    ],
-    // splitChunks: {
-    //   cacheGroups: {
-    //     axios: {
-    //       test: /[\\/]node_modules[\\/](axios)[\\/]/,
-    //       name: "axios",
-    //       chunks: "all",
-    //       priority: 2,
-    //     },
-    //     antd: {
-    //       test: /[\\/]node_modules[\\/](antd)|(@ant-design)[\\/]/,
-    //       name: "antd",
-    //       chunks: "all",
-    //       priority: 3,
-    //     },
-    //     moment: {
-    //       test: /[\\/]node_modules[\\/](moment)[\\/]/,
-    //       name: "moment",
-    //       chunks: "all",
-    //       priority: 4,
-    //     },
-    //     rc: {
-    //       test: /[\\/]node_modules[\\/](rc-table)|(rc-mentions)|(rc-tree)|(rc-picker)|(rc-select)[\\/]/,
-    //       name: "rc",
-    //       chunks: "all",
-    //       priority: 4,
-    //     },
-    //   },
-    // },
+
+    splitChunks: {
+      cacheGroups: {
+        lib: {
+          test: /[\\/]node_modules[\\/](@codeyhj[\\/]react-ui)[\\/]/,
+          name: "codeyhjui",
+          chunks: "all",
+          priority: 2,
+        },
+      },
+    },
   },
 };
 module.exports = merge(baseConfig, proConfig);

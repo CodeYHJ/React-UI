@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom';
 import { classPre } from '@com/utils';
 import { Icon, Button } from '@com/index';
 import Transition from '@com/Transition';
-const { CancelIcon } = Icon
+import { CancelIcon } from "@com/Icon"
 export interface DailogProps extends HtmlHTMLAttributes<HTMLElement> {
     visible: boolean,
     onOk?: MouseEventHandler,
