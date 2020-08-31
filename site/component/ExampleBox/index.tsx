@@ -1,8 +1,7 @@
 import React, { HtmlHTMLAttributes, useState, ReactNode } from 'react';
 import { classPre } from "../../util/index";
 import './index.less'
-// import { Transition, Icon } from '@codeyhj/react-ui';
-import { Transition, Icon } from "../../../components/index"
+import { Transition, Icon } from '@codeyhj/react-ui';
 const { CodeIcon } = Icon
 import Highlight, { defaultProps } from "prism-react-renderer";
 export interface ExampleBoxProps extends HtmlHTMLAttributes<HTMLDivElement> {
@@ -23,7 +22,7 @@ const ExampleBox: React.SFC<ExampleBoxProps> = (props) => {
         if (props.code) {
             return <Transition visible={open} beforeEnter={{ visibility: "hidden", maxHeight: "0" }} enter={{ maxHeight: '1000vh', visibility: "visible" }} leave={{ maxHeight: '0px',visibility: "hidden" }
             } time={.6} >
-                <div>
+                <div >
                     <Highlight {...defaultProps} code={props.code.default} language="jsx">
                         {({ className, style, tokens, getLineProps, getTokenProps }) => (
                             <pre className={className} style={style}>

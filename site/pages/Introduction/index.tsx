@@ -11,7 +11,7 @@ const Introduction: React.SFC<IntroductionProps> = () => {
         <div className={c()}>
             <section className={c('section')}>
                 <h1 className={c('h1')}>CodeUI-React</h1>
-                <p className={c('p')}>CodeUI-React是一套PC端得React组件库</p>
+                <p className={c('p')}>CodeUI-React是一套PC端的React组件库</p>
             </section>
             <section className={c('section')}>
                 <h1 className={c('h1')}>使用TypeScript</h1>
