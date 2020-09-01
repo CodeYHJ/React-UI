@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import Button from '@com/Button';
+
+import { Button } from '@codeyhj/react-ui';
+
 export interface ButtonDemoProps {
 
 }
 const ButtonDemo: React.SFC<ButtonDemoProps> = () => {
 
     const [loading, setLoading] = useState(false)
-    
+
     return (
         <div>
             <Button type="danger" loading>danger</Button>

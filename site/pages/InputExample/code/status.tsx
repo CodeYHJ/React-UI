@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Input, Icon } from '@codeyhj/react-ui';
+import { Input } from '@codeyhj/react-ui';
 
-const { UserIcon } = Icon
+import { UserIcon } from '@codeyhj/react-ui/lib/Icon';
 
 export interface InputDemoProps {
 

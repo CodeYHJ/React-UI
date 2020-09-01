@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import { Button, Icon } from '@com/index';
+
+import { Button, Icon } from '@codeyhj/react-ui';
+
 const { CancelIcon } = Icon
+
 export interface ButtonDemoProps {
 
 }

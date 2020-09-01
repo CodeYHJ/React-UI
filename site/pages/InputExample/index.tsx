@@ -3,9 +3,10 @@ import { classPre } from "../../util/index"
 import ExampleBox from '../../component/ExampleBox';
 import ExampleApi from '../../component/ExampleApi';
 import "./index.less";
-import { Input, Icon } from "@codeyhj/react-ui";
+import { Input } from "@codeyhj/react-ui";
 
-const { UserIcon, PasswordIcon } = Icon
+import { UserIcon, PasswordIcon } from "@codeyhj/react-ui/lib/Icon";
+
 
 export interface InputExampleProps {
 

@@ -1065,8 +1065,8 @@
 
 "@codeyhj/react-ui@^0.0.10":
   version "0.0.10"
-  resolved "https://registry.npmjs.org/@codeyhj/react-ui/-/react-ui-0.0.10.tgz#da427d104c340e6ff2a5ebe112832ae7fe908a7a"
-  integrity sha512-LZ6tAg6lDeB6MXTtk77gsojqaXvuKKzmRscp+iTgnDHsJfdBTW/akdprRQDTw/JKPfRGJFg/oU3d6ZvCarZ1DQ==
+  resolved "https://registry.npm.taobao.org/@codeyhj/react-ui/download/@codeyhj/react-ui-0.0.10.tgz#da427d104c340e6ff2a5ebe112832ae7fe908a7a"
+  integrity sha1-2kJ9EEw0Dm/ypevhEoMq5/6Qino=
   dependencies:
     axios "^0.19.2"
     react "^16.13.1"
