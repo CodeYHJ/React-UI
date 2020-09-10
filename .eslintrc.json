@@ -1,61 +1,57 @@
 {
-    "env": {
-        "browser": true,
-        "es6": true
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended",
+    "airbnb-base"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "plugin:@typescript-eslint/eslint-recommended",
-        "prettier/@typescript-eslint",
-        "plugin:prettier/recommended",
-        "airbnb-base"
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react-hooks",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "packageDir": "./"
+      }
     ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 11,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react-hooks",
-        "@typescript-eslint"
+    "no-use-before-define": "off",
+    "object-curly-newline": [
+      0
     ],
-    "rules": {
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
-        "import/no-extraneous-dependencies": [
-            "error",
-            {
-                "packageDir": "./"
-            }
-        ],
-        "no-use-before-define": "off",
-        "indent": [
-            "error",
-            4
-        ],
-        "object-curly-newline": [
-            0
-        ],
-        "padding-line-between-statements": [
-            "error",
-            {
-                "blankLine": "always",
-                "prev": "*",
-                "next": "*"
-            }
-        ]
-    },
-    "settings": {
-        "import/resolver": {
-            "webpack": {
-                "config": "config/webpack/webpack.config.base.js"
-            }
-        }
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "*"
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "config/webpack/webpack.config.base.js"
+      }
     }
+  }
 }
