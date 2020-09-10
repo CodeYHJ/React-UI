@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
   "extends": [
     "plugin:@typescript-eslint/eslint-recommended",
@@ -44,6 +45,14 @@
         "blankLine": "always",
         "prev": "*",
         "next": "*"
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "ts": "never",
+        "tsx": "never"
       }
     ]
   },
