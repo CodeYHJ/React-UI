@@ -1,4 +1,4 @@
-@import "../../style/var.less";
+@import '../../style/var.less';
 .buttonBase() {
   display: inline-flex;
   flex-direction: row;
@@ -15,7 +15,7 @@
 .hover() {
   &:hover {
     &::before {
-      content: "";
+      content: '';
       width: 100%;
       height: 100%;
       position: absolute;
@@ -100,19 +100,18 @@
     }
   }
   &-loading {
-    color:#ffffff;
+    color: #ffffff;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin-right:8px;
+    margin-right: 8px;
     animation: button-loading-spin 1s linear infinite;
   }
-  &-preIcon{
+  &-preIcon {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin-right:8px;
-
+    margin-right: 8px;
   }
   &-dashed-disabled {
     background: @neutral-color-background;
