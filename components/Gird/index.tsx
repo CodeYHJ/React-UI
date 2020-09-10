@@ -1,10 +1,11 @@
-import r from "./Row";
-import c from "./Col";
+import r from './Row';
 
-type Row = typeof r & { Col: typeof c }
+import c from './Col';
 
-const Row = r as Row
+type RowType = typeof r & { Col: typeof c };
 
-Row.Col = c
+const Row = r as RowType;
+
+Row.Col = c;
 
 export default Row;

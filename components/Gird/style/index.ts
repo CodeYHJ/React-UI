@@ -1,2 +1,3 @@
-import './Row.less'
-import './Col.less'
+import './Row.less';
+
+import './Col.less';
