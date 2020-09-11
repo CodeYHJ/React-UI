@@ -1,19 +1,28 @@
-import L from "./Layout";
-import C from "./Content";
-import A from "./Aside";
-import F from "./Footer";
-import H from "./Header";
+import L from './Layout';
 
-type Layout = typeof L & { Content: typeof C, Aside: typeof C, Footer: typeof F, Header: typeof H }
+import C from './Content';
 
-const Layout = L as Layout
+import A from './Aside';
 
-Layout.Content = C
+import F from './Footer';
 
-Layout.Aside = A
+import H from './Header';
 
-Layout.Footer = F
+type Layout = typeof L & {
+  Content: typeof C;
+  Aside: typeof C;
+  Footer: typeof F;
+  Header: typeof H;
+};
 
-Layout.Header = H
+const Layout = L as Layout;
 
-export default Layout
+Layout.Content = C;
+
+Layout.Aside = A;
+
+Layout.Footer = F;
+
+Layout.Header = H;
+
+export default Layout;

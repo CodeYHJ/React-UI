@@ -1,21 +1,22 @@
 import React, { HtmlHTMLAttributes } from 'react';
+
 import { classPre } from '@com/utils';
-export interface AsideProps extends HtmlHTMLAttributes<HTMLElement> {
 
-}
-const c = classPre('layout-aside')
+// eslint-disable-next-line prettier/prettier
+export interface AsideProps extends HtmlHTMLAttributes<HTMLElement> { }
 
-const Aside: React.SFC<AsideProps> = (props) => {
-    const { className, ...others } = props
-    const cls = [c(), className].filter(Boolean).join(' ')
-    return (
-        <aside className={cls} {...others}>
-            <div className={c('children')}>
-                {props.children}
+const c = classPre('layout-aside');
 
-            </div>
-        </aside>
-    );
-}
+const Aside: React.FunctionComponent<AsideProps> = (props) => {
+  const { className, children, ...others } = props;
+
+  const cls = [c(), className].filter(Boolean).join(' ');
+
+  return (
+    <aside className={cls} {...others}>
+      <div className={c('children')}>{children}</div>
+    </aside>
+  );
+};
 
 export default Aside;
