@@ -1,2 +1,3 @@
-import './Dialog.less'
-import './Modal.less'
+import './Dialog.less';
+
+import './Modal.less';
