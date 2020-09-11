@@ -1,1 +1,1 @@
-import './input.less'
+import './input.less';
