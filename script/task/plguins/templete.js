@@ -63,7 +63,7 @@ const generateIconBaseTemplete = (tsName, componentName) => {
 
       const cls = [c(), className].filter(Boolean).join(" ")
 
-      const childrenList = info.path.map(d => React.createElement('path', { d ,key:info.attributes.key}))
+      const childrenList = info.path.map(d => React.createElement('path', { d ,key:info.attributes.key+d}))
 
       return React.createElement('svg', { ...info.attributes, className: cls, ...others }, childrenList)
   }

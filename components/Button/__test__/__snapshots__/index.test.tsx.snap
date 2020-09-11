@@ -4,6 +4,7 @@ exports[`<Button/> Component render renders an \`.code-ui-button-danger\` compon
 <button
   className="code-ui-button code-ui-button-danger"
   onClick={[Function]}
+  type="button"
 >
   <span />
 </button>
@@ -13,6 +14,7 @@ exports[`<Button/> Component render renders an \`.code-ui-button-dashed\` compon
 <button
   className="code-ui-button code-ui-button-dashed"
   onClick={[Function]}
+  type="button"
 >
   <span />
 </button>
@@ -22,6 +24,7 @@ exports[`<Button/> Component render renders an \`.code-ui-button-default\` compo
 <button
   className="code-ui-button code-ui-button-default"
   onClick={[Function]}
+  type="button"
 >
   <span />
 </button>
@@ -31,6 +34,7 @@ exports[`<Button/> Component render renders an \`.code-ui-button-primary\` compo
 <button
   className="code-ui-button code-ui-button-primary"
   onClick={[Function]}
+  type="button"
 >
   <span />
 </button>
@@ -40,6 +44,7 @@ exports[`<Button/> Component render renders an \`.code-ui-button-success\` compo
 <button
   className="code-ui-button code-ui-button-success"
   onClick={[Function]}
+  type="button"
 >
   <span />
 </button>
@@ -49,6 +54,7 @@ exports[`<Button/> Component render renders an \`.code-ui-button-warn\` componen
 <button
   className="code-ui-button code-ui-button-warn"
   onClick={[Function]}
+  type="button"
 >
   <span />
 </button>
@@ -58,6 +64,7 @@ exports[`<Button/> Component render renders an disabled of dashed 1`] = `
 <button
   className="code-ui-button code-ui-button-dashed code-ui-button-dashed-disabled"
   onClick={[Function]}
+  type="button"
 >
   <span />
 </button>
@@ -67,6 +74,7 @@ exports[`<Button/> Component render renders an disabled of default 1`] = `
 <button
   className="code-ui-button code-ui-button-default code-ui-button-disabled"
   onClick={[Function]}
+  type="button"
 >
   <span />
 </button>
@@ -76,6 +84,7 @@ exports[`<Button/> Component render renders an disabled of primary 1`] = `
 <button
   className="code-ui-button code-ui-button-primary code-ui-button-disabled"
   onClick={[Function]}
+  type="button"
 >
   <span />
 </button>
@@ -85,6 +94,7 @@ exports[`<Button/> Component render renders loading 1`] = `
 <button
   className="code-ui-button code-ui-button-primary"
   onClick={[Function]}
+  type="button"
 >
   <div
     className="code-ui-button-loading"
