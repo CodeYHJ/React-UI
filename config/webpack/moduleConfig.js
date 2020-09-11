@@ -1,5 +1,6 @@
-const { pathFn } = require("./utils");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const { pathFn } = require('./utils');
 
 module.exports = {
   rules: [
@@ -8,39 +9,39 @@ module.exports = {
       exclude: /node_modules/,
       use: [
         {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ["@babel/preset-typescript", "@babel/preset-react"],
-            plugins: ["syntax-dynamic-import"],
+            presets: ['@babel/preset-typescript', '@babel/preset-react'],
+            plugins: ['syntax-dynamic-import'],
           },
         },
       ],
     },
     {
       test: /\.svg$/,
-      loader: "svg-sprite-loader",
+      loader: 'svg-sprite-loader',
     },
 
     {
       test: /\.less/,
       use: [
-        process.env.NODE_ENV === "pro"
+        process.env.NODE_ENV === 'pro'
           ? MiniCssExtractPlugin.loader
-          : "style-loader",
-        "css-loader",
-        "less-loader",
+          : 'style-loader',
+        'css-loader',
+        'less-loader',
       ],
     },
     // img优化
     {
       test: /\.(png|svg|jpg|gif|jpeg)$/,
-      include: pathFn("./site"),
+      include: pathFn('./site'),
       use: [
         {
-          loader: "url-loader",
+          loader: 'url-loader',
           options: {
-            limit: 8192, //默认单位为bytes
-            outputPath: "images/",
+            limit: 8192, // 默认单位为bytes
+            outputPath: 'images/',
           },
         },
       ],

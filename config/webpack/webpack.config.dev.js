@@ -1,20 +1,27 @@
-const baseConfig = require("./webpack.config.base");
-const { merge } = require("webpack-merge");
-const HtmlwebpackPlugin = require("html-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
-const HardSourceWebpackPlugin = require("hard-source-webpack-plugin");
+const { merge } = require('webpack-merge');
 
-const { pathFn } = require("./utils");
+const HtmlwebpackPlugin = require('html-webpack-plugin');
+
+const TerserPlugin = require('terser-webpack-plugin');
+
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+
+// eslint-disable-next-line import/no-unresolved
+const nodeObjectHash = require('node-object-hash');
+
+const baseConfig = require('./webpack.config.base');
+
+const { pathFn } = require('./utils');
 
 /**
  * @type {import('webpack').Configuration}
  */
 const devConfig = {
-  mode: "development",
+  mode: 'development',
   devServer: {
     historyApiFallback: true,
-    publicPath: "/",
-    stats: "minimal",
+    publicPath: '/',
+    stats: 'minimal',
     // proxy: {
     //   "/api": {
     //     target: "http://localhost:7001",
@@ -37,30 +44,30 @@ const devConfig = {
   },
   plugins: [
     new HtmlwebpackPlugin({
-      title: "CodeUI",
-      template: pathFn("./config/HTML/index.html"),
+      title: 'CodeUI',
+      template: pathFn('./config/HTML/index.html'),
       // favicon: pathFn("./config/HTML/favicon.ico"),
     }),
     new HardSourceWebpackPlugin({
       // Either an absolute path or relative to webpack's options.context.
-      cacheDirectory: "node_modules/.cache/hard-source/[confighash]",
+      cacheDirectory: 'node_modules/.cache/hard-source/[confighash]',
       // Either a string of object hash function given a webpack config.
-      configHash: function (webpackConfig) {
+      configHash(webpackConfig) {
         // node-object-hash on npm can be used to build this.
-        return require("node-object-hash")({ sort: false }).hash(webpackConfig);
+        return nodeObjectHash({ sort: false }).hash(webpackConfig);
       },
       // Either false, a string, an object, or a project hashing function.
       environmentHash: {
         root: process.cwd(),
         directories: [],
-        files: ["package-lock.json", "yarn.lock"],
+        files: ['package-lock.json', 'yarn.lock'],
       },
       // An object.
       info: {
         // 'none' or 'test'.
-        mode: "none",
+        mode: 'none',
         // 'debug', 'log', 'info', 'warn', or 'error'.
-        level: "debug",
+        level: 'debug',
       },
       // Clean up large, old caches automatically.
       cachePrune: {
@@ -74,6 +81,7 @@ const devConfig = {
       },
     }),
   ],
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
 };
+
 module.exports = merge(baseConfig, devConfig);
