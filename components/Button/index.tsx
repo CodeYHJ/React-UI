@@ -25,7 +25,7 @@ export interface ButtonProps extends HtmlHTMLAttributes<HTMLButtonElement> {
 
 const c = classPre('button');
 
-const Button: React.SFC<ButtonProps> = (props) => {
+const Button: React.FunctionComponent<ButtonProps> = (props) => {
   const {
     type = 'default',
     className,

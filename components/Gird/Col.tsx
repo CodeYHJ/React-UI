@@ -41,7 +41,7 @@ export interface ColProps extends HtmlHTMLAttributes<HTMLDivElement> {
 
 const c = classPre('col');
 
-const Col: React.SFC<ColProps> = (props) => {
+const Col: React.FunctionComponent<ColProps> = (props) => {
   const {
     className,
     span = 24,

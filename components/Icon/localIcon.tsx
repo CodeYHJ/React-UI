@@ -10,7 +10,7 @@ export interface IconProps extends SVGAttributes<SVGElement> {
 
 const c = classPre('svg');
 
-const Icon: React.SFC<IconProps> = (props) => {
+const Icon: React.FunctionComponent<IconProps> = (props) => {
   const { className, name, ...others } = props;
 
   const cls = [c(), className].filter(Boolean).join(' ');

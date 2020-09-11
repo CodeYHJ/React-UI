@@ -20,7 +20,7 @@ export interface RowProps extends HtmlHTMLAttributes<HTMLDivElement> {
 
 const c = classPre('row');
 
-const Row: React.SFC<RowProps> = (props) => {
+const Row: React.FunctionComponent<RowProps> = (props) => {
   const { className, gutter, justify, align, children } = props;
 
   let rowStyleStr: CSSProperties = {};
