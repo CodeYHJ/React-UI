@@ -26,7 +26,7 @@ export interface InputProps extends HtmlHTMLAttributes<HTMLInputElement> {
 
 const c = classPre('input');
 
-const Input: React.SFC<InputProps> = (props) => {
+const Input: React.FunctionComponent<InputProps> = (props) => {
   const {
     className,
     value,
