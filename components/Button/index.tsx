@@ -6,7 +6,13 @@ import { classPre } from '@com/utils';
 
 import { LoadingIcon } from '@com/Icon';
 
-type ButtonType = 'primary' | 'danger' | 'warn' | 'default' | 'success' | 'dashed';
+type ButtonType =
+  | 'primary'
+  | 'danger'
+  | 'warn'
+  | 'default'
+  | 'success'
+  | 'dashed';
 
 export interface ButtonProps extends HtmlHTMLAttributes<HTMLButtonElement> {
   type?: ButtonType;
@@ -20,7 +26,16 @@ export interface ButtonProps extends HtmlHTMLAttributes<HTMLButtonElement> {
 const c = classPre('button');
 
 const Button: React.SFC<ButtonProps> = (props) => {
-  const { type = 'default', className, disabled, onClick, pre, loading, ...other } = props;
+  const {
+    type = 'default',
+    className,
+    disabled,
+    onClick,
+    pre,
+    loading,
+    children,
+    ...other
+  } = props;
 
   const defaultCls = [c(), c(type), className];
 
@@ -57,9 +72,9 @@ const Button: React.SFC<ButtonProps> = (props) => {
   };
 
   return (
-    <button className={cls} onClick={handleClick} {...other}>
+    <button type="button" className={cls} onClick={handleClick} {...other}>
       {renderIcon()}
-      <span>{props.children}</span>
+      <span>{children}</span>
     </button>
   );
 };
