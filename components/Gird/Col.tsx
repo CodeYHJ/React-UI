@@ -4,7 +4,31 @@ import { classPre } from '@com/utils';
 
 import './style/Col.less';
 
-type Num = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24;
+type Num =
+  | 1
+  | 2
+  | 3
+  | 4
+  | 5
+  | 6
+  | 7
+  | 8
+  | 9
+  | 10
+  | 11
+  | 12
+  | 13
+  | 14
+  | 15
+  | 16
+  | 17
+  | 18
+  | 19
+  | 20
+  | 21
+  | 22
+  | 23
+  | 24;
 
 export interface ColProps extends HtmlHTMLAttributes<HTMLDivElement> {
   span?: Num;
@@ -18,7 +42,17 @@ export interface ColProps extends HtmlHTMLAttributes<HTMLDivElement> {
 const c = classPre('col');
 
 const Col: React.SFC<ColProps> = (props) => {
-  const { className, span = 24, style = {}, offset = 0, sm = 0, md = 0, lg = 0, xl = 0 } = props;
+  const {
+    className,
+    span = 24,
+    style = {},
+    offset = 0,
+    sm = 0,
+    md = 0,
+    lg = 0,
+    xl = 0,
+    children,
+  } = props;
 
   const colSpan = c(span);
 
@@ -56,11 +90,22 @@ const Col: React.SFC<ColProps> = (props) => {
     xlClass = c(`xl-${xl}`);
   }
 
-  const cls = [c(), colSpan, offsetClass, smClass, mdClass, lgClass, xlClass, className].filter(Boolean).join(' ');
+  const cls = [
+    c(),
+    colSpan,
+    offsetClass,
+    smClass,
+    mdClass,
+    lgClass,
+    xlClass,
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   return (
     <div className={cls} style={style}>
-      {props.children}
+      {children}
     </div>
   );
 };

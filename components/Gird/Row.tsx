@@ -1,4 +1,9 @@
-import React, { HtmlHTMLAttributes, ReactElement, cloneElement, CSSProperties } from 'react';
+import React, {
+  HtmlHTMLAttributes,
+  ReactElement,
+  cloneElement,
+  CSSProperties,
+} from 'react';
 
 import { classPre } from '@com/utils';
 
@@ -16,7 +21,7 @@ export interface RowProps extends HtmlHTMLAttributes<HTMLDivElement> {
 const c = classPre('row');
 
 const Row: React.SFC<RowProps> = (props) => {
-  const { className, gutter, justify, align } = props;
+  const { className, gutter, justify, align, children } = props;
 
   let rowStyleStr: CSSProperties = {};
 
@@ -98,12 +103,14 @@ const Row: React.SFC<RowProps> = (props) => {
 
   const cls = [c(), justifyCls, align, className].filter(Boolean).join(' ');
 
-  const renderLayout = (children: React.ReactNode) => {
+  const renderLayout = () => {
     if (Array.isArray(children)) {
       const childrenMap: React.ReactNode[] = [];
 
       children.forEach((el, index) => {
-        childrenMap.push(cloneElement(el as ReactElement, { key: index, style: colStyleStr }));
+        childrenMap.push(
+          cloneElement(el as ReactElement, { key: index, style: colStyleStr })
+        );
       });
 
       return childrenMap;
@@ -114,7 +121,7 @@ const Row: React.SFC<RowProps> = (props) => {
 
   return (
     <div className={cls} style={rowStyleStr}>
-      {renderLayout(props.children)}
+      {renderLayout()}
     </div>
   );
 };
